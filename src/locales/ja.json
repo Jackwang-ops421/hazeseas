@@ -1,0 +1,460 @@
+{
+  "site": {
+    "name": "Haze Seas Wiki",
+    "shortName": "Haze Seas",
+    "tagline": "ファン制作コミュニティウィキ",
+    "description": "Haze Seas Hub Wikiは、Robloxプレイヤー向けにコード、フルーツティアリスト、剣、格闘スタイル、ボス、マップ、種族、始めの攻略ガイドを提供するファンメイドハブです。",
+    "legalNotice": "非公式ファンウィキ。プレイヤーのため、プレイヤーによる。"
+  },
+  "nav": {
+    "races": "種族",
+    "bosses": "ボス",
+    "guides": "ガイド",
+    "codes": "コード",
+    "tierList": "ティアリスト",
+    "maps": "マップ",
+    "skills": "スキル",
+    "updates": "更新情報",
+    "home": "ホーム",
+    "menu": "メニュー",
+    "toggleTheme": "テーマ切替"
+  },
+  "home": {
+    "meta": {
+      "title": "Haze Seas コード・フルーツ・始めのガイド | Haze Seas Wiki",
+      "description": "Haze Seas Hub Wikiは、Robloxプレイヤー向けにコード、フルーツティアリスト、剣、格闘スタイル、ボス、マップ、種族、始めの攻略ガイドを提供します。"
+    },
+    "hero": {
+      "eyebrow": "ファン制作コミュニティウィキ",
+      "title": "Haze Seas Wiki",
+      "description": "Haze SeasはHaze Pieceの新生版であり、航海、クエスト攻略、フルーツ収集、海賊または海軍として強くなることを目指すRobloxアクションRPGです。このファンメイドハブで、コード、フルーツ、剣、格闘スタイル、ボス、進行ルートをえます。",
+      "stats": [
+        "Haze Seas リワーク 2026年6月30日",
+        "更新日 2026年6月19日",
+        "239.6M+ 訪問",
+        "3.14M+ お気に入り",
+        "サーバーサイズ 12"
+      ],
+      "primaryCta": "初心者ガイドを始める",
+      "secondaryCta": "フルーツを比較する",
+      "tertiaryCta": "コードを確認する",
+      "videoLabel": "公式メディア"
+    },
+    "updates": {
+      "title": "動的更新",
+      "browse": "すべてのガイドを見る",
+      "viewAll": "すべて見る"
+    },
+    "start": {
+      "eyebrow": "ここから始める",
+      "title": "あなたのHaze Seasジャーニー",
+      "cards": [
+        {
+          "number": "1",
+          "title": "初心者ガイド",
+          "description": "島クエスト、フルーツの基礎、種族、最初のステータス優先順位をカバーする最初のHaze Seasセッションへのクリーンルートを始めましょう。"
+        },
+        {
+          "number": "2",
+          "title": "コードと報酬",
+          "description": "Robloxの説明文、公式Discord、YouTubeからEXPブースト、Race Spins、ジェム、Stat Refundのコードを確認します。"
+        },
+        {
+          "number": "3",
+          "title": "フルーツ出現",
+          "description": "フルーツが60分ごとに出現し、20分後に消滅し、VIPサーバーにどのフルーツが出るかを学びます。"
+        },
+        {
+          "number": "4",
+          "title": "フルーツティアリスト",
+          "description": "グリンディング、ボス、PvP用にすべてのフルーツをティアで比較し、初日で最も良いビルドを選べます。"
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Popular Pages",
+      "title": "Trending Now",
+      "quickLinks": [
+        "Hollow Progression",
+        "Fastest Leveling",
+        "Spirit Charms",
+        "All Boss Guides"
+      ],
+      "cards": [
+        {
+          "badge": "Beginner",
+          "title": "Beginner Guide",
+          "description": "Everything you need from your first login to mastering the basics of combat and progression.",
+          "href": "/beginner-guide"
+        },
+        {
+          "badge": "Updated",
+          "title": "Active Codes",
+          "description": "All working codes with rewards redeem before they expire.",
+          "href": "/codes"
+        },
+        {
+          "badge": "Updated",
+          "title": "Equipment Database",
+          "description": "94 items across 5 slots complete gear database with stats, rarity, and sources.",
+          "href": "/equipment"
+        },
+        {
+          "badge": "Popular",
+          "title": "Which Race Should You Pick?",
+          "description": "Shinigami, Quincy, or Hollow compare all three and find your perfect playstyle.",
+          "href": "/races/best-race"
+        },
+        {
+          "badge": "New",
+          "title": "Enemies & Monsters",
+          "description": "23 enemy types across 5 regions drops, locations, and farming tips.",
+          "href": "/enemies"
+        },
+        {
+          "badge": "Popular",
+          "title": "Boss Locations & Drops",
+          "description": "Every boss location, drop table, and respawn timer in one reference.",
+          "href": "/boss-locations-drops-respawn-times"
+        },
+        {
+          "badge": "Popular",
+          "title": "Best Builds",
+          "description": "Optimal stat allocation, skill tree picks, and Charm combos for every playstyle.",
+          "href": "/builds/best-builds"
+        },
+        {
+          "badge": "New",
+          "title": "Shikai Tier List",
+          "description": "All 6 Shinigami Shikai types ranked by PvP and PvE performance.",
+          "href": "/tier-list/shikai"
+        },
+        {
+          "badge": "New",
+          "title": "World Events Guide",
+          "description": "Supply Caches, Raids, and endgame world events with rare rewards.",
+          "href": "/world-events"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "Haze Seasとは？",
+      "paragraphs": [
+        "Haze SeasはRobloxのHaze StudiosによるHaze Pieceのリワーク版です。プレイヤーが最も多く検索するアニメ海賊RPGループを維持：クエスト、フルーツ、剣、格闘スタイル、ボス、種族、賞金首、島進行。",
+        "プレイヤーはHaze Seasをライブアップデートゲームとして扱うべきです。Robloxページとイベントページがリリース時期の最も安全な指標であり、DiscordとYouTubeが最新のコード、メンテナンス通知、リワークショーの確認に最適な場所です。"
+      ],
+      "stats": [
+        {
+          "label": "開発",
+          "value": "Haze Studios"
+        },
+        {
+          "label": "プラットフォーム",
+          "value": "Roblox"
+        },
+        {
+          "label": "ジャンル",
+          "value": "アクションRPG"
+        },
+        {
+          "label": "訪問数",
+          "value": "239.6M+"
+        },
+        {
+          "label": "お気に入り",
+          "value": "3.14M+"
+        },
+        {
+          "label": "フルーツ出現",
+          "value": "60分"
+        },
+        {
+          "label": "サーバーサイズ",
+          "value": "12"
+        }
+      ],
+      "cta": "すべてのガイドを見る"
+    },
+    "explore": {
+      "title": "Haze Seas Hub Modules",
+      "description": "Jump straight to the eight homepage sections and scroll to the module you need.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Haze Seas Codes",
+          "description": "Track Haze Seas and Haze Piece redeem codes with rewards, source status, and update notes. This page prioritizes codes from the official Roblox description, official Discord announcements, and official Haze Studios channels.",
+          "href": "/codes",
+          "displayType": "code-cards",
+          "highlights": [
+            {
+              "label": "HAZESEAS2026",
+              "detail": "Free rewards; verify in-game before publishing as active",
+              "badge": "Verify"
+            },
+            {
+              "label": "NEXTCODEAT400KLIKES",
+              "detail": "+3 Race Spins, +15 Gems, Stat Refund",
+              "badge": "Legacy"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Haze Seas Beginner Guide",
+          "description": "Give new players a clean first-session route for joining the official Roblox experience, understanding the Haze Piece to Haze Seas rework, and learning the basic progression loop.",
+          "href": "/beginner-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Open the official Roblox experience page and follow the Haze Seas event for the rework launch."
+            },
+            {
+              "label": "2",
+              "detail": "Join the official Haze Studios Discord to track announcements, code drops, and maintenance notices."
+            },
+            {
+              "label": "3",
+              "detail": "Learn core systems first: fruits, swords, fighting styles, races, bosses, and sea progression."
+            },
+            {
+              "label": "4",
+              "detail": "Use the official Trello and official videos to verify mechanics before following third-party builds."
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Haze Seas Release Date And Updates",
+          "description": "Cover release-date, trailer, update, maintenance, and rework searches with official sources first. The official event page lists Haze Seas with an official date of 6-30-2026.",
+          "href": "/release-date-and-updates",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "The official Roblox event page lists Haze Seas with an official date of 6-30-2026."
+            },
+            {
+              "label": "2",
+              "detail": "The official Haze Seas Final Trailer video appears in the uploaded YouTube dataset with 100K views."
+            },
+            {
+              "label": "3",
+              "detail": "The official Haze Seas Trailer video appears in the uploaded YouTube dataset with 120K views."
+            },
+            {
+              "label": "4",
+              "detail": "Use the official Discord, X account, and YouTube channel for maintenance, sneak peek, and post-release update tracking."
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Haze Seas Fruits",
+          "description": "Create a dedicated fruits hub for fruit names, spawn rules, reworks, awakenings, and showcase links. Supported by Google Suggest terms such as haze seas fruits, haze seas fruit tier list, and haze seas dragon.",
+          "href": "/fruits",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "33",
+              "detail": "Indexed official Roblox description data lists 33 fruits in Haze Piece before the Haze Seas rework."
+            },
+            {
+              "label": "60m",
+              "detail": "Fruits spawn every 60 minutes according to indexed official Roblox description data."
+            },
+            {
+              "label": "20m",
+              "detail": "Fruits despawn after 20 minutes according to indexed official Roblox description data."
+            },
+            {
+              "label": "VIP",
+              "detail": "Fruits spawn in VIP servers with a 5 limit according to indexed official Roblox description data."
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "Haze Seas Fruit Tier List",
+          "description": "Build a fruit tier list page for players comparing fruits for grinding, bosses, PvP, mobility, and awakening potential. The module uses post-release testing and official fruit references.",
+          "href": "/fruit-tier-list",
+          "displayType": "tier-grid",
+          "highlights": [
+            {
+              "label": "S",
+              "detail": "High-demand fruits to test first after release: Dragon, Dough, Leopard, Venom, Soul, Phoenix"
+            },
+            {
+              "label": "A",
+              "detail": "Strong comparison candidates from the verified fruit pool: Magma, Electricity, Ice, Operation, Light, Shadow, Flame"
+            },
+            {
+              "label": "B",
+              "detail": "Mid-tier candidates to evaluate for grinding and boss routes: Gravity, Gas, Tremor, Snow, Buddha, Mammoth, String"
+            },
+            {
+              "label": "C",
+              "detail": "Starter or situational fruits to verify after release: Sand, Smoke, Paw, Barrier, Bomb, Spike, Spin, Chop, Clear, Love, Magnet, Darkness, Gum"
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "Haze Seas Trello And Discord",
+          "description": "Serve players searching for the official Haze Seas Trello, Discord, Roblox link, and social channels. Captures navigational SEO demand from keyword data including haze seas discord, haze seas trello, and haze seas roblox.",
+          "href": "/official-links",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Roblox",
+              "detail": "Official Haze Piece Roblox experience page for the Haze Seas rework."
+            },
+            {
+              "label": "Event",
+              "detail": "Official Haze Seas Roblox event page with release and notification information."
+            },
+            {
+              "label": "Discord",
+              "detail": "Official Haze Studios Discord invite for announcements, codes, and community updates."
+            },
+            {
+              "label": "Trello",
+              "detail": "Official Haze Seas Trello board for gameplay systems and reference cards."
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Haze Seas Fighting Styles",
+          "description": "Cover fighting style V1, V2, showcases, unlock routes, and build pairing with fruits or weapons. The uploaded YouTube dataset includes Every Fighting Style V1-V2 Full Showcase and Every V2 Fighting Style in Haze Seas.",
+          "href": "/fighting-styles",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "V1-V2",
+              "detail": "Uploaded YouTube data includes a Haze Seas video titled EVERY FIGHTING STYLE V1-V2 FULL SHOWCASE."
+            },
+            {
+              "label": "V2",
+              "detail": "Uploaded YouTube data includes a Haze Seas video titled Every V2 Fighting Style in Haze Seas."
+            },
+            {
+              "label": "Styles",
+              "detail": "The V1-V2 showcase title names Fishman, BlackLeg, Electro, Cyborg, and Dragonic."
+            },
+            {
+              "label": "Builds",
+              "detail": "Use this page to connect fighting styles with fruits, weapons, races, and boss routes after release verification."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Haze Seas Swords And Weapons",
+          "description": "Create a weapons hub for sword progression, weapon showcases, upgrade routes, and drop requirements. Supported by keyword data for haze seas sword tier list and YouTube videos about weapons, swords, and reworked weapons.",
+          "href": "/swords-and-weapons",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Weapons",
+              "detail": "Uploaded YouTube data includes I Showcased EVERY Weapon In Haze Seas with 19K views."
+            },
+            {
+              "label": "Rework",
+              "detail": "Uploaded YouTube data includes These Are ALL the Reworked Weapons in Haze Seas."
+            },
+            {
+              "label": "Swords",
+              "detail": "Uploaded YouTube data includes ALL NEW SWORDS COMING TO HAZE SEAS."
+            },
+            {
+              "label": "Routes",
+              "detail": "Use verified post-release data to connect each sword or weapon to bosses, islands, NPCs, and upgrade requirements."
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "よくある質問",
+      "description": "Haze Seasについての最も一般的な質問へのクイックアンサー。",
+      "items": [
+        {
+          "question": "Haze Seasとは？",
+          "answer": "Haze SeasはRobloxのHaze StudiosによるHaze Pieceのリワーク版です。フルーツ、剣、格闘スタイル、種族、ボス、島進行を海賊アニメアクションRPGとして提供するゲームです。"
+        },
+        {
+          "question": "Haze Seasは無料でプレイできますか？",
+          "answer": "はい、Haze SeasはRobloxの無料プレイ体験です。公式Robloxページから参加してすぐにプレイを開始できます。"
+        },
+        {
+          "question": "Haze Seasでコードを交換する方法は？",
+          "answer": "Robloxゲームを開き、ゲーム内ショップまたはコードメニューを見つけ、コードを入力して確認します。EXPブースト、Race Spins、ジェム、Stat Refundといった報酬はすぐにアカウントに追加されます。"
+        },
+        {
+          "question": "Haze Seasで最も良いフルーツは？",
+          "answer": "リリース後のテストはまだ進行中です。Dragon、Dough、Leopard、Venom、Soul、Phoenixが、グリンディング、ボス、PvPにおける最も挙げ，Sティア候補として強く引用されています。"
+        },
+        {
+          "question": "Haze Seasのアクティブコードはどこで見つけますか？",
+          "answer": "このウィキのコードページは、公式Robloxの説明文、公式Discordの発表、公式Haze Studios YouTubeチャンネルからコードを追跡します。信頼する場合は常にゲーム内でコードを確認してください。"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Haze Seasをマスターする準備はできましたか？",
+      "description": "最初の島クエストからフルーツビルド、ボスドロップ、剣ルート、アップデートコードまで、Haze Seas Hub Wikiはプレイヤーにクリーンな出発点を提供します。",
+      "primary": "初心者ガイドを読む",
+      "secondary": "Robloxでプレイ"
+    }
+  },
+  "bosses": {
+    "meta": {
+      "title": "ボス - 完全ガイドとウォークスルー | Haze Seas Wiki",
+      "description": "Haze Seasのボス完全ガイド - 位置、攻撃パターン、攻略、ドロップ表、再生タイマーを含む。"
+    },
+    "overviewTitle": "ボス概要",
+    "overviewDescription": "Haze Seasのすべてのボス攻略の完全ガイド。",
+    "body": "Haze Seasのボスはスキルゲートおよび進行マイルストーンとして機能します。",
+    "guidesTitle": "ボスガイド",
+    "readMore": "続きを読む",
+    "new": "新",
+    "popular": "人気"
+  },
+  "shared": {
+    "wikiNavigation": "ウィキナビゲーション",
+    "activeCodes": "アクティブコード",
+    "updated": "更新",
+    "viewAllCodes": "すべてのコードを見る",
+    "playOnRoblox": "Robloxでプレイ",
+    "inThisSection": "このセクション内",
+    "tableOfContents": "目次",
+    "nextSteps": "次のステップ",
+    "needHelp": "お困りですか？",
+    "relatedReading": "関連記事",
+    "relatedGuides": "関連ガイド",
+    "readMore": "続きを読む",
+    "officialMedia": "公式メディア",
+    "home": "ホーム",
+    "noGuidesAvailable": "まだガイドがありません。しばらくしてからまた確認してください。"
+  },
+  "footer": {
+    "aboutTitle": "Haze Seas Wiki",
+    "about": "Haze Seas Wikiは、Robloxプレイヤー向けの独立したファンメイドガイドハブです。コード、フルーツ、剣、格闘スタイル、ボス、マップ、種族、始めの進行ルートを cobertura、公式Haze Studiosチャンネルの代わりにはなりません。",
+    "quickLinks": "クイックリンク",
+    "guides": "ガイド",
+    "legal": "法的情報",
+    "copyright": "2026 Haze Seas Wiki。Haze StudiosまたはRobloxとは提携していません。",
+    "description": "Roblox海賊アクションRPGリワーク。フルーツ、剣、格闘スタイル、種族、ボス、コード報酬。",
+    "playGame": "RobloxでHaze Seasをプレイ - https://www.roblox.com/games/6918802270/HAZE-PIECE",
+    "officialDiscord": "公式Discord - https://discord.com/invite/hazeseas",
+    "officialYoutube": "公式YouTube - https://www.youtube.com/@RealHazeStudios",
+    "vvBuilder": "Trelloボード - https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
+    "beginnerGuide": "初心者ガイド",
+    "raceGuides": "種族ガイド",
+    "bossGuides": "ボスガイド",
+    "buildGuide": "ビルドガイド",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約"
+  }
+}

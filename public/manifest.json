@@ -1,0 +1,17 @@
+{
+  "name": "Haze Seas Hub Wiki",
+  "short_name": "Haze Seas",
+  "description": "Fan-made Haze Seas Roblox wiki with codes, fruit tier lists, swords, fighting styles, bosses, races and beginner guides.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en",
+  "background_color": "#0d1b2a",
+  "theme_color": "#13a4c9",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
