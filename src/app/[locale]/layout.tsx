@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const image = `${siteUrl}/images/hero.webp`;
+  const image = `${siteUrl}/images/og-image.png`;
   return {
     metadataBase: new URL(siteUrl),
     title: { default: "Haze Seas Wiki", template: "%s" },
@@ -38,7 +38,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     name: "Haze Seas Wiki",
     url: siteUrl,
     logo: `${siteUrl}/android-chrome-512x512.png`,
-    image: `${siteUrl}/images/hero.webp`,
+    image: `${siteUrl}/images/og-image.png`,
   };
 
   return (

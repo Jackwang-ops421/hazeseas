@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
     const title = ctMessages?.overviewTitle || `${ctTitle} — Haze Seas Wiki`;
     const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for Haze Seas Wiki.`;
-    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, images: [`${siteUrl}/images/hero.webp`] } };
+    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, siteName: "Haze Seas Wiki", images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: "Haze Seas Wiki" }] } };
   }
   const [contentType, ...articleSlug] = slug;
   const item = await getContent(contentType, articleSlug, locale);

@@ -21,7 +21,7 @@
   },
   "home": {
     "meta": {
-      "title": "Haze Seas コード・フルーツ・始めのガイド | Haze Seas Wiki",
+      "title": "Haze Seas Wiki — コード、フルーツ、始めのガイド",
       "description": "Haze Seas Hub Wikiは、Robloxプレイヤー向けにコード、フルーツティアリスト、剣、格闘スタイル、ボス、マップ、種族、始めの攻略ガイドを提供します。"
     },
     "hero": {
@@ -411,10 +411,10 @@
   "bosses": {
     "meta": {
       "title": "ボス - 完全ガイドとウォークスルー | Haze Seas Wiki",
-      "description": "Haze Seasのボス完全ガイド - 位置、攻撃パターン、攻略、ドロップ表、再生タイマーを含む。"
+      "description": "Haze Seas on Robloxのボス完全ガイド - 全ボスの位置、攻撃パターン、攻略、ドロップ表、再生タイマーを含む。"
     },
-    "overviewTitle": "ボス概要",
-    "overviewDescription": "Haze Seasのすべてのボス攻略の完全ガイド。",
+    "overviewTitle": "ボス",
+    "overviewDescription": "Haze Seas on Robloxのすべてのボス攻略の完全ガイド。",
     "body": "Haze Seasのボスはスキルゲートおよび進行マイルストーンとして機能します。",
     "guidesTitle": "ボスガイド",
     "readMore": "続きを読む",

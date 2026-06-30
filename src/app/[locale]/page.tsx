@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: messages.home.meta.title,
     description: messages.home.meta.description,
     alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/" } },
-    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: siteUrl, images: [`${siteUrl}/images/hero.webp`] },
+    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: siteUrl, siteName: "Haze Seas Wiki", images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: "Haze Seas Wiki" }] },
   };
 }
 
@@ -27,6 +27,15 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
   const messages = (await getMessages({ locale })) as Messages;
   const navGroups = getDynamicNavigation(loc);
   const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Haze Seas Wiki", url: siteUrl, description: messages.home.meta.description };
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: messages.home.faq.items.map((item: { question: string; answer: string }) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
 
   // 动态加载所有 content 目录下的文章
   const allArticles: ContentItem[] = [];
@@ -47,6 +56,7 @@ export default async function LocaleHomePage({ params }: { params: Promise<{ loc
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={webSite} />
+      <JsonLd data={faqPage} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
         <HomePageClient home={messages.home} locale={locale} articles={allArticles} recentArticles={recentArticles} />
         <WikiSidebar locale={locale} navGroups={navGroups} />
