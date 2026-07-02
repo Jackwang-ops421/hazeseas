@@ -93,7 +93,7 @@ export const HERO = {
   description:
     "Haze Seas Hub is a fan-made Roblox guide hub for Haze Seas codes, fruits, races, bosses, maps, fighting styles, weapons, materials, and beginner progression.",
   primaryCta: { label: "Get Free Codes", href: "/codes/haze-seas-codes" },
-  secondaryCta: { label: "Play on Roblox", href: "#", ariaLabel: "Roblox link pending verification" },
+  secondaryCta: { label: "Play on Roblox", href: "https://www.roblox.com/games/6918802270/HAZE-PIECE" },
   stats: [
     { value: "Guide Hub", label: "Site Type" },
     { value: "Codes", label: "Popular Search" },
@@ -247,7 +247,6 @@ export const CODES_SECTION = {
   title: "Haze Seas Codes",
   description:
     "Redeem active Haze Seas codes for free rewards when verified codes are available. Always check the latest update notes before assuming a code still works.",
-  emptyState: "No verified Haze Seas codes have been added yet.",
   expiredNote: "Expired codes will be listed here after verification.",
   cta: { label: "View Full Codes Guide", href: "/codes/haze-seas-codes" },
   steps: [
@@ -270,6 +269,12 @@ export const CODES_SECTION = {
   ] as CodeStep[],
 };
 
+// Verified active codes from Roblox game description
+export const VERIFIED_CODES: Array<{ code: string; reward: string }> = [
+  { code: "GEAR5TH", reward: "EXP code shown in the Roblox game description" },
+  { code: "WOW325KMLG", reward: "+3 Race Spins, +15 Gems, Stat Refund" },
+];
+
 // ─── Official Links ───────────────────────────────────────────────
 export const OFFICIAL_LINKS_SECTION = {
   title: "Haze Seas Official Links",
@@ -279,22 +284,30 @@ export const OFFICIAL_LINKS_SECTION = {
     {
       title: "Roblox Game Page",
       description: "Verified game access link.",
-      href: "#",
+      href: "https://www.roblox.com/games/6918802270/HAZE-PIECE",
       external: true,
-      ariaLabel: "Roblox game link pending verification",
+      ariaLabel: "Play Haze Seas on Roblox",
     },
     {
-      title: "Community Resources",
-      description: "Official or community-accessible update spaces.",
-      href: "#",
+      title: "Official Discord",
+      description: "Official Haze Studios community with code drops and updates.",
+      href: "https://discord.com/invite/hazeseas",
       external: true,
-      ariaLabel: "Community resources link pending verification",
+      ariaLabel: "Official Haze Seas Discord",
     },
     {
-      title: "Update Sources",
-      description: "Sources used for patch notes, codes, and content changes.",
-      href: "/guide/haze-seas-release-date-and-updates",
-      external: false,
+      title: "Official YouTube",
+      description: "Official Haze Studios channel with trailers and showcases.",
+      href: "https://www.youtube.com/@RealHazeStudios",
+      external: true,
+      ariaLabel: "Official Haze Studios YouTube",
+    },
+    {
+      title: "Trello Board",
+      description: "Official Haze Seas resource board with game updates and guides.",
+      href: "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
+      external: true,
+      ariaLabel: "Official Haze Seas Trello Board",
     },
   ] as OfficialLink[],
 };

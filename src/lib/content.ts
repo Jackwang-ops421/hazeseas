@@ -244,6 +244,9 @@ const GROUP_TITLES: Record<string, string> = {
   codes: "Codes",
   guide: "Getting Started",
   "tier-list": "Tier Lists",
+  fruits: "Fruits",
+  materials: "Materials",
+  "official-links": "Official Links",
 };
 
 // 日文分组标题映射
@@ -255,6 +258,9 @@ const GROUP_TITLES_JA: Record<string, string> = {
   codes: "コード",
   guide: "初心者ガイド",
   "tier-list": "Tier List",
+  fruits: "恶魔果实",
+  materials: "材料",
+  "official-links": "公式リンク",
 };
 
 // locale → 分组标题映射
@@ -269,7 +275,7 @@ const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {
 
 // 分组排序顺序
 const GROUP_ORDER: string[] = [
-  "guide", "races", "bosses", "maps", "skills", "codes", "tier-list",
+  "guide", "races", "bosses", "maps", "skills", "codes", "tier-list", "fruits", "materials", "official-links",
 ];
 
 /**

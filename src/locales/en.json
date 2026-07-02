@@ -22,12 +22,12 @@
   },
   "home": {
     "meta": {
-      "title": "Haze Seas Wiki Hub - Codes, Fruits, Races, Bosses & Beginner Guides",
-      "description": "A fan-made Haze Seas wiki hub with codes, beginner guides, fruit tier list, races, bosses, maps, fighting styles, official links, and update notes."
+      "title": "Haze Seas Wiki — Codes, Fruits & Beginner Guide",
+      "description": "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides."
     },
     "hero": {
       "eyebrow": "Fan-Made Community Wiki",
-      "title": "Haze Seas Wiki",
+      "title": "Haze Seas",
       "description": "Haze Seas is the new rework era of Haze Piece, a Roblox action RPG about sailing, grinding quests, collecting fruits, and building a stronger pirate or marine. Use this fan-made hub to track codes, fruits, swords, fighting styles, bosses, and progression routes before and after the Haze Seas update.",
       "stats": [
         "Haze Seas Rework Jun 30 2026",
@@ -36,8 +36,8 @@
         "3.14M+ Favorites",
         "Server Size 12"
       ],
-      "primaryCta": "Start Beginner Guide",
-      "secondaryCta": "Compare Fruits",
+      "primaryCta": "Get Free Codes",
+      "secondaryCta": "Play on Roblox",
       "tertiaryCta": "Check Active Codes",
       "videoLabel": "Official media"
     },
@@ -389,12 +389,12 @@
     "quickLinks": "Quick Links",
     "guides": "Guides",
     "legal": "Legal",
-    "copyright": "2026 Haze Seas Wiki. Not affiliated with Haze Studios or Roblox.",
+    "copyright": "© 2026 Haze Seas Hub. Not affiliated with Haze Studios or Roblox Corporation.",
     "description": "Roblox pirate Action RPG rework with fruits, swords, fighting styles, races, bosses, and code rewards.",
-    "playGame": "Play Haze Seas on Roblox — https://www.roblox.com/games/6918802270/HAZE-PIECE",
-    "officialDiscord": "Official Discord — https://discord.com/invite/hazeseas",
-    "officialYoutube": "Official YouTube — https://www.youtube.com/@RealHazeStudios",
-    "vvBuilder": "Trello Board — https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
+    "playGame": "Play Haze Seas on Roblox",
+    "officialDiscord": "Official Discord",
+    "officialYoutube": "Official YouTube",
+    "communityTool": "Trello Board",
     "beginnerGuide": "Beginner Guide",
     "raceGuides": "Race Guides",
     "bossGuides": "Boss Guides",
@@ -457,5 +457,29 @@
     },
     "overviewTitle": "Weapons",
     "overviewDescription": "Haze Seas swords and weapons guide hub."
+  },
+  "fruits": {
+    "meta": {
+      "title": "Haze Seas Fruits Hub - Fruit Guides and Tier List",
+      "description": "Explore Haze Seas fruit guides, tier list links, grinding recommendations, and related resources."
+    },
+    "overviewTitle": "Fruits",
+    "overviewDescription": "Haze Seas fruit guides, tier list, and fruit-related resources."
+  },
+  "materials": {
+    "meta": {
+      "title": "Haze Seas Materials Guide - Farming, Drops and Upgrade Resources",
+      "description": "Structure Haze Seas material farming, drop sources, and upgrade planning."
+    },
+    "overviewTitle": "Materials",
+    "overviewDescription": "Haze Seas material farming, drops, and upgrade resources."
+  },
+  "official-links": {
+    "meta": {
+      "title": "Haze Seas Official Links - Roblox, Discord and Update Resources",
+      "description": "Find verified Haze Seas resource links and avoid fake mirrors or unsafe script pages."
+    },
+    "overviewTitle": "Official Links",
+    "overviewDescription": "Verified Haze Seas resource links and community channels."
   }
 }
