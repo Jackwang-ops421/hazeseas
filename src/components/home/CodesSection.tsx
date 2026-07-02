@@ -7,7 +7,7 @@ import { CODES_SECTION, VERIFIED_CODES } from "@/data/home";
 import { Badge } from "@/components/ui/badge";
 
 const cardClass =
-  "rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-slate-900/80";
+  "rounded-2xl border border-white/10 bg-slate-900/60 p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-slate-900/80 sm:p-5";
 
 export function CodesSection() {
   const [copied, setCopied] = useState<string | null>(null);

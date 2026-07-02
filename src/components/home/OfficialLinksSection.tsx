@@ -10,7 +10,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 const cardClass =
-  "group flex items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80";
+  "group flex items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80 sm:p-5";
 
 export function OfficialLinksSection() {
   return (
