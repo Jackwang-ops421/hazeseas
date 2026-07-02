@@ -8,12 +8,15 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Package,
 };
 
+const cardClass =
+  "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80";
+
 export function ProgressionSection() {
   return (
     <section className="space-y-6">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight text-white">Haze Seas Bosses, Maps and Progression</h2>
-        <p className="mt-2 text-sm text-white/50">
+      <div className="max-w-2xl">
+        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Haze Seas Bosses, Maps and Progression</h2>
+        <p className="mt-2 text-sm leading-6 text-white/50">
           Plan where to go next by connecting maps, boss routes, weapons, materials, and beginner progression.
         </p>
       </div>
@@ -23,13 +26,9 @@ export function ProgressionSection() {
           const iconKey = card.title.split(" ")[0];
           const Icon = ICON_MAP[iconKey] || Skull;
           return (
-            <Link
-              key={card.href + card.title}
-              href={card.href}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-6 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5">
-                <Icon className="h-6 w-6 text-[hsl(var(--nav-theme-light))]" />
+            <Link key={card.href + card.title} href={card.href} className={cardClass}>
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/5">
+                <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>
               <h3 className="font-bold text-white group-hover:text-[hsl(var(--nav-theme-light))]">
                 {card.title}

@@ -5,9 +5,9 @@ import { FINAL_CTA } from "@/data/home";
 export function FinalCTA() {
   return (
     <section className="space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-950/80 p-8 text-center">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight text-white">{FINAL_CTA.title}</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm text-white/50">{FINAL_CTA.description}</p>
+      <div className="mx-auto max-w-2xl">
+        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{FINAL_CTA.title}</h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-white/50">{FINAL_CTA.description}</p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-3">

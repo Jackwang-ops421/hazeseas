@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { STATS } from "@/data/home";
 
 export function StatsStrip() {
@@ -9,7 +10,7 @@ export function StatsStrip() {
           className="flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-slate-900/60 p-6 text-center"
         >
           <p className="text-2xl font-black text-white">{stat.value}</p>
-          <p className="text-xs text-white/40">{stat.label}</p>
+          <p className="text-xs uppercase tracking-widest text-white/40">{stat.label}</p>
         </div>
       ))}
     </section>
