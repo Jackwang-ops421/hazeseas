@@ -2,9 +2,38 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Globe } from "lucide-react";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Globe,
+  Gift,
+  BookOpen,
+  Compass,
+  Skull,
+  Map,
+  Link as LinkIcon,
+  Zap,
+  Users,
+  Sword,
+  Package,
+  Sun,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
-import { NAV_ITEMS, MORE_ITEMS, HERO } from "@/data/home";
+import { NAV_ITEMS, MORE_ITEMS, MORE_WIKIS, HERO } from "@/data/home";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  Gift,
+  BookOpen,
+  Compass,
+  Skull,
+  Map,
+  Link: LinkIcon,
+  Zap,
+  Users,
+  Sword,
+  Package,
+};
 
 interface HeaderProps {
   locale: string;
@@ -57,7 +86,7 @@ export function Header({ locale }: HeaderProps) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href={localizedHref("/")} className="flex items-center gap-2.5 shrink-0">
-            <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-[hsl(var(--nav-theme))] text-sm font-black text-white shadow-sm">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-[hsl(var(--nav-theme))] text-sm font-black text-white shadow-sm">
               HS
             </span>
             <div className="hidden leading-tight sm:block">
@@ -67,20 +96,24 @@ export function Header({ locale }: HeaderProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-1 md:flex">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={localizedHref(item.href)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                    : "text-white/70 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="hidden items-center gap-1 lg:flex">
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+              return (
+                <Link
+                  key={item.href}
+                  href={localizedHref(item.href)}
+                  className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(item.href)
+                      ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
+                      : "text-white/70 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {Icon && <Icon className="h-4 w-4" />}
+                  {item.label}
+                </Link>
+              );
+            })}
 
             {/* More dropdown */}
             <div className="relative" ref={moreRef}>
@@ -93,20 +126,24 @@ export function Header({ locale }: HeaderProps) {
               </button>
               {moreOpen && (
                 <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0f0f14] p-2 shadow-2xl">
-                  {MORE_ITEMS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={localizedHref(item.href)}
-                      onClick={() => setMoreOpen(false)}
-                      className={`block rounded-xl px-3 py-2.5 text-sm transition-colors ${
-                        isActive(item.href)
-                          ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                          : "text-white/70 hover:bg-white/5 hover:text-white"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                  {MORE_ITEMS.map((item) => {
+                    const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={localizedHref(item.href)}
+                        onClick={() => setMoreOpen(false)}
+                        className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm transition-colors ${
+                          isActive(item.href)
+                            ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
+                            : "text-white/70 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        {Icon && <Icon className="h-4 w-4" />}
+                        {item.label}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -114,6 +151,10 @@ export function Header({ locale }: HeaderProps) {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
+            <button className="hidden rounded-lg p-2 text-white/70 transition-colors hover:bg-white/5 lg:block" aria-label="Toggle theme">
+              <Sun className="h-4 w-4" />
+            </button>
+
             <Link
               href={locale === "en" ? "/" : `/${locale}`}
               className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 transition-colors hover:border-white/30 hover:text-white"
@@ -122,8 +163,16 @@ export function Header({ locale }: HeaderProps) {
               {locale.toUpperCase()}
             </Link>
 
+            <Link
+              href={MORE_WIKIS.href}
+              aria-label={MORE_WIKIS.ariaLabel}
+              className="hidden items-center gap-1.5 rounded-lg bg-[hsl(var(--nav-theme))] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 lg:inline-flex"
+            >
+              {MORE_WIKIS.label}
+            </Link>
+
             <button
-              className="rounded-lg p-2 text-white/70 transition-colors hover:bg-white/5 md:hidden"
+              className="rounded-lg p-2 text-white/70 transition-colors hover:bg-white/5 lg:hidden"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -135,44 +184,52 @@ export function Header({ locale }: HeaderProps) {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-200 md:hidden ${
-          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-200 lg:hidden ${
+          mobileOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 py-4">
           <nav className="space-y-1">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={localizedHref(item.href)}
-                onClick={() => setMobileOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                    : "text-white/70 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="mt-3 border-t border-white/10 pt-3">
-              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-white/30">
-                More
-              </p>
-              {MORE_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+              return (
                 <Link
                   key={item.href}
                   href={localizedHref(item.href)}
                   onClick={() => setMobileOpen(false)}
-                  className={`block rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
                       : "text-white/70 hover:bg-white/5 hover:text-white"
                   }`}
                 >
+                  {Icon && <Icon className="h-4 w-4" />}
                   {item.label}
                 </Link>
-              ))}
+              );
+            })}
+            <div className="mt-3 border-t border-white/10 pt-3">
+              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-white/30">
+                More
+              </p>
+              {MORE_ITEMS.map((item) => {
+                const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+                return (
+                  <Link
+                    key={item.href}
+                    href={localizedHref(item.href)}
+                    onClick={() => setMobileOpen(false)}
+                    className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+                      isActive(item.href)
+                        ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
+                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                    }`}
+                  >
+                    {Icon && <Icon className="h-4 w-4" />}
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </nav>
         </div>

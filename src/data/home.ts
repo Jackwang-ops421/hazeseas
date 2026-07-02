@@ -1,6 +1,7 @@
 export interface NavItem {
   label: string;
   href: string;
+  icon?: string; // lucide icon name
 }
 
 export interface ResourceCard {
@@ -71,20 +72,26 @@ export interface FooterColumn {
 
 // ─── Nav ───────────────────────────────────────────────────────────
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Codes", href: "/codes/haze-seas-codes" },
-  { label: "Guide", href: "/guide" },
-  { label: "Fruits", href: "/fruits" },
-  { label: "Bosses", href: "/bosses/haze-seas-boss-guide" },
-  { label: "Maps", href: "/maps/haze-seas-map-guide" },
+  { label: "Codes", href: "/codes/haze-seas-codes", icon: "Gift" },
+  { label: "Guide", href: "/guide", icon: "BookOpen" },
+  { label: "Fruits", href: "/fruits", icon: "Compass" },
+  { label: "Bosses", href: "/bosses/haze-seas-boss-guide", icon: "Skull" },
+  { label: "Maps", href: "/maps/haze-seas-map-guide", icon: "Map" },
 ];
 
 export const MORE_ITEMS: NavItem[] = [
-  { label: "Official Links", href: "/official-links" },
-  { label: "Fighting Styles", href: "/skills/haze-seas-fighting-styles" },
-  { label: "Races", href: "/races/haze-seas-race-guide" },
-  { label: "Weapons", href: "/weapons/haze-seas-swords-and-weapons" },
-  { label: "Materials", href: "/materials" },
+  { label: "Official Links", href: "/official-links", icon: "Link" },
+  { label: "Fighting Styles", href: "/skills/haze-seas-fighting-styles", icon: "Zap" },
+  { label: "Races", href: "/races/haze-seas-race-guide", icon: "Users" },
+  { label: "Weapons", href: "/weapons/haze-seas-swords-and-weapons", icon: "Sword" },
+  { label: "Materials", href: "/materials", icon: "Package" },
 ];
+
+export const MORE_WIKIS = {
+  label: "More Wikis",
+  href: "#",
+  ariaLabel: "More wikis coming soon",
+};
 
 // ─── Hero ─────────────────────────────────────────────────────────
 export const HERO = {

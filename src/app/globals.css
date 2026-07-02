@@ -10,7 +10,7 @@
     --card-foreground: 0 0% 88%;
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 88%;
-    --primary: 188 82% 42%;
+    --primary: 258 90% 66%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 88%;
@@ -22,12 +22,12 @@
     --destructive-foreground: 0 0% 96%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 188 82% 45%;
+    --ring: 258 90% 66%;
     --radius: 0.75rem;
-    --nav-theme: 188 82% 42%;
-    --nav-theme-light: 188 82% 58%;
-    --chart-1: 188 82% 42%;
-    --chart-2: 175 32% 47%;
+    --nav-theme: 258 90% 66%;
+    --nav-theme-light: 258 90% 74%;
+    --chart-1: 258 90% 66%;
+    --chart-2: 270 50% 55%;
     --chart-3: 221 30% 42%;
     --chart-4: 38 62% 42%;
     --chart-5: 0 0% 45%;
@@ -49,8 +49,8 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at 18% 12%, hsl(var(--nav-theme) / 0.12), transparent 32rem),
-      radial-gradient(circle at 85% 8%, hsl(175 32% 47% / 0.08), transparent 28rem);
+      radial-gradient(circle at 50% 0%, hsl(var(--nav-theme) / 0.18), transparent 40rem),
+      radial-gradient(circle at 80% 10%, hsl(270 50% 55% / 0.10), transparent 30rem);
     z-index: -1;
   }
 }

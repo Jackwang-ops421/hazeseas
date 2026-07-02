@@ -9,7 +9,6 @@ import {
   StepGuideSection,
   TopicGridSection,
   ProgressionSection,
-  StatsStrip,
   FaqAccordion,
   FinalCTA,
 } from "@/components/home";
@@ -66,13 +65,10 @@ export default function HomePageClient() {
       {/* 9. Boss / Map / Progression Section */}
       <ProgressionSection />
 
-      {/* 10. Stats / Trust Strip */}
-      <StatsStrip />
-
-      {/* 11. FAQ */}
+      {/* 10. FAQ */}
       <FaqAccordion />
 
-      {/* 12. Final CTA */}
+      {/* 11. Final CTA */}
       <FinalCTA />
     </div>
   );
