@@ -32,7 +32,7 @@ export function OfficialLinksSection() {
               aria-label={link.ariaLabel}
               className={cardClass}
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--nav-theme))]/15">
                 <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>
               <div className="flex-1 min-w-0">

@@ -19,7 +19,7 @@ export function StepGuideSection() {
         {BEGINNER_STEPS.map((step, i) => (
           <div key={step.label} className={cardClass}>
             <div className="flex items-center gap-3">
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-[hsl(var(--nav-theme))] text-sm font-bold text-white">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-[hsl(var(--nav-theme))]/15 text-sm font-bold text-[hsl(var(--nav-theme-light))]">
                 {i + 1}
               </span>
               <h3 className="font-bold text-white">{step.label}</h3>

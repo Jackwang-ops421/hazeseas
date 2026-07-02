@@ -7,13 +7,13 @@ import { HERO } from "@/data/home";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-6 pb-10 pt-8 text-center sm:pb-12 sm:pt-10 lg:pb-16 lg:pt-12">
+    <section className="relative overflow-hidden px-6 pb-8 pt-8 text-center sm:pb-10 sm:pt-10 lg:pb-12">
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[hsl(var(--nav-theme))]/18 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[hsl(var(--nav-theme))]/10 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-3xl space-y-6">
+      <div className="relative mx-auto max-w-3xl space-y-5">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-[hsl(var(--nav-theme-light))]">
           {HERO.badge}
         </div>
@@ -26,7 +26,7 @@ export function HeroSection() {
           {HERO.description}
         </p>
 
-        <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
+        <div className="flex flex-col justify-center gap-3 pt-1 sm:flex-row">
           <Link
             href={HERO.primaryCta.href}
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-[hsl(var(--nav-theme))] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[hsl(var(--nav-theme))]/25 transition hover:brightness-110"
@@ -45,7 +45,7 @@ export function HeroSection() {
         </div>
 
         {/* Stats row */}
-        <div className="mx-auto grid max-w-2xl grid-cols-2 gap-3 pt-4 sm:grid-cols-4">
+        <div className="mx-auto grid max-w-2xl grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
           {HERO.stats.map((stat) => (
             <div
               key={stat.label}
@@ -58,12 +58,9 @@ export function HeroSection() {
         </div>
 
         {/* Trailer card */}
-        <div className="relative mx-auto max-w-2xl pt-4">
+        <div className="relative mx-auto max-w-md pt-2 sm:max-w-lg">
           <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
             <TrailerButton videoId="uLhv4-5NRCc" />
-          </div>
-          <div className="absolute -bottom-3 -right-3 rounded-xl border border-white/10 bg-[hsl(var(--nav-theme))]/20 px-3 py-1.5 backdrop-blur-sm">
-            <p className="text-xs font-semibold text-[hsl(var(--nav-theme-light))]">Official Trailer</p>
           </div>
         </div>
       </div>

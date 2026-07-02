@@ -8,7 +8,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 const cardClass =
-  "group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80 sm:p-5";
+  "group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80";
 
 export function ResourceCards() {
   return (
@@ -25,7 +25,7 @@ export function ResourceCards() {
           const Icon = ICON_MAP[card.icon] || Link2;
           return (
             <Link key={card.href} href={card.href} className={cardClass}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/5">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[hsl(var(--nav-theme))]/15">
                 <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>
               <h3 className="font-bold text-white">{card.title}</h3>

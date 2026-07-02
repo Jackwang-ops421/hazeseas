@@ -79,7 +79,7 @@ export function CodesSection() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {CODES_SECTION.steps.map((step, i) => (
           <div key={step.label} className={cardClass}>
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-[hsl(var(--nav-theme))] text-sm font-bold text-white">
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-[hsl(var(--nav-theme))]/15 text-sm font-bold text-[hsl(var(--nav-theme-light))]">
               {i + 1}
             </span>
             <h3 className="mt-4 font-bold text-white">{step.label}</h3>

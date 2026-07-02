@@ -27,7 +27,7 @@ export function ProgressionSection() {
           const Icon = ICON_MAP[iconKey] || Skull;
           return (
             <Link key={card.href + card.title} href={card.href} className={cardClass}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/5">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[hsl(var(--nav-theme))]/15">
                 <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>
               <h3 className="font-bold text-white group-hover:text-[hsl(var(--nav-theme-light))]">
