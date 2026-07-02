@@ -27,6 +27,35 @@ const nextConfig = {
       { protocol: "https", hostname: "i.ytimg.com", pathname: "/**" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/beginner-guide",
+        destination: "/guide/haze-seas-beginner-guide",
+        permanent: true,
+      },
+      {
+        source: "/release-date-and-updates",
+        destination: "/guide/haze-seas-release-date-and-updates",
+        permanent: true,
+      },
+      {
+        source: "/fruit-tier-list",
+        destination: "/tier-list/haze-seas-fruit-tier-list",
+        permanent: true,
+      },
+      {
+        source: "/fighting-styles",
+        destination: "/skills/haze-seas-fighting-styles",
+        permanent: true,
+      },
+      {
+        source: "/swords-and-weapons",
+        destination: "/weapons/haze-seas-swords-and-weapons",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(withMDX(nextConfig));

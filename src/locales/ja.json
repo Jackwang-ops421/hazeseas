@@ -456,5 +456,21 @@
     "buildGuide": "ビルドガイド",
     "privacyPolicy": "プライバシーポリシー",
     "termsOfService": "利用規約"
+  },
+  "weapons": {
+    "meta": {
+      "title": "Haze Seas Swords and Weapons Guide - Unlocks and Progression",
+      "description": "Organize Haze Seas swords and weapons by unlock intent, progression use, and related guide pages."
+    },
+    "overviewTitle": "Weapons",
+    "overviewDescription": "Haze Seas swords and weapons guide hub."
+  },
+  "materials": {
+    "meta": {
+      "title": "Haze Seas Materials Guide - Farming, Drops and Upgrade Resources",
+      "description": "A Haze Seas materials hub for farming routes, drop sources, upgrade planning, and related boss or weapon guide links."
+    },
+    "overviewTitle": "Materials",
+    "overviewDescription": "Haze Seas materials hub for farming and upgrades."
   }
 }

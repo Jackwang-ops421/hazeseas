@@ -17,12 +17,13 @@
     "updates": "Updates",
     "home": "Home",
     "menu": "Menu",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "weapons": "Weapons"
   },
   "home": {
     "meta": {
-      "title": "Haze Seas Wiki — Codes, Fruits & Beginner Guide",
-      "description": "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides."
+      "title": "Haze Seas Wiki Hub - Codes, Fruits, Races, Bosses & Beginner Guides",
+      "description": "A fan-made Haze Seas wiki hub with codes, beginner guides, fruit tier list, races, bosses, maps, fighting styles, official links, and update notes."
     },
     "hero": {
       "eyebrow": "Fan-Made Community Wiki",
@@ -75,65 +76,35 @@
       "eyebrow": "Popular Pages",
       "title": "Trending Now",
       "quickLinks": [
-        "Hollow Progression",
-        "Fastest Leveling",
-        "Spirit Charms",
-        "All Boss Guides"
+        "Haze Seas Codes",
+        "Beginner Guide",
+        "Fruit Tier List",
+        "Boss Guide"
       ],
       "cards": [
         {
-          "badge": "Beginner",
-          "title": "Beginner Guide",
-          "description": "Everything you need from your first login to mastering the basics of combat and progression.",
-          "href": "/beginner-guide"
-        },
-        {
           "badge": "Updated",
           "title": "Active Codes",
-          "description": "All working codes with rewards redeem before they expire.",
-          "href": "/codes"
+          "description": "All working Haze Seas codes with rewards and redemption steps.",
+          "href": "/codes/haze-seas-codes"
         },
         {
-          "badge": "Updated",
-          "title": "Equipment Database",
-          "description": "94 items across 5 slots complete gear database with stats, rarity, and sources.",
-          "href": "/equipment"
-        },
-        {
-          "badge": "Popular",
-          "title": "Which Race Should You Pick?",
-          "description": "Shinigami, Quincy, or Hollow compare all three and find your perfect playstyle.",
-          "href": "/races/best-race"
-        },
-        {
-          "badge": "New",
-          "title": "Enemies & Monsters",
-          "description": "23 enemy types across 5 regions drops, locations, and farming tips.",
-          "href": "/enemies"
+          "badge": "Beginner",
+          "title": "Beginner Guide",
+          "description": "Start your Haze Seas session with a clean route covering island quests, fruit basics, and progression.",
+          "href": "/guide/haze-seas-beginner-guide"
         },
         {
           "badge": "Popular",
-          "title": "Boss Locations & Drops",
-          "description": "Every boss location, drop table, and respawn timer in one reference.",
-          "href": "/boss-locations-drops-respawn-times"
+          "title": "Fruit Tier List",
+          "description": "Compare all fruits by tier for grinding, bosses, and PvP in one place.",
+          "href": "/tier-list/haze-seas-fruit-tier-list"
         },
         {
           "badge": "Popular",
-          "title": "Best Builds",
-          "description": "Optimal stat allocation, skill tree picks, and Charm combos for every playstyle.",
-          "href": "/builds/best-builds"
-        },
-        {
-          "badge": "New",
-          "title": "Shikai Tier List",
-          "description": "All 6 Shinigami Shikai types ranked by PvP and PvE performance.",
-          "href": "/tier-list/shikai"
-        },
-        {
-          "badge": "New",
-          "title": "World Events Guide",
-          "description": "Supply Caches, Raids, and endgame world events with rare rewards.",
-          "href": "/world-events"
+          "title": "Boss Guide",
+          "description": "Routes, requirements, and fight tips for Haze Seas bosses.",
+          "href": "/bosses/haze-seas-boss-guide"
         }
       ]
     },
@@ -177,199 +148,173 @@
     },
     "explore": {
       "title": "Haze Seas Hub Modules",
-      "description": "Jump straight to the eight homepage sections and scroll to the module you need.",
+      "description": "Jump to the section you need.",
       "modules": [
         {
           "order": 1,
           "name": "Haze Seas Codes",
-          "description": "Track Haze Seas and Haze Piece redeem codes with rewards, source status, and update notes. This page prioritizes codes from the official Roblox description, official Discord announcements, and official Haze Studios channels.",
-          "href": "/codes",
+          "description": "Find the latest Haze Seas codes, redemption steps, and update notes in one place. This page should be checked and updated whenever the game receives a new update.",
+          "href": "/codes/haze-seas-codes",
           "displayType": "code-cards",
           "highlights": [
             {
-              "label": "HAZESEAS2026",
-              "detail": "Free rewards; verify in-game before publishing as active",
-              "badge": "Verify"
+              "label": "Active Codes",
+              "detail": "Track active Haze Seas codes and rewards."
             },
             {
-              "label": "NEXTCODEAT400KLIKES",
-              "detail": "+3 Race Spins, +15 Gems, Stat Refund",
-              "badge": "Legacy"
+              "label": "How to Redeem",
+              "detail": "Step-by-step redemption instructions."
+            },
+            {
+              "label": "Expired Codes",
+              "detail": "Expired code notes and update reminders."
             }
           ]
         },
         {
           "order": 2,
-          "name": "Haze Seas Beginner Guide",
-          "description": "Give new players a clean first-session route for joining the official Roblox experience, understanding the Haze Piece to Haze Seas rework, and learning the basic progression loop.",
-          "href": "/beginner-guide",
-          "displayType": "step-by-step",
+          "name": "Haze Seas Official Links",
+          "description": "Quick access hub for Haze Seas resources, including the Roblox game page, community links, Trello-style resources if available, and update channels. This page must clearly state that hazeseashub.wiki is a fan-made guide site, not the official game website.",
+          "href": "/official-links",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "1",
-              "detail": "Open the official Roblox experience page and follow the Haze Seas event for the rework launch."
+              "label": "Roblox Game",
+              "detail": "Official Roblox game page and related links."
             },
             {
-              "label": "2",
-              "detail": "Join the official Haze Studios Discord to track announcements, code drops, and maintenance notices."
+              "label": "Community Resources",
+              "detail": "Discord, Trello, and community update channels."
             },
             {
-              "label": "3",
-              "detail": "Learn core systems first: fruits, swords, fighting styles, races, bosses, and sea progression."
-            },
-            {
-              "label": "4",
-              "detail": "Use the official Trello and official videos to verify mechanics before following third-party builds."
+              "label": "Update Sources",
+              "detail": "Official channels for news and patch notes."
             }
           ]
         },
         {
           "order": 3,
-          "name": "Haze Seas Release Date And Updates",
-          "description": "Cover release-date, trailer, update, maintenance, and rework searches with official sources first. The official event page lists Haze Seas with an official date of 6-30-2026.",
-          "href": "/release-date-and-updates",
+          "name": "Haze Seas Beginner Guide",
+          "description": "A beginner-focused route for new Haze Seas players covering first steps, early progression, and how to avoid wasting time. Keep the content practical and task-based.",
+          "href": "/guide/haze-seas-beginner-guide",
           "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "1",
-              "detail": "The official Roblox event page lists Haze Seas with an official date of 6-30-2026."
+              "label": "Start Here",
+              "detail": "Join the official Roblox experience and set up your first session."
             },
             {
-              "label": "2",
-              "detail": "The official Haze Seas Final Trailer video appears in the uploaded YouTube dataset with 100K views."
+              "label": "Early Progression",
+              "detail": "Focus on quests, fruit basics, and core systems."
             },
             {
-              "label": "3",
-              "detail": "The official Haze Seas Trailer video appears in the uploaded YouTube dataset with 120K views."
-            },
-            {
-              "label": "4",
-              "detail": "Use the official Discord, X account, and YouTube channel for maintenance, sneak peek, and post-release update tracking."
+              "label": "Beginner Tips",
+              "detail": "Avoid common mistakes and save resources."
             }
           ]
         },
         {
           "order": 4,
-          "name": "Haze Seas Fruits",
-          "description": "Create a dedicated fruits hub for fruit names, spawn rules, reworks, awakenings, and showcase links. Supported by Google Suggest terms such as haze seas fruits, haze seas fruit tier list, and haze seas dragon.",
-          "href": "/fruits",
-          "displayType": "card-list",
+          "name": "Haze Seas Fruit Tier List",
+          "description": "A ranking hub for Haze Seas fruits based on general player search intent such as grinding, boss fights, and overall usefulness. Do not invent rankings unless the current page already has verified ranking data.",
+          "href": "/tier-list/haze-seas-fruit-tier-list",
+          "displayType": "tier-grid",
           "highlights": [
             {
-              "label": "33",
-              "detail": "Indexed official Roblox description data lists 33 fruits in Haze Piece before the Haze Seas rework."
+              "label": "Best Fruits",
+              "detail": "Top-tier fruits for general use."
             },
             {
-              "label": "60m",
-              "detail": "Fruits spawn every 60 minutes according to indexed official Roblox description data."
+              "label": "Grinding",
+              "detail": "Fruits that help with farming and leveling."
             },
             {
-              "label": "20m",
-              "detail": "Fruits despawn after 20 minutes according to indexed official Roblox description data."
-            },
-            {
-              "label": "VIP",
-              "detail": "Fruits spawn in VIP servers with a 5 limit according to indexed official Roblox description data."
+              "label": "Boss Fights",
+              "detail": "Fruits useful for boss encounters."
             }
           ]
         },
         {
           "order": 5,
-          "name": "Haze Seas Fruit Tier List",
-          "description": "Build a fruit tier list page for players comparing fruits for grinding, bosses, PvP, mobility, and awakening potential. The module uses post-release testing and official fruit references.",
-          "href": "/fruit-tier-list",
-          "displayType": "tier-grid",
+          "name": "Haze Seas Fighting Styles",
+          "description": "A guide page for Haze Seas fighting styles and skill progression. Structure it for players who want to compare styles, unlock paths, and practical usage.",
+          "href": "/skills/haze-seas-fighting-styles",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "S",
-              "detail": "High-demand fruits to test first after release: Dragon, Dough, Leopard, Venom, Soul, Phoenix"
+              "label": "Unlock Guide",
+              "detail": "How to unlock and progress fighting styles."
             },
             {
-              "label": "A",
-              "detail": "Strong comparison candidates from the verified fruit pool: Magma, Electricity, Ice, Operation, Light, Shadow, Flame"
+              "label": "Style Comparison",
+              "detail": "Compare V1 and V2 fighting styles."
             },
             {
-              "label": "B",
-              "detail": "Mid-tier candidates to evaluate for grinding and boss routes: Gravity, Gas, Tremor, Snow, Buddha, Mammoth, String"
-            },
-            {
-              "label": "C",
-              "detail": "Starter or situational fruits to verify after release: Sand, Smoke, Paw, Barrier, Bomb, Spike, Spin, Chop, Clear, Love, Magnet, Darkness, Gum"
+              "label": "Skill Tips",
+              "detail": "Combat and skill planning advice."
             }
           ]
         },
         {
           "order": 6,
-          "name": "Haze Seas Trello And Discord",
-          "description": "Serve players searching for the official Haze Seas Trello, Discord, Roblox link, and social channels. Captures navigational SEO demand from keyword data including haze seas discord, haze seas trello, and haze seas roblox.",
-          "href": "/official-links",
+          "name": "Haze Seas Race Guide",
+          "description": "A race guide hub for Haze Seas players comparing race effects, reroll intent, and beginner-friendly choices. Do not add exact race stats unless already verified in the project content.",
+          "href": "/races/haze-seas-race-guide",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Roblox",
-              "detail": "Official Haze Piece Roblox experience page for the Haze Seas rework."
+              "label": "Race Overview",
+              "detail": "What races are available in Haze Seas."
             },
             {
-              "label": "Event",
-              "detail": "Official Haze Seas Roblox event page with release and notification information."
+              "label": "Best Picks",
+              "detail": "Beginner-friendly race choices."
             },
             {
-              "label": "Discord",
-              "detail": "Official Haze Studios Discord invite for announcements, codes, and community updates."
-            },
-            {
-              "label": "Trello",
-              "detail": "Official Haze Seas Trello board for gameplay systems and reference cards."
+              "label": "Reroll Tips",
+              "detail": "When and how to reroll race choices."
             }
           ]
         },
         {
           "order": 7,
-          "name": "Haze Seas Fighting Styles",
-          "description": "Cover fighting style V1, V2, showcases, unlock routes, and build pairing with fruits or weapons. The uploaded YouTube dataset includes Every Fighting Style V1-V2 Full Showcase and Every V2 Fighting Style in Haze Seas.",
-          "href": "/fighting-styles",
-          "displayType": "card-list",
+          "name": "Haze Seas Boss Guide",
+          "description": "A boss guide hub for Haze Seas players who need routes, requirements, drops, and fight tips. Do not invent boss drops; add table structure only if data is not already verified.",
+          "href": "/bosses/haze-seas-boss-guide",
+          "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "V1-V2",
-              "detail": "Uploaded YouTube data includes a Haze Seas video titled EVERY FIGHTING STYLE V1-V2 FULL SHOWCASE."
+              "label": "Boss Routes",
+              "detail": "Where to find bosses and how to reach them."
             },
             {
-              "label": "V2",
-              "detail": "Uploaded YouTube data includes a Haze Seas video titled Every V2 Fighting Style in Haze Seas."
+              "label": "Fight Tips",
+              "detail": "General strategies for boss encounters."
             },
             {
-              "label": "Styles",
-              "detail": "The V1-V2 showcase title names Fishman, BlackLeg, Electro, Cyborg, and Dragonic."
-            },
-            {
-              "label": "Builds",
-              "detail": "Use this page to connect fighting styles with fruits, weapons, races, and boss routes after release verification."
+              "label": "Drop Table",
+              "detail": "Drop table structure for verified data."
             }
           ]
         },
         {
           "order": 8,
-          "name": "Haze Seas Swords And Weapons",
-          "description": "Create a weapons hub for sword progression, weapon showcases, upgrade routes, and drop requirements. Supported by keyword data for haze seas sword tier list and YouTube videos about weapons, swords, and reworked weapons.",
-          "href": "/swords-and-weapons",
+          "name": "Haze Seas Map Guide",
+          "description": "A map and island progression guide for players looking for locations, route planning, and where to go next. Use hub-style cards and internal links to beginner, boss, and leveling content.",
+          "href": "/maps/haze-seas-map-guide",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Weapons",
-              "detail": "Uploaded YouTube data includes I Showcased EVERY Weapon In Haze Seas with 19K views."
-            },
-            {
-              "label": "Rework",
-              "detail": "Uploaded YouTube data includes These Are ALL the Reworked Weapons in Haze Seas."
-            },
-            {
-              "label": "Swords",
-              "detail": "Uploaded YouTube data includes ALL NEW SWORDS COMING TO HAZE SEAS."
+              "label": "Islands",
+              "detail": "Island locations and progression order."
             },
             {
               "label": "Routes",
-              "detail": "Use verified post-release data to connect each sword or weapon to bosses, islands, NPCs, and upgrade requirements."
+              "detail": "Efficient travel and farming routes."
+            },
+            {
+              "label": "Progression",
+              "detail": "Where to go next at each stage."
             }
           ]
         }
@@ -410,13 +355,13 @@
   },
   "bosses": {
     "meta": {
-      "title": "Bosses — Complete Guide & Walkthrough | Haze Seas Wiki",
-      "description": "Complete boss guides for Haze Seas on Roblox — all boss locations, attack patterns, strategies, drop tables, and respawn timers."
+      "title": "Haze Seas Boss Guide - Boss Routes, Fight Tips and Drops",
+      "description": "Use this Haze Seas boss guide hub to organize boss routes, fight tips, drop-table structure, and related progression pages."
     },
     "overviewTitle": "Bosses",
-    "overviewDescription": "Complete guides for every boss encounter in Haze Seas on Roblox.",
-    "body": "Bosses in Haze Seas serve as skill gates and progression milestones. Each boss has distinct attack patterns and drop tables to learn.",
-    "guidesTitle": "Bosses Guides",
+    "overviewDescription": "Haze Seas boss guides and routes.",
+    "body": "Bosses in Haze Seas serve as skill gates and progression milestones.",
+    "guidesTitle": "Boss Guides",
     "readMore": "Read more",
     "new": "New",
     "popular": "Popular"
@@ -456,5 +401,61 @@
     "buildGuide": "Build Guide",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "codes": {
+    "meta": {
+      "title": "Haze Seas Codes - Latest Rewards and Redemption Guide",
+      "description": "Check Haze Seas codes, redemption steps, expired code notes, and update reminders in this fan-made Haze Seas guide hub."
+    },
+    "overviewTitle": "Codes",
+    "overviewDescription": "Haze Seas codes, redemption steps, and update notes."
+  },
+  "guide": {
+    "meta": {
+      "title": "Haze Seas Beginner Guide - Start, Leveling and Progression Tips",
+      "description": "Start Haze Seas with a beginner-friendly guide covering early progression, basic priorities, useful routes, and practical tips for new players."
+    },
+    "overviewTitle": "Guides",
+    "overviewDescription": "Beginner guides and progression routes for Haze Seas."
+  },
+  "tier-list": {
+    "meta": {
+      "title": "Haze Seas Fruit Tier List - Best Fruits for Grinding and Bosses",
+      "description": "Compare Haze Seas fruits by general usefulness, grinding potential, boss fights, and beginner-friendly choices in this fan-made tier list guide."
+    },
+    "overviewTitle": "Tier List",
+    "overviewDescription": "Haze Seas fruit tier list and rankings."
+  },
+  "skills": {
+    "meta": {
+      "title": "Haze Seas Fighting Styles Guide - Unlocks, Skills and Progression",
+      "description": "Learn how Haze Seas fighting styles fit into progression, combat choices, unlock paths, and skill planning."
+    },
+    "overviewTitle": "Skills",
+    "overviewDescription": "Haze Seas fighting styles and skill guides."
+  },
+  "races": {
+    "meta": {
+      "title": "Haze Seas Race Guide - Best Races, Rerolls and Player Tips",
+      "description": "Compare Haze Seas races, reroll intent, beginner-friendly picks, and practical race guide notes for players."
+    },
+    "overviewTitle": "Races",
+    "overviewDescription": "Haze Seas race guides and reroll tips."
+  },
+  "maps": {
+    "meta": {
+      "title": "Haze Seas Map Guide - Islands, Routes and Progression",
+      "description": "Navigate Haze Seas maps, islands, routes, and progression paths with this fan-made map guide hub."
+    },
+    "overviewTitle": "Maps",
+    "overviewDescription": "Haze Seas map and island guides."
+  },
+  "weapons": {
+    "meta": {
+      "title": "Haze Seas Swords and Weapons Guide - Unlocks and Progression",
+      "description": "Organize Haze Seas swords and weapons by unlock intent, progression use, and related guide pages without inventing unverified weapon data."
+    },
+    "overviewTitle": "Weapons",
+    "overviewDescription": "Haze Seas swords and weapons guide hub."
   }
 }

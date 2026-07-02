@@ -8,6 +8,7 @@ export const NAVIGATION_CONFIG = [
   { key: "tierList", path: "/tier-list", icon: Trophy, isContentType: true },
   { key: "maps", path: "/maps", icon: Map, isContentType: true },
   { key: "skills", path: "/skills", icon: Flame, isContentType: true },
+  { key: "weapons", path: "/weapons", icon: Swords, isContentType: true },
   { key: "updates", path: "/updates", icon: Zap, isContentType: false },
 ] as const;
 
