@@ -8,6 +8,8 @@ import { ThemeProvider } from "next-themes";
 import { JsonLd, SiteFooter, SiteHeader } from "@/components/site";
 import { routing } from "@/i18n/routing";
 import { siteConfig, SITE_URL } from "@/site-data/site.config";
+import { PRIMARY_NAV } from "@/site-data/nav.config";
+import { getHeaderNavDropdowns } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -44,6 +46,15 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   const messages = await getMessages();
 
+  const categoryLabels: Record<string, string> = Object.fromEntries(
+    PRIMARY_NAV.map((item) => [item.href.replace(/^\//, ""), item.label]),
+  );
+  const headerDropdowns = getHeaderNavDropdowns(
+    PRIMARY_NAV.map((item) => item.href.replace(/^\//, "")),
+    locale,
+    categoryLabels,
+  );
+
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -59,7 +70,7 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <NextIntlClientProvider messages={messages}>
             <JsonLd data={organization} />
-            <SiteHeader locale={locale} />
+            <SiteHeader locale={locale} dropdownData={headerDropdowns} />
             {children}
             <SiteFooter locale={locale} />
           </NextIntlClientProvider>

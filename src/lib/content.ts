@@ -360,6 +360,107 @@ const GROUP_ORDER: string[] = [
   "tier-list", "fruits", "materials", "official-links",
 ];
 
+// ─── Header dropdown data (per primary nav item) ───────────────────────────
+
+export interface NavDropdownLink {
+  label: string;
+  href: string;
+}
+
+export interface NavDropdownGroup {
+  /** Slug of the category (e.g. "guide", "codes") */
+  slug: string;
+  /** Display label already provided by nav config */
+  label: string;
+  /** Where the label itself navigates (the category overview) */
+  href: string;
+  /** Top articles in this category, capped */
+  items: NavDropdownLink[];
+  /** Footer link inside the dropdown — points to the full listing */
+  readMoreHref: string;
+}
+
+/**
+ * Build dropdown bundles for each primary header nav item.
+ *
+ * Each group contains the category overview plus up to `maxItems` articles,
+ * sorted by `priority` (asc) then `date` (desc). Falls back to alphabetical
+ * ordering when neither is set.
+ *
+ * Designed to be called server-side and passed into <SiteHeader />.
+ */
+export function getHeaderNavDropdowns(
+  categorySlugs: string[],
+  language: Locale = "en",
+  categoryLabels: Record<string, string> = {},
+  maxItems = 6,
+): NavDropdownGroup[] {
+  const out: NavDropdownGroup[] = [];
+
+  for (const slug of categorySlugs) {
+    if (!CONTENT_TYPES.includes(slug as ContentType)) continue;
+    const groupDir = path.join(CONTENT_ROOT, language, slug);
+    if (!fs.existsSync(groupDir)) continue;
+
+    type Row = { title: string; href: string; priority: number; date: string };
+    const rows: Row[] = [];
+
+    for (const segments of getSlugsFromDirectory(groupDir)) {
+      const articleSlug = segments.join("/");
+      const mdxFilePath = findFileBySlug(groupDir, articleSlug);
+      if (!mdxFilePath) continue;
+
+      const fullPath = path.join(groupDir, `${mdxFilePath}.mdx`);
+      let title = segments[segments.length - 1]
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+      let priority = 99;
+      let date = "";
+
+      try {
+        const source = fs.readFileSync(fullPath, "utf-8");
+        const titleMatch = source.match(/title:\s*["'](.+?)["']/);
+        const priorityMatch = source.match(/priority:\s*(\d+)/);
+        const dateMatch = source.match(/date:\s*["'](.+?)["']/);
+        if (titleMatch) title = titleMatch[1];
+        if (priorityMatch) priority = parseInt(priorityMatch[1], 10);
+        if (dateMatch) date = dateMatch[1];
+      } catch {
+        // keep defaults
+      }
+
+      rows.push({
+        title,
+        href: `/${slug}/${articleSlug}`,
+        priority,
+        date,
+      });
+    }
+
+    rows.sort((a, b) => {
+      if (a.priority !== b.priority) return a.priority - b.priority;
+      return (b.date ?? "").localeCompare(a.date ?? "");
+    });
+
+    const overviewLink: NavDropdownLink = { label: "Overview", href: `/${slug}` };
+    const articleLinks = rows
+      .slice(0, maxItems)
+      .map<NavDropdownLink>((r) => ({ label: r.title, href: r.href }));
+
+    if (articleLinks.length === 0) continue;
+
+    out.push({
+      slug,
+      label: categoryLabels[slug] ?? slug.replace(/\b\w/g, (c) => c.toUpperCase()),
+      href: `/${slug}`,
+      items: [overviewLink, ...articleLinks],
+      readMoreHref: `/${slug}`,
+    });
+  }
+
+  return out;
+}
+
 export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
   const localeDir = path.join(CONTENT_ROOT, language);
   if (!fs.existsSync(localeDir)) return [];
