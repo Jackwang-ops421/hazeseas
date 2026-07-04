@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { CollapsibleNavGroup } from "@/components/collapsible-nav-group";
 import { type NavGroup } from "@/lib/content";
 
-export { TrailerButton, TrailerCard, TrailerDialog } from "./site/Trailer";
+export { TrailerButton } from "./site/Trailer";
 export { Header as SiteHeader } from "./site/Header";
 export { Footer as SiteFooter } from "./site/Footer";
 

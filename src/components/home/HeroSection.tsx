@@ -67,7 +67,7 @@ export function HeroSection({ data }: { data: HeroConfig }) {
 
         {/* Trailer */}
         {data.trailerVideoId && (
-          <div className="relative mx-auto max-w-md pt-2 sm:max-w-lg">
+          <div className="relative mx-auto max-w-3xl pt-2 sm:max-w-4xl">
             <div className="overflow-hidden rounded-lg border border-border shadow-xl dark:border-white/10 dark:shadow-2xl dark:shadow-black/50">
               <TrailerButton videoId={data.trailerVideoId} />
             </div>
