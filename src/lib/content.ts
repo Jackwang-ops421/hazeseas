@@ -355,19 +355,6 @@ const GROUP_TITLES: Record<string, string> = {
   "official-links": "Official Links",
 };
 
-const GROUP_TITLES_JA: Record<string, string> = {
-  bosses: "ボス",
-  races: "種族",
-  maps: "マップ & エリア",
-  skills: "スキル",
-  codes: "コード",
-  guide: "初心者ガイド",
-  "tier-list": "Tier List",
-  fruits: "恶魔果实",
-  materials: "材料",
-  "official-links": "公式リンク",
-};
-
 const GROUP_ORDER: string[] = [
   "guide", "races", "bosses", "maps", "skills", "codes",
   "tier-list", "fruits", "materials", "official-links",
@@ -389,8 +376,7 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
     if (slugPaths.length === 0) continue;
 
     const links: NavGroup["links"] = [];
-    const overviewLabel = language === "ja" ? "一覧" : "Overview";
-    links.push({ label: overviewLabel, href: `/${groupSlug}` });
+    links.push({ label: "Overview", href: `/${groupSlug}` });
 
     for (const segments of slugPaths) {
       const articleSlug = segments.join("/");
@@ -416,8 +402,7 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
       links.push({ label: title, href: `/${groupSlug}/${articleSlug}`, badge });
     }
 
-    const localTitles = language === "ja" ? GROUP_TITLES_JA : {};
-    const groupTitle = localTitles[groupSlug] || GROUP_TITLES[groupSlug]
+    const groupTitle = GROUP_TITLES[groupSlug]
       || groupSlug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
     groups.push({ title: groupTitle, count: links.length - 1, slug: groupSlug, links });

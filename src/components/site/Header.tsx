@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
-  ChevronDown, Menu, X, Globe, Sun,
+  ChevronDown, Menu, X,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import {
@@ -13,6 +13,8 @@ import {
   NAV_ICON_MAP,
 } from "@/site-data/nav.config";
 import { siteConfig } from "@/site-data/site.config";
+import { ClientThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
@@ -121,17 +123,9 @@ export function Header({ locale }: { locale: string }) {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
-            <button className="hidden rounded-lg p-2 text-white/70 transition-colors hover:bg-white/5 lg:block" aria-label="Toggle theme">
-              <Sun className="h-4 w-4" />
-            </button>
+            <ClientThemeToggle label="Toggle theme" />
 
-            <Link
-              href={locale === "en" ? "/" : `/${locale}`}
-              className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 transition-colors hover:border-white/30 hover:text-white"
-            >
-              <Globe className="h-3.5 w-3.5" />
-              {locale.toUpperCase()}
-            </Link>
+            <LanguageSwitcher locale={locale} />
 
             <Link
               href={MORE_WIKIS_BUTTON.href}

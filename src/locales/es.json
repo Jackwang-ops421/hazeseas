@@ -1,0 +1,484 @@
+{
+  "site": {
+    "name": "Haze Seas Wiki",
+    "shortName": "Haze Seas",
+    "tagline": "Wiki de la Comunidad Hecha por Fans",
+    "description": "Haze Seas Hub Wiki ofrece a jugadores de Roblox códigos, listas de frutas, espadas, estilos de combate, Jefes, mapas, razas y guías de progresión para principiantes."
+  },
+  "nav": {
+    "races": "Razas",
+    "bosses": "Jefes",
+    "guides": "Guías",
+    "codes": "Códigos",
+    "tierList": "Tier List",
+    "maps": "Mapas",
+    "skills": "Habilidades",
+    "updates": "Actualizaciones",
+    "home": "Inicio",
+    "menu": "Menú",
+    "toggleTheme": "Cambiar tema",
+    "weapons": "Armas"
+  },
+  "home": {
+    "meta": {
+      "title": "Haze Seas Wiki — Códigos, Frutas y Guía para Principiantes",
+      "description": "Haze Seas Hub Wiki ofrece a jugadores de Roblox códigos, listas de frutas, espadas, estilos de combate, Jefes, mapas, razas y guías de progresión para principiantes."
+    },
+    "hero": {
+      "eyebrow": "Wiki de la Comunidad Hecha por Fans",
+      "title": "Haze Seas",
+      "description": "Haze Seas es la nueva era de rework de Haze Piece, un RPG de acción de Roblox sobre navegación, misiones de grind, recolección de frutas y construir un pirata o marine más fuerte. Usa este hub hecho por fans para seguir códigos, frutas, espadas, estilos de combate, Jefes y rutas de progresión antes y después de la actualización Haze Seas.",
+      "stats": [
+        "Rework Haze Seas Jun 30 2026",
+        "Actualizado Jun 19 2026",
+        "239.6M+ Visitas",
+        "3.14M+ Favoritos",
+        "Tamaño del Servidor 12"
+      ],
+      "primaryCta": "Obtener Códigos Gratis",
+      "secondaryCta": "Jugar en Roblox",
+      "tertiaryCta": "Ver Códigos Activos",
+      "videoLabel": "Medios oficiales"
+    },
+    "updates": {
+      "title": "Actualizaciones Recientes",
+      "browse": "Ver Todas las Guías",
+      "viewAll": "Ver Todo"
+    },
+    "start": {
+      "eyebrow": "Empieza Aquí",
+      "title": "Tu Viaje en Haze Seas",
+      "cards": [
+        {
+          "number": "1",
+          "title": "Guía para Principiantes",
+          "description": "Comienza tu primera sesión en Haze Seas con una ruta limpia cubriendo misiones de isla, conceptos básicos de frutas, razas y prioridades de stats iniciales."
+        },
+        {
+          "number": "2",
+          "title": "Códigos y Recompensas",
+          "description": "Sigue códigos verificados de la descripción de Roblox, Discord oficial y YouTube para boosts de EXP, Spin de Raza, Gemas y Reembolso de Stats."
+        },
+        {
+          "number": "3",
+          "title": "Spawn de Frutas",
+          "description": "Aprende cómo las frutas hacen spawn cada 60 minutos, desaparecen después de 20 minutos y cuáles aparecen en servidores VIP."
+        },
+        {
+          "number": "4",
+          "title": "Lista de Tier de Frutas",
+          "description": "Compara todas las frutas por tier para grind, Jefes y PvP para que puedas elegir el mejor build el primer día."
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Páginas Populares",
+      "title": "Tendencia Ahora",
+      "quickLinks": [
+        "Códigos Haze Seas",
+        "Guía para Principiantes",
+        "Lista de Tier de Frutas",
+        "Guía de Jefes"
+      ],
+      "cards": [
+        {
+          "badge": "Actualizado",
+          "title": "Códigos Activos",
+          "description": "Todos los códigos funcionales de Haze Seas con recompensas y pasos de canje.",
+          "href": "/codes/haze-seas-codes"
+        },
+        {
+          "badge": "Principiante",
+          "title": "Guía para Principiantes",
+          "description": "Comienza tu sesión en Haze Seas con una ruta limpia cubriendo misiones de isla, conceptos básicos de frutas y progresión.",
+          "href": "/guide/haze-seas-beginner-guide"
+        },
+        {
+          "badge": "Popular",
+          "title": "Lista de Tier de Frutas",
+          "description": "Compara todas las frutas por tier para grind, Jefes y PvP en un solo lugar.",
+          "href": "/tier-list/haze-seas-fruit-tier-list"
+        },
+        {
+          "badge": "Popular",
+          "title": "Guía de Jefes",
+          "description": "Rutas, requisitos y consejos de pelea para Jefes de Haze Seas.",
+          "href": "/bosses/haze-seas-boss-guide"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "¿Qué es Haze Seas?",
+      "paragraphs": [
+        "Haze Seas es la versión reworked de Haze Piece por Haze Studios en Roblox. Mantiene el loop de RPG pirata anime que los jugadores más buscan: misiones, frutas, espadas, estilos de combate, Jefes, razas, bounty y progresión de islas.",
+        "Los jugadores deben tratar Haze Seas como un juego con actualizaciones en vivo. La página de Roblox y la página de eventos son los anclas más seguras para el tiempo de lanzamiento, mientras Discord y YouTube son los mejores lugares para verificar códigos nuevos, avisos de mantenimiento y showcases del rework."
+      ],
+      "stats": [
+        {
+          "label": "Desarrollador",
+          "value": "Haze Studios"
+        },
+        {
+          "label": "Plataforma",
+          "value": "Roblox"
+        },
+        {
+          "label": "Género",
+          "value": "RPG de Acción"
+        },
+        {
+          "label": "Visitas",
+          "value": "239.6M+"
+        },
+        {
+          "label": "Favoritos",
+          "value": "3.14M+"
+        },
+        {
+          "label": "Spawn de Frutas",
+          "value": "60 min"
+        },
+        {
+          "label": "Tamaño del Servidor",
+          "value": "12"
+        }
+      ],
+      "cta": "Explorar Todas las Guías"
+    },
+    "explore": {
+      "title": "Módulos de Haze Seas Hub",
+      "description": "Salta a la sección que necesitas.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Códigos Haze Seas",
+          "description": "Encuentra los últimos códigos de Haze Seas, pasos de canje y notas de actualización en un solo lugar. Esta página debe ser verificada y actualizada siempre que el juego reciba una nueva actualización.",
+          "href": "/codes/haze-seas-codes",
+          "displayType": "code-cards",
+          "highlights": [
+            {
+              "label": "Códigos Activos",
+              "detail": "Sigue códigos activos de Haze Seas y recompensas."
+            },
+            {
+              "label": "Cómo Canjear",
+              "detail": "Instrucciones paso a paso para canje."
+            },
+            {
+              "label": "Códigos Expirados",
+              "detail": "Notas de códigos expirados y recordatorios de actualización."
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Enlaces Oficiales Haze Seas",
+          "description": "Hub de acceso rápido para recursos de Haze Seas, incluyendo la página del juego en Roblox, enlaces de comunidad, recursos estilo Trello si están disponibles y canales de actualización. Esta página debe dejar claro que hazeseashub.wiki es un sitio de guía hecho por fans, no el sitio oficial del juego.",
+          "href": "/official-links",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Juego en Roblox",
+              "detail": "Página oficial del juego en Roblox y enlaces relacionados."
+            },
+            {
+              "label": "Recursos de Comunidad",
+              "detail": "Discord, Trello y canales de actualización de comunidad."
+            },
+            {
+              "label": "Fuentes de Actualización",
+              "detail": "Canales oficiales para noticias y notas de parche."
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Guía para Principiantes Haze Seas",
+          "description": "Una ruta enfocada en principiantes para nuevos jugadores de Haze Seas cubriendo primeros pasos, progresión temprana y cómo evitar perder tiempo. Mantén el contenido práctico y basado en tareas.",
+          "href": "/guide/haze-seas-beginner-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "Empieza Aquí",
+              "detail": "Únete a la experiencia oficial de Roblox y configura tu primera sesión."
+            },
+            {
+              "label": "Progresión Temprana",
+              "detail": "Enfócate en misiones, conceptos básicos de frutas y sistemas principales."
+            },
+            {
+              "label": "Consejos para Principiantes",
+              "detail": "Evita errores comunes y ahorra recursos."
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Lista de Tier de Frutas Haze Seas",
+          "description": "Un hub de ranking para frutas de Haze Seas basado en la intención de búsqueda general de jugadores como grind, peleas de Jefes y utilidad general. No inventes rankings a menos que la página actual ya tenga datos de ranking verificados.",
+          "href": "/tier-list/haze-seas-fruit-tier-list",
+          "displayType": "tier-grid",
+          "highlights": [
+            {
+              "label": "Mejores Frutas",
+              "detail": "Frutas de tier más alto para uso general."
+            },
+            {
+              "label": "Grind",
+              "detail": "Frutas que ayudan con farming y level up."
+            },
+            {
+              "label": "Peleas de Jefes",
+              "detail": "Frutas útiles para encuentros con Jefes."
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "Estilos de Combate Haze Seas",
+          "description": "Una página de guía para estilos de combate de Haze Seas y progresión de habilidades. Estructurada para jugadores que quieren comparar estilos, caminos de unlock y uso práctico.",
+          "href": "/skills/haze-seas-fighting-styles",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Guía de Unlock",
+              "detail": "Cómo desbloquear y progresar estilos de combate."
+            },
+            {
+              "label": "Comparación de Estilos",
+              "detail": "Compara estilos de combate V1 y V2."
+            },
+            {
+              "label": "Consejos de Habilidades",
+              "detail": "Consejo de combate y planificación de habilidades."
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "Guía de Razas Haze Seas",
+          "description": "Un hub de guía de razas para jugadores de Haze Seas comparando efectos de raza, intención de reroll y elecciones amigables para principiantes. No agregues stats exactos de raza a menos que ya estén verificados en el contenido del proyecto.",
+          "href": "/races/haze-seas-race-guide",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Vista General de Razas",
+              "detail": "Qué razas están disponibles en Haze Seas."
+            },
+            {
+              "label": "Mejores Opciones",
+              "detail": "Opciones de raza amigables para principiantes."
+            },
+            {
+              "label": "Consejos de Reroll",
+              "detail": "Cuándo y cómo hacer reroll de elecciones de raza."
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Guía de Jefes Haze Seas",
+          "description": "Un hub de guía de Jefes para jugadores de Haze Seas que necesitan rutas, requisitos, drops y consejos de pelea. No inventes drops de Jefes; agrega estructura de tabla solo si los datos no están verificados.",
+          "href": "/bosses/haze-seas-boss-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "Rutas de Jefes",
+              "detail": "Dónde encontrar Jefes y cómo alcanzarlos."
+            },
+            {
+              "label": "Consejos de Pelea",
+              "detail": "Estrategias generales para encuentros con Jefes."
+            },
+            {
+              "label": "Tabla de Drops",
+              "detail": "Estructura de tabla de drops para datos verificados."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Guía de Mapas Haze Seas",
+          "description": "Una guía de mapas y progresión de islas para jugadores que buscan localizaciones, planificación de rutas y a dónde ir después. Usa cards estilo hub y enlaces internos a contenido de principiante, Jefe y level up.",
+          "href": "/maps/haze-seas-map-guide",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Islas",
+              "detail": "Localizaciones de islas y orden de progresión."
+            },
+            {
+              "label": "Rutas",
+              "detail": "Viaje eficiente y rutas de farming."
+            },
+            {
+              "label": "Progresión",
+              "detail": "A dónde ir después en cada etapa."
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "description": "Respuestas rápidas a las preguntas más comunes sobre Haze Seas.",
+      "items": [
+        {
+          "question": "¿Qué es Haze Seas?",
+          "answer": "Haze Seas es la versión reworked de Haze Piece por Haze Studios en Roblox. Es un RPG de acción pirata anime con frutas, espadas, estilos de combate, raza, Jefes y progresión de islas."
+        },
+        {
+          "question": "¿Haze Seas es gratis para jugar?",
+          "answer": "Sí, Haze Seas es una experiencia gratuita en Roblox. Puedes unirte a través de la página oficial de Roblox y comenzar a jugar inmediatamente."
+        },
+        {
+          "question": "¿Cómo canjeo códigos en Haze Seas?",
+          "answer": "Abre el juego de Roblox, encuentra el menú in-game de Tienda o Códigos, ingresa el código y confirma. Recompensas como boosts de EXP, Spin de Raza, Gemas y Reembolso de Stats se agregan a tu cuenta instantáneamente."
+        },
+        {
+          "question": "¿Cuál es la mejor fruta en Haze Seas?",
+          "answer": "Las pruebas post-lanzamiento aún están en curso. Las frutas Dragon, Dough, Leopard, Venom, Soul y Phoenix son los candidatos S-tier más citados para grind, Jefes y PvP."
+        },
+        {
+          "question": "¿Dónde encuentro códigos activos de Haze Seas?",
+          "answer": "La página de Códigos de esta wiki sigue códigos de la descripción oficial de Roblox, anuncios del Discord oficial y canal oficial de YouTube de Haze Studios. Siempre verifica los códigos en el juego antes de depender de ellos."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Listo para Dominar Haze Seas?",
+      "description": "Desde tus primeras misiones de isla hasta builds de frutas, drops de Jefes, rutas de espadas y códigos de actualización, Haze Seas Hub Wiki da a los jugadores un punto de partida limpio.",
+      "primary": "Leer la Guía para Principiantes",
+      "secondary": "Jugar en Roblox"
+    }
+  },
+  "bosses": {
+    "meta": {
+      "title": "Guía de Jefes Haze Seas - Rutas, Consejos de Pelea y Drops",
+      "description": "Usa este hub de guía de Jefes de Haze Seas para organizar rutas de Jefes, consejos de pelea, estructura de tabla de drops y páginas de progresión relacionadas."
+    },
+    "overviewTitle": "Jefes",
+    "overviewDescription": "Guías y rutas de Jefes de Haze Seas.",
+    "body": "Los Jefes en Haze Seas sirven como puertas de habilidad y puntos de control de progresión.",
+    "guidesTitle": "Guías de Jefes",
+    "readMore": "Leer más",
+    "new": "Nuevo",
+    "popular": "Popular"
+  },
+  "shared": {
+    "wikiNavigation": "Navegación de Wiki",
+    "activeCodes": "Códigos Activos",
+    "updated": "Actualizado",
+    "viewAllCodes": "Ver todos los códigos",
+    "playOnRoblox": "Jugar en Roblox",
+    "inThisSection": "En esta sección",
+    "tableOfContents": "Tabla de Contenidos",
+    "nextSteps": "Próximos Pasos",
+    "needHelp": "¿Necesitas Ayuda?",
+    "relatedReading": "Lectura Relacionada",
+    "relatedGuides": "Guías Relacionados",
+    "readMore": "Leer más",
+    "officialMedia": "Medios oficiales",
+    "home": "Inicio",
+    "noGuidesAvailable": "No hay guías disponibles todavía. ¡Vuelve pronto!"
+  },
+  "footer": {
+    "aboutTitle": "Haze Seas Wiki",
+    "about": "Haze Seas Wiki es un hub independiente de guía hecho por fans para jugadores de Roblox que quieren rutas más rápidas, elecciones de build más limpias y recursos de actualización verificados. Cubre códigos, frutas, espadas, estilos de combate, Jefes, raza, mapas y progresión para principiantes sin reemplazar los canales oficiales de Haze Studios.",
+    "quickLinks": "Enlaces Rápidos",
+    "guides": "Guías",
+    "legal": "Legal",
+    "copyright": "© 2026 Haze Seas Hub. No afiliado a Haze Studios o Roblox Corporation.",
+    "description": "RPG de acción pirata de Roblox rework con frutas, espadas, estilos de combate, raza, Jefes y recompensas de códigos.",
+    "playGame": "Jugar Haze Seas en Roblox",
+    "officialDiscord": "Discord Oficial",
+    "officialYoutube": "YouTube Oficial",
+    "communityTool": "Tablero Trello",
+    "beginnerGuide": "Guía para Principiantes",
+    "raceGuides": "Guías de Raza",
+    "bossGuides": "Guías de Jefes",
+    "buildGuide": "Guía de Build",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio"
+  },
+  "codes": {
+    "meta": {
+      "title": "Códigos Haze Seas - Últimas Recompensas y Guía de Canje",
+      "description": "Verifica códigos de Haze Seas, pasos de canje, notas de códigos expirados y recordatorios de actualización en este hub de guía hecho por fans."
+    },
+    "overviewTitle": "Códigos",
+    "overviewDescription": "Códigos de Haze Seas, pasos de canje y notas de actualización."
+  },
+  "guide": {
+    "meta": {
+      "title": "Guía para Principiantes Haze Seas - Inicio, Level Up y Consejos de Progresión",
+      "description": "Comienza en Haze Seas con una guía amigable para principiantes cubriendo progresión inicial, prioridades básicas, rutas útiles y consejos prácticos para nuevos jugadores."
+    },
+    "overviewTitle": "Guías",
+    "overviewDescription": "Guías para principiantes y rutas de progresión de Haze Seas."
+  },
+  "tier-list": {
+    "meta": {
+      "title": "Lista de Tier de Frutas Haze Seas - Mejores Frutas para Grind y Jefes",
+      "description": "Compara frutas de Haze Seas por utilidad general, potencial de grind, peleas de Jefes y elecciones amigables para principiantes en esta lista de tier hecha por fans."
+    },
+    "overviewTitle": "Tier List",
+    "overviewDescription": "Lista de tier y rankings de frutas de Haze Seas."
+  },
+  "skills": {
+    "meta": {
+      "title": "Guía de Estilos de Combate Haze Seas - Unlocks, Habilidades y Progresión",
+      "description": "Aprende cómo estilos de combate de Haze Seas encajan en la progresión, elecciones de combate, caminos de unlock y planificación de habilidades."
+    },
+    "overviewTitle": "Habilidades",
+    "overviewDescription": "Estilos de combate y guías de habilidades de Haze Seas."
+  },
+  "races": {
+    "meta": {
+      "title": "Guía de Razas Haze Seas - Mejores Razas, Rerolls y Consejos de Jugadores",
+      "description": "Compara razas de Haze Seas, intención de reroll, elecciones amigables para principiantes y notas prácticas de guía de raza para jugadores."
+    },
+    "overviewTitle": "Razas",
+    "overviewDescription": "Guías de raza y consejos de reroll de Haze Seas."
+  },
+  "maps": {
+    "meta": {
+      "title": "Guía de Mapas Haze Seas - Islas, Rutas y Progresión",
+      "description": "Navega mapas, islas, rutas y caminos de progresión de Haze Seas con este hub de guía de mapas hecho por fans."
+    },
+    "overviewTitle": "Mapas",
+    "overviewDescription": "Guías de mapa e isla de Haze Seas."
+  },
+  "weapons": {
+    "meta": {
+      "title": "Guía de Espadas y Armas Haze Seas - Unlocks y Progresión",
+      "description": "Organiza espadas y armas de Haze Seas por intención de unlock, uso de progresión y páginas de guía relacionadas sin inventar datos de arma no verificados."
+    },
+    "overviewTitle": "Armas",
+    "overviewDescription": "Hub de guía de espadas y armas de Haze Seas."
+  },
+  "fruits": {
+    "meta": {
+      "title": "Hub de Frutas Haze Seas - Guías de Frutas y Tier List",
+      "description": "Explora guías de frutas de Haze Seas, enlaces de tier list, recomendaciones de grind y recursos relacionados."
+    },
+    "overviewTitle": "Frutas",
+    "overviewDescription": "Guías de frutas, tier list y recursos relacionados a frutas de Haze Seas."
+  },
+  "materials": {
+    "meta": {
+      "title": "Guía de Materiales Haze Seas - Farming, Drops y Recursos de Upgrade",
+      "description": "Estructura farming de materiales de Haze Seas, fuentes de drop y planificación de upgrade."
+    },
+    "overviewTitle": "Materiales",
+    "overviewDescription": "Farming de materiales, drops y recursos de upgrade de Haze Seas."
+  },
+  "official-links": {
+    "meta": {
+      "title": "Enlaces Oficiales Haze Seas - Roblox, Discord y Recursos de Actualización",
+      "description": "Encuentra enlaces de recursos verificados de Haze Seas y evita espejos falsos o páginas de script inseguras."
+    },
+    "overviewTitle": "Enlaces Oficiales",
+    "overviewDescription": "Enlaces de recursos verificados y canales de comunidad de Haze Seas."
+  }
+}

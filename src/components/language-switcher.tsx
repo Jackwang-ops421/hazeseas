@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { Check, Globe } from "lucide-react";
+import { Globe, Check } from "lucide-react";
 import { routing, type Locale } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,16 +11,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const LOCALE_LABELS: Record<Locale, string> = {
+const LOCALE_LABELS: Record<string, string> = {
   en: "English",
-  ja: "日本語",
+  "pt-BR": "Portugues (BR)",
+  es: "Espanol",
+  ru: "Russkiy",
 };
 
-/**
- * 语言切换器（下拉菜单版）：点击 Globe 图标展开所有语言列表
- * 当前语言显示 ✓ 标记，选择后跳转对应语言路径
- * 支持 2+ 个语言，扩展时只需在 routing.ts 添加 locale 即可
- */
 export function LanguageSwitcher({ locale }: { locale: string }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -33,18 +30,19 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
 
     let newPath = pathname;
 
-    // 移除当前 locale 前缀（如果有）
+    // Remove current locale prefix if present
     if (locale !== routing.defaultLocale) {
-      newPath = newPath.replace(`/${locale}`, "") || "/";
+      const prefix = "/" + locale;
+      newPath = pathname.startsWith(prefix) ? pathname.slice(prefix.length) || "/" : pathname;
     }
 
-    // 添加新 locale 前缀（如果不是默认语言）
+    // Add new locale prefix (defaultLocale has no prefix)
     if (nextLocale !== routing.defaultLocale) {
-      newPath = `/${nextLocale}${newPath === "/" ? "" : newPath}`;
+      newPath = "/" + nextLocale + (newPath === "/" ? "" : newPath);
     }
 
-    // 设置 NEXT_LOCALE cookie，防止 middleware 重定向回原语言
-    document.cookie = `NEXT_LOCALE=${nextLocale};path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;
+    // Set NEXT_LOCALE cookie so middleware does not redirect back
+    document.cookie = "NEXT_LOCALE=" + nextLocale + "; path=/; max-age=" + (60 * 60 * 24 * 365) + "; SameSite=Lax";
 
     router.push(newPath);
   };
@@ -52,20 +50,24 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground">
-          <Globe className="h-4 w-4" />
-          <span>{LOCALE_LABELS[locale as Locale]}</span>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 transition-colors hover:border-white/30 hover:text-white"
+        >
+          <Globe className="h-3.5 w-3.5" />
+          {LOCALE_LABELS[locale] ?? locale}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[140px]">
+      <DropdownMenuContent align="end" className="min-w-[160px]">
         {routing.locales.map((loc) => (
           <DropdownMenuItem
             key={loc}
-            onClick={() => handleSwitch(loc)}
+            onClick={() => handleSwitch(loc as Locale)}
             className="flex items-center justify-between gap-3"
           >
-            <span>{LOCALE_LABELS[loc]}</span>
-            {loc === (locale as Locale) && <Check className="h-4 w-4 text-[hsl(var(--nav-theme))]" />}
+            <span className="text-foreground">{LOCALE_LABELS[loc] ?? loc}</span>
+            {loc === locale && <Check className="h-4 w-4 text-[hsl(var(--nav-theme))]" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

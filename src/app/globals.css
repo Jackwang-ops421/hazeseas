@@ -4,6 +4,38 @@
 
 @layer base {
   :root {
+    /* Light theme (default) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 188 82% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 356 78% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 188 82% 42%;
+    --radius: 0.75rem;
+    --nav-theme: 188 82% 42%;
+    --nav-theme-light: 188 82% 55%;
+    --chart-1: 188 82% 42%;
+    --chart-2: 270 50% 55%;
+    --chart-3: 221 30% 42%;
+    --chart-4: 38 62% 42%;
+    --chart-5: 0 0% 45%;
+  }
+
+  .dark {
+    /* Dark theme */
     --background: 0 0% 5%;
     --foreground: 0 0% 88%;
     --card: 0 0% 7%;
