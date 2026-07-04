@@ -1,30 +1,29 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { RESOURCE_CARDS } from "@/data/home";
-import { Code2, Link2, BookOpen, Compass, Zap, Users, Skull, Map } from "lucide-react";
+import { ChevronRight, Code2, BookOpen, Compass, Skull, Map, Zap, Users, Sword, Package, Trophy, TrendingUp } from "lucide-react";
+import { type ResourceModule } from "@/site-data/home.config";
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  Code2, Link2, BookOpen, Compass, Zap, Users, Skull, Map,
+  Code2, BookOpen, Compass, Skull, Map, Zap, Users, Sword, Package, Trophy, TrendingUp,
 };
 
 const cardClass =
   "group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80";
 
-export function ResourceCards() {
+export function ResourceCards({ items }: { items: ResourceModule[] }) {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
         <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Haze Seas Resources</h2>
         <p className="mt-2 text-sm leading-6 text-white/50">
-          Everything you need to explore Haze Seas: codes, fruits, bosses, maps, races, fighting styles, weapons, materials, and update notes.
+          Explore Haze Seas guides, resources, and content organized by topic.
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {RESOURCE_CARDS.map((card) => {
-          const Icon = ICON_MAP[card.icon] || Link2;
+        {items.map((card) => {
+          const Icon = ICON_MAP[card.icon] || Code2;
           return (
-            <Link key={card.href} href={card.href} className={cardClass}>
+            <Link key={card.href + card.title} href={card.href} className={cardClass}>
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[hsl(var(--nav-theme))]/15">
                 <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>

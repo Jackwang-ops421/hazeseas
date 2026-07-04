@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { getAllContent, getAllContentPaths, getContent, getDynamicNavigation, type ContentItem } from "@/lib/content";
 import { Breadcrumbs, JsonLd, WikiSidebar, localizeHref } from "@/components/site";
 import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
-import { CONTENT_TYPES } from "@/config/navigation";
+import { CONTENT_TYPES, type ContentType } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
 import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
@@ -28,8 +28,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string[] }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const messages = (await getMessages({ locale })) as Messages;
-  if (slug.length === 1 && CONTENT_TYPES.includes(slug[0])) {
-    const ct = slug[0];
+  if (slug.length === 1 && CONTENT_TYPES.includes(slug[0] as ContentType)) {
+    const ct = slug[0] as ContentType;
     const ctTitle = ct.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
     const title = ctMessages?.overviewTitle || `${ctTitle} — Haze Seas Wiki`;
@@ -47,12 +47,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function SlugPage({ params }: { params: Promise<{ locale: Locale; slug: string[] }> }) {
   const { locale, slug } = await params;
   const navGroups = getDynamicNavigation(locale);
-  if (slug.length === 1) return <NavigationPage locale={locale} contentType={slug[0]} navGroups={navGroups} />;
-  return <DetailPage locale={locale} contentType={slug[0]} slug={slug.slice(1)} navGroups={navGroups} />;
+  if (slug.length === 1) return <NavigationPage locale={locale} contentType={slug[0] as ContentType} navGroups={navGroups} />;
+  return <DetailPage locale={locale} contentType={slug[0] as ContentType} slug={slug.slice(1)} navGroups={navGroups} />;
 }
 
 async function NavigationPage({ locale, contentType, navGroups }: { locale: Locale; contentType: string; navGroups: import("@/lib/content").NavGroup[] }) {
-  if (!CONTENT_TYPES.includes(contentType)) notFound();
+  if (!CONTENT_TYPES.includes(contentType as ContentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale as Locale);
   const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — Haze Seas Wiki`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
@@ -128,7 +128,7 @@ const RELATED_BY_TYPE: Record<string, Array<{ title: string; description: string
 };
 
 async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Locale; contentType: string; slug: string[]; navGroups: import("@/lib/content").NavGroup[] }) {
-  if (!CONTENT_TYPES.includes(contentType)) notFound();
+  if (!CONTENT_TYPES.includes(contentType as ContentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const item = await getContent(contentType, slug, locale as Locale);
   if (!item) notFound();

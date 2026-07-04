@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ExternalLink, Globe, MessageCircle, Youtube, Kanban } from "lucide-react";
-import { OFFICIAL_LINKS_SECTION } from "@/data/home";
+import { officialLinksSection } from "@/site-data/home.config";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   "Roblox Game Page": Globe,
@@ -16,19 +16,19 @@ export function OfficialLinksSection() {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
-        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{OFFICIAL_LINKS_SECTION.title}</h2>
-        <p className="mt-2 text-sm leading-6 text-white/50">{OFFICIAL_LINKS_SECTION.description}</p>
+        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{officialLinksSection.title}</h2>
+        <p className="mt-2 text-sm leading-6 text-white/50">{officialLinksSection.description}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {OFFICIAL_LINKS_SECTION.links.map((link) => {
+        {officialLinksSection.links.map((link) => {
           const Icon = ICON_MAP[link.title] || ExternalLink;
           return (
             <Link
               key={link.href + link.title}
               href={link.href}
               target={link.external ? "_blank" : undefined}
-              rel={link.external ? "nofollow noopener noreferrer" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
               aria-label={link.ariaLabel}
               className={cardClass}
             >
@@ -36,9 +36,7 @@ export function OfficialLinksSection() {
                 <Icon className="h-5 w-5 text-[hsl(var(--nav-theme-light))]" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-white group-hover:text-[hsl(var(--nav-theme-light))]">
-                  {link.title}
-                </h3>
+                <h3 className="font-bold text-white group-hover:text-[hsl(var(--nav-theme-light))]">{link.title}</h3>
                 <p className="mt-1 text-sm leading-5 text-white/50">{link.description}</p>
               </div>
               <ExternalLink className="h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-0.5 group-hover:text-[hsl(var(--nav-theme-light))]" />

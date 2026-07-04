@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FOOTER, HERO } from "@/data/home";
+import { footerConfig } from "@/site-data/home.config";
+import { siteConfig } from "@/site-data/site.config";
 
 export function Footer({ locale }: { locale: string }) {
   const lp = (href: string) => (locale === "en" ? href : `/${locale}${href}`);
@@ -12,15 +13,15 @@ export function Footer({ locale }: { locale: string }) {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href={lp("/")} className="inline-flex items-center gap-2.5">
               <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-[hsl(var(--nav-theme))] text-sm font-black text-white">
-                HS
+                {siteConfig.logoInitials}
               </span>
-              <span className="text-sm font-bold tracking-wide text-white">{HERO.title}</span>
+              <span className="text-sm font-bold tracking-wide text-white">{siteConfig.siteName}</span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-white/50">{FOOTER.tagline}</p>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-white/50">{footerConfig.tagline}</p>
           </div>
 
           {/* Link columns */}
-          {FOOTER.columns.map((col) => (
+          {footerConfig.columns.map((col) => (
             <div key={col.title}>
               <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/30">
                 {col.title}
@@ -42,7 +43,10 @@ export function Footer({ locale }: { locale: string }) {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
-          <p className="text-xs leading-5 text-white/30">{FOOTER.bottom}</p>
+          <p className="text-xs leading-5 text-white/30">{footerConfig.bottom}</p>
+          {siteConfig.disclaimer && (
+            <p className="mt-2 text-xs leading-5 text-white/20">{siteConfig.disclaimer}</p>
+          )}
         </div>
       </div>
     </footer>

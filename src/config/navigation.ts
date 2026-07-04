@@ -1,18 +1,6 @@
-import { BookOpen, Code2, Flame, Map, Swords, Trophy, Users, Zap, Compass, Package, Link } from "lucide-react";
-
-export const NAVIGATION_CONFIG = [
-  { key: "races", path: "/races", icon: Users, isContentType: true },
-  { key: "bosses", path: "/bosses", icon: Swords, isContentType: true },
-  { key: "guides", path: "/guide", icon: BookOpen, isContentType: true },
-  { key: "codes", path: "/codes", icon: Code2, isContentType: true },
-  { key: "tierList", path: "/tier-list", icon: Trophy, isContentType: true },
-  { key: "maps", path: "/maps", icon: Map, isContentType: true },
-  { key: "skills", path: "/skills", icon: Flame, isContentType: true },
-  { key: "weapons", path: "/weapons", icon: Swords, isContentType: true },
-  { key: "updates", path: "/updates", icon: Zap, isContentType: false },
-  { key: "fruits", path: "/fruits", icon: Compass, isContentType: true },
-  { key: "materials", path: "/materials", icon: Package, isContentType: true },
-  { key: "official-links", path: "/official-links", icon: Link, isContentType: true },
-] as const;
-
-export const CONTENT_TYPES = NAVIGATION_CONFIG.filter((item) => item.isContentType).map((item) => item.path.replace(/^\//, ""));
+/**
+ * @deprecated Import CONTENT_TYPES from @/lib/content instead.
+ * This file exists for backward compatibility only.
+ */
+import { CONTENT_TYPES } from "@/lib/content";
+export { CONTENT_TYPES };

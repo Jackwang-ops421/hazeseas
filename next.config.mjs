@@ -29,31 +29,21 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/beginner-guide",
-        destination: "/guide/haze-seas-beginner-guide",
-        permanent: true,
-      },
-      {
-        source: "/release-date-and-updates",
-        destination: "/guide/haze-seas-release-date-and-updates",
-        permanent: true,
-      },
-      {
-        source: "/fruit-tier-list",
-        destination: "/tier-list/haze-seas-fruit-tier-list",
-        permanent: true,
-      },
-      {
-        source: "/fighting-styles",
-        destination: "/skills/haze-seas-fighting-styles",
-        permanent: true,
-      },
-      {
-        source: "/swords-and-weapons",
-        destination: "/weapons/haze-seas-swords-and-weapons",
-        permanent: true,
-      },
+      // Legacy article shortcuts
+      { source: "/beginner-guide", destination: "/guide/haze-seas-beginner-guide", permanent: true },
+      { source: "/release-date-and-updates", destination: "/guide/haze-seas-release-date-and-updates", permanent: true },
+      { source: "/fruit-tier-list", destination: "/tier-list/haze-seas-fruit-tier-list", permanent: true },
+      { source: "/fighting-styles", destination: "/skills/haze-seas-fighting-styles", permanent: true },
+      { source: "/swords-and-weapons", destination: "/weapons/haze-seas-swords-and-weapons", permanent: true },
+      // Directory consolidation
+      { source: "/styles", destination: "/skills", permanent: true },
+      { source: "/styles/:slug", destination: "/skills/:slug", permanent: true },
+      { source: "/tiers", destination: "/tier-list", permanent: true },
+      { source: "/tiers/:slug", destination: "/tier-list/:slug", permanent: true },
+      { source: "/official", destination: "/official-links", permanent: true },
+      { source: "/official/:slug", destination: "/official-links/:slug", permanent: true },
+      { source: "/progression", destination: "/guide", permanent: true },
+      { source: "/progression/:slug", destination: "/guide/:slug", permanent: true },
     ];
   },
 };

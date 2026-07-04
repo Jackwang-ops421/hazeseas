@@ -1,9 +1,9 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { FAQS } from "@/data/home";
+import { type FAQItem } from "@/site-data/home.config";
 
-export function FaqAccordion() {
+export function FaqAccordion({ items }: { items: FAQItem[] }) {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
@@ -19,9 +19,8 @@ export function FaqAccordion() {
         defaultValue="item-0"
         className="rounded-2xl border border-white/10 bg-slate-900/60"
       >
-        {FAQS.map((faq, index) => (
-          <AccordionItem key={faq.question} value={`item-${index}`} className="border-white/10 px-5"
-          >
+        {items.map((faq, index) => (
+          <AccordionItem key={faq.question} value={`item-${index}`} className="border-white/10 px-5">
             <AccordionTrigger className="text-left text-sm font-semibold text-white hover:text-[hsl(var(--nav-theme-light))] sm:text-base">
               {faq.question}
             </AccordionTrigger>

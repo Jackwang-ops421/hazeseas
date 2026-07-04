@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "bunx tsc --noEmit && next lint",
-    "format": "bunx biome format --write"
+    "format": "bunx biome format --write",
+    "validate:content": "npx tsx scripts/validate-content.ts",
+    "validate:site": "npx tsx scripts/validate-site.ts",
+    "validate": "npm run validate:content && npm run validate:site"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

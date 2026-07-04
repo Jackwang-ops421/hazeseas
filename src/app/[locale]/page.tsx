@@ -1,33 +1,44 @@
 import type { Metadata } from "next";
 import { getMessages } from "next-intl/server";
 import { JsonLd } from "@/components/site";
-import { routing, type Locale } from "@/i18n/routing";
-import en from "@/locales/en.json";
+import { siteConfig, SITE_URL } from "@/site-data/site.config";
+import { faqItems } from "@/site-data/home.config";
 import HomePageClient from "./HomePageClient";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
-
-type Messages = typeof en;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = (await getMessages({ locale })) as Messages;
   return {
-    title: messages.home.meta.title,
-    description: messages.home.meta.description,
-    alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/" } },
-    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: siteUrl, siteName: "Haze Seas Wiki", images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: "Haze Seas Wiki" }] },
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    alternates: {
+      canonical: locale === "en" ? "/" : `/${locale}`,
+      languages: { en: "/" },
+    },
+    openGraph: {
+      title: siteConfig.seo.title,
+      description: siteConfig.seo.description,
+      url: SITE_URL,
+      siteName: siteConfig.siteName,
+      images: [{ url: `${SITE_URL}/images/og-image.png`, width: 1200, height: 630, alt: siteConfig.siteName }],
+    },
   };
 }
 
 export default async function LocaleHomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const messages = (await getMessages({ locale })) as Messages;
-  const webSite = { "@context": "https://schema.org", "@type": "WebSite", name: "Haze Seas Wiki", url: siteUrl, description: messages.home.meta.description };
+
+  const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.siteName,
+    url: SITE_URL,
+    description: siteConfig.seo.description,
+  };
+
   const faqPage = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: messages.home.faq.items.map((item: { question: string; answer: string }) => ({
+    mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },

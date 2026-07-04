@@ -3,43 +3,18 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
-  ChevronDown,
-  Menu,
-  X,
-  Globe,
-  Gift,
-  BookOpen,
-  Compass,
-  Skull,
-  Map,
-  Link as LinkIcon,
-  Zap,
-  Users,
-  Sword,
-  Package,
-  Sun,
+  ChevronDown, Menu, X, Globe, Sun,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { NAV_ITEMS, MORE_ITEMS, MORE_WIKIS, HERO } from "@/data/home";
+import {
+  PRIMARY_NAV,
+  SECONDARY_NAV,
+  MORE_WIKIS_BUTTON,
+  NAV_ICON_MAP,
+} from "@/site-data/nav.config";
+import { siteConfig } from "@/site-data/site.config";
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  Gift,
-  BookOpen,
-  Compass,
-  Skull,
-  Map,
-  Link: LinkIcon,
-  Zap,
-  Users,
-  Sword,
-  Package,
-};
-
-interface HeaderProps {
-  locale: string;
-}
-
-export function Header({ locale }: HeaderProps) {
+export function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -56,25 +31,18 @@ export function Header({ locale }: HeaderProps) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 8);
-    }
-    onScroll();
+    const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/" || pathname === `/${locale}`;
-    return pathname.startsWith(`/${locale}${href}`) || pathname.startsWith(href);
-  };
-
-  const localizedHref = (href: string) => (locale === "en" ? href : `/${locale}${href}`);
+  const lp = (href: string) => (locale === "en" ? href : `/${locale}${href}`);
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" || pathname === `/${locale}` : pathname.startsWith(`/${locale}${href}`);
 
   return (
     <header
@@ -85,24 +53,24 @@ export function Header({ locale }: HeaderProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href={localizedHref("/")} className="flex items-center gap-2.5 shrink-0">
+          <Link href={lp("/")} className="flex items-center gap-2.5 shrink-0">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-[hsl(var(--nav-theme))] text-sm font-black text-white shadow-sm">
-              HS
+              {siteConfig.logoInitials}
             </span>
             <div className="hidden leading-tight sm:block">
-              <span className="block text-sm font-bold tracking-wide text-white">{HERO.title}</span>
+              <span className="block text-sm font-bold tracking-wide text-white">{siteConfig.siteName}</span>
               <span className="block text-[10px] font-medium uppercase tracking-widest text-white/40">Wiki Hub</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-1 lg:flex">
-            {NAV_ITEMS.map((item) => {
-              const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+            {PRIMARY_NAV.map((item) => {
+              const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
               return (
                 <Link
                   key={item.href}
-                  href={localizedHref(item.href)}
+                  href={lp(item.href)}
                   className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
@@ -116,37 +84,39 @@ export function Header({ locale }: HeaderProps) {
             })}
 
             {/* More dropdown */}
-            <div className="relative" ref={moreRef}>
-              <button
-                onClick={() => setMoreOpen((v) => !v)}
-                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                More
-                <ChevronDown className={`h-4 w-4 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
-              </button>
-              {moreOpen && (
-                <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0f0f14] p-2 shadow-2xl">
-                  {MORE_ITEMS.map((item) => {
-                    const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
-                    return (
-                      <Link
-                        key={item.href}
-                        href={localizedHref(item.href)}
-                        onClick={() => setMoreOpen(false)}
-                        className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm transition-colors ${
-                          isActive(item.href)
-                            ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                            : "text-white/70 hover:bg-white/5 hover:text-white"
-                        }`}
-                      >
-                        {Icon && <Icon className="h-4 w-4" />}
-                        {item.label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+            {SECONDARY_NAV.length > 0 && (
+              <div className="relative" ref={moreRef}>
+                <button
+                  onClick={() => setMoreOpen((v) => !v)}
+                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  More
+                  <ChevronDown className={`h-4 w-4 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+                </button>
+                {moreOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0f0f14] p-2 shadow-2xl">
+                    {SECONDARY_NAV.map((item) => {
+                      const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
+                      return (
+                        <Link
+                          key={item.href}
+                          href={lp(item.href)}
+                          onClick={() => setMoreOpen(false)}
+                          className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm transition-colors ${
+                            isActive(item.href)
+                              ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
+                              : "text-white/70 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          {Icon && <Icon className="h-4 w-4" />}
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            )}
           </nav>
 
           {/* Right side */}
@@ -164,11 +134,11 @@ export function Header({ locale }: HeaderProps) {
             </Link>
 
             <Link
-              href={MORE_WIKIS.href}
-              aria-label={MORE_WIKIS.ariaLabel}
+              href={MORE_WIKIS_BUTTON.href}
+              aria-label={MORE_WIKIS_BUTTON.ariaLabel}
               className="hidden items-center gap-1.5 rounded-lg bg-[hsl(var(--nav-theme))] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 lg:inline-flex"
             >
-              {MORE_WIKIS.label}
+              {MORE_WIKIS_BUTTON.label}
             </Link>
 
             <button
@@ -190,12 +160,12 @@ export function Header({ locale }: HeaderProps) {
       >
         <div className="mx-auto max-w-7xl px-4 py-4">
           <nav className="space-y-1">
-            {NAV_ITEMS.map((item) => {
-              const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
+            {PRIMARY_NAV.map((item) => {
+              const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
               return (
                 <Link
                   key={item.href}
-                  href={localizedHref(item.href)}
+                  href={lp(item.href)}
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                     isActive(item.href)
@@ -208,29 +178,31 @@ export function Header({ locale }: HeaderProps) {
                 </Link>
               );
             })}
-            <div className="mt-3 border-t border-white/10 pt-3">
-              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-white/30">
-                More
-              </p>
-              {MORE_ITEMS.map((item) => {
-                const Icon = item.icon ? ICON_MAP[item.icon] || Gift : null;
-                return (
-                  <Link
-                    key={item.href}
-                    href={localizedHref(item.href)}
-                    onClick={() => setMobileOpen(false)}
-                    className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                        : "text-white/70 hover:bg-white/5 hover:text-white"
-                    }`}
-                  >
-                    {Icon && <Icon className="h-4 w-4" />}
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
+            {SECONDARY_NAV.length > 0 && (
+              <>
+                <div className="mt-3 border-t border-white/10 pt-3">
+                  <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-white/30">More</p>
+                  {SECONDARY_NAV.map((item) => {
+                    const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={lp(item.href)}
+                        onClick={() => setMobileOpen(false)}
+                        className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+                          isActive(item.href)
+                            ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
+                            : "text-white/70 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        {Icon && <Icon className="h-4 w-4" />}
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </nav>
         </div>
       </div>
