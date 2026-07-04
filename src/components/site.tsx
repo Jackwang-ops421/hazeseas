@@ -136,15 +136,16 @@ export function TrailerCard({ videoId }: { videoId: string }) {
 
 export function TrailerDialog({ videoId }: { videoId: string }) {
   return (
-    <dialog
+    <div
       id="trailer-dialog"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200"
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm"
+      popover="manual"
       onClick={(e) => {
-        const d = document.getElementById("trailer-dialog") as HTMLDialogElement;
+        const d = document.getElementById("trailer-dialog") as HTMLDivElement;
         if (e.target === d) {
-          d.close();
-          d.classList.add("opacity-0", "pointer-events-none");
-          d.classList.remove("opacity-100", "pointer-events-auto");
+          d.hidePopover();
         }
       }}
     >
@@ -152,22 +153,23 @@ export function TrailerDialog({ videoId }: { videoId: string }) {
         <iframe
           id="trailer-iframe"
           className="aspect-video w-full rounded-xl"
-          allow="autoplay; encrypted-media"
+          allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
         />
         <button
+          id="trailer-close"
           className="absolute -top-10 right-0 text-sm font-medium text-white/80 hover:text-white"
           onClick={() => {
-            const d = document.getElementById("trailer-dialog") as HTMLDialogElement;
-            d.close();
-            d.classList.add("opacity-0", "pointer-events-none");
-            d.classList.remove("opacity-100", "pointer-events-auto");
+            const d = document.getElementById("trailer-dialog") as HTMLDivElement;
+            const f = document.getElementById("trailer-iframe") as HTMLIFrameElement;
+            d.hidePopover();
+            if (f) f.src = "";
           }}
         >
           ✕ Close
         </button>
       </div>
-    </dialog>
+    </div>
   );
 }
 
@@ -179,14 +181,10 @@ export function TrailerButton({ videoId }: { videoId: string }) {
         className="w-full"
         aria-haspopup="dialog"
         onClick={() => {
-          const d = document.getElementById("trailer-dialog") as HTMLDialogElement;
+          const d = document.getElementById("trailer-dialog") as HTMLDivElement;
           const f = document.getElementById("trailer-iframe") as HTMLIFrameElement;
-          if (f) f.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-          if (d) {
-            d.showModal();
-            d.classList.remove("opacity-0", "pointer-events-none");
-            d.classList.add("opacity-100", "pointer-events-auto");
-          }
+          if (f) f.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1`;
+          if (d) d.showPopover();
         }}
       >
         <TrailerCard videoId={videoId} />
