@@ -17,7 +17,7 @@ export function FaqAccordion({ items }: { items: FAQItem[] }) {
         type="single"
         collapsible
         defaultValue="item-0"
-        className="rounded-2xl border border-border bg-card dark:border-white/10 dark:bg-slate-900/60"
+        className="rounded-lg border border-border bg-card dark:border-white/10 dark:bg-slate-900/60"
       >
         {items.map((faq, index) => (
           <AccordionItem key={faq.question} value={`item-${index}`} className="border-border px-5 dark:border-white/10">

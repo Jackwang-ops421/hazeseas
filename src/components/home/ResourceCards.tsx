@@ -7,7 +7,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 const cardClass =
-  "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80";
+  "group relative flex flex-col overflow-hidden rounded-lg border border-border bg-card p-5 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80";
 
 export function ResourceCards({ items }: { items: ResourceModule[] }) {
   return (

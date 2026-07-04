@@ -53,7 +53,7 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
         <Button
           variant="ghost"
           size="sm"
-          className="flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-[hsl(var(--nav-theme))]/50 hover:text-foreground dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:border-white/30 dark:hover:text-white"
+          className="flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:border-[hsl(var(--nav-theme))]/50 hover:text-foreground dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:border-white/30 dark:hover:text-white"
         >
           <Globe className="h-3.5 w-3.5" />
           {LOCALE_LABELS[locale] ?? locale}

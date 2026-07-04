@@ -34,7 +34,7 @@ export function HomeArticleSection({
       </div>
 
       {/* Body paragraphs */}
-      <div className="space-y-4 rounded-2xl border border-border bg-card p-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-slate-900/60 dark:text-white/50">
+      <div className="space-y-4 rounded-lg border border-border bg-card p-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-slate-900/60 dark:text-white/50">
         {body.split("\n\n").map((para, i) => (
           <p key={i}>{para}</p>
         ))}
@@ -45,7 +45,7 @@ export function HomeArticleSection({
         {subsections.map((sub) => (
           <div
             key={sub.title}
-            className="rounded-2xl border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/40"
+            className="rounded-lg border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/40"
           >
             <h3 className="font-bold text-foreground dark:text-white">{sub.title}</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">{sub.body}</p>

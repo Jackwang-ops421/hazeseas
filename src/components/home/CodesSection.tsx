@@ -12,7 +12,7 @@ import {
 } from "@/site-data/home.config";
 
 const cardClass =
-  "rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/30 dark:hover:bg-slate-900/80 sm:p-5";
+  "rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/30 dark:hover:bg-slate-900/80 sm:p-5";
 
 export function CodesSection() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -43,7 +43,7 @@ export function CodesSection() {
         {activeCodes.length > 0 ? activeCodes.map(({ code, status, reward, note }) => (
           <div
             key={code}
-            className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/60 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+            className="flex flex-col gap-3 rounded-lg border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/60 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
           >
             <div className="flex flex-col gap-2">
               <div className="flex flex-wrap items-center gap-2">
@@ -59,7 +59,7 @@ export function CodesSection() {
             </div>
             <button
               onClick={() => handleCopy(code)}
-              className="flex items-center justify-center gap-1.5 rounded-xl border border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground transition hover:border-[hsl(var(--nav-theme))]/50 hover:bg-muted/80 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:bg-white/10 sm:shrink-0"
+              className="flex items-center justify-center gap-1.5 rounded-lg border border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground transition hover:border-[hsl(var(--nav-theme))]/50 hover:bg-muted/80 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:bg-white/10 sm:shrink-0"
               aria-label={`Copy code ${code}`}
             >
               {copied === code ? (
@@ -93,7 +93,7 @@ export function CodesSection() {
 
       {/* Expired codes */}
       {expiredCodes.length > 0 && (
-        <div className="rounded-2xl border border-border bg-muted/50 p-4 dark:border-white/10 dark:bg-slate-900/40">
+        <div className="rounded-lg border border-border bg-muted/50 p-4 dark:border-white/10 dark:bg-slate-900/40">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground dark:text-white/40">Expired Codes</p>
           <p className="mb-3 text-xs text-muted-foreground/60 dark:text-white/30">Expired codes are kept here so players do not waste time testing old milestone codes.</p>
           <div className="flex flex-wrap gap-2">

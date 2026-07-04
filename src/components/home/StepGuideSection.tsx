@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { beginnerSteps } from "@/site-data/home.config";
 
 const cardClass =
-  "flex flex-col gap-3 rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/30 dark:hover:bg-slate-900/80 sm:p-5";
+  "flex flex-col gap-3 rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/30 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/30 dark:hover:bg-slate-900/80 sm:p-5";
 
 interface StepGuideSectionProps {
   title?: string;

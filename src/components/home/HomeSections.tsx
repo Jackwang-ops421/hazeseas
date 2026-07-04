@@ -13,7 +13,7 @@ import { ProgressionSection } from "./ProgressionSection";
 import { type HomeSection } from "@/site-data/home.config";
 
 const cardClass =
-  "rounded-2xl border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/40";
+  "rounded-lg border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/40";
 
 interface HomeSectionsProps {
   sections: HomeSection[];
@@ -30,7 +30,7 @@ function ArticleSection({ section }: { section: HomeSection }) {
       </div>
 
       {section.body && (
-        <div className="space-y-4 rounded-2xl border border-border bg-card p-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-slate-900/60 dark:text-white/50">
+        <div className="space-y-4 rounded-lg border border-border bg-card p-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-slate-900/60 dark:text-white/50">
           {section.body.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}

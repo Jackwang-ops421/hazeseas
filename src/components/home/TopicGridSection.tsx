@@ -17,7 +17,7 @@ interface TopicGridSectionProps {
 }
 
 const cardClass =
-  "group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80 sm:p-5";
+  "group flex flex-col overflow-hidden rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80 sm:p-5";
 
 export function TopicGridSection({ title, description, cards, ctaLabel, ctaHref }: TopicGridSectionProps) {
   return (

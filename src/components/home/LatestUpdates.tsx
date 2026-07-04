@@ -39,7 +39,7 @@ const CATEGORY_ICONS: Record<string, React.ElementType> = {
 };
 
 const cardClass =
-  "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80";
+  "group relative flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80";
 
 interface LatestUpdatesProps {
   /** If not provided, fetches from MDX automatically via getLatestUpdates */
@@ -98,7 +98,7 @@ export function LatestUpdates({ items: propItems }: LatestUpdatesProps) {
         <div className="pt-2 text-center">
           <button
             onClick={() => setShowAll(true)}
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-muted px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-[hsl(var(--nav-theme))]/50 hover:bg-muted/80 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-[hsl(var(--nav-theme))]/50 hover:bg-muted/80 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:bg-white/10"
           >
             Show More Updates <ArrowRight className="h-4 w-4" />
           </button>
