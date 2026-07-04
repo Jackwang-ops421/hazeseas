@@ -19,7 +19,7 @@ function GiftIcon({ className }: { className?: string }) {
 
 export function HeroSection({ data }: { data: HeroConfig }) {
   return (
-    <section className="relative overflow-hidden px-6 pb-8 pt-8 text-center sm:pb-10 sm:pt-10 lg:pb-12">
+    <section id="hero" className="relative overflow-hidden px-6 pb-8 pt-8 text-center sm:pb-10 sm:pt-10 lg:pb-12">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/2 top-0 hidden h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[hsl(var(--nav-theme))]/10 blur-3xl dark:block" />
       </div>
