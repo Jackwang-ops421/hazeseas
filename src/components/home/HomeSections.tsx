@@ -13,7 +13,7 @@ import { ProgressionSection } from "./ProgressionSection";
 import { type HomeSection } from "@/site-data/home.config";
 
 const cardClass =
-  "rounded-2xl border border-white/10 bg-slate-900/40 p-4";
+  "rounded-2xl border border-border bg-card p-4 dark:border-white/10 dark:bg-slate-900/40";
 
 interface HomeSectionsProps {
   sections: HomeSection[];
@@ -23,14 +23,14 @@ function ArticleSection({ section }: { section: HomeSection }) {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
-        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{section.title}</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-foreground dark:text-white sm:text-3xl">{section.title}</h2>
         {section.description && (
-          <p className="mt-2 text-sm leading-6 text-white/50">{section.description}</p>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">{section.description}</p>
         )}
       </div>
 
       {section.body && (
-        <div className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm leading-7 text-white/50">
+        <div className="space-y-4 rounded-2xl border border-border bg-card p-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-slate-900/60 dark:text-white/50">
           {section.body.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}
@@ -41,8 +41,8 @@ function ArticleSection({ section }: { section: HomeSection }) {
         <div className="space-y-4">
           {section.subsections.map((sub) => (
             <div key={sub.title} className={cardClass}>
-              <h3 className="font-bold text-white">{sub.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-white/50">{sub.body}</p>
+              <h3 className="font-bold text-foreground dark:text-white">{sub.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">{sub.body}</p>
             </div>
           ))}
         </div>
@@ -51,7 +51,7 @@ function ArticleSection({ section }: { section: HomeSection }) {
       {section.ctaLabel && section.ctaHref && (
         <Link
           href={section.ctaHref}
-          className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme-light))] hover:underline"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline dark:text-[hsl(var(--nav-theme-light))]"
         >
           {section.ctaLabel} <ChevronRight className="h-4 w-4" />
         </Link>

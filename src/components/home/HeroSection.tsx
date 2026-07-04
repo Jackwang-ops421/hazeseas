@@ -21,19 +21,19 @@ export function HeroSection({ data }: { data: HeroConfig }) {
   return (
     <section className="relative overflow-hidden px-6 pb-8 pt-8 text-center sm:pb-10 sm:pt-10 lg:pb-12">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[hsl(var(--nav-theme))]/10 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[hsl(var(--nav-theme))]/10 blur-3xl dark:bg-[hsl(var(--nav-theme))]/10" />
       </div>
 
       <div className="relative mx-auto max-w-3xl space-y-5">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-[hsl(var(--nav-theme-light))]">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-[hsl(var(--nav-theme))] dark:border-white/10 dark:bg-white/5 dark:text-[hsl(var(--nav-theme-light))]">
           {data.badge}
         </div>
 
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
           {data.title}
         </h1>
 
-        <p className="mx-auto max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
+        <p className="mx-auto max-w-2xl text-base leading-7 text-muted-foreground dark:text-white/60 sm:text-lg">
           {data.description}
         </p>
 
@@ -49,7 +49,7 @@ export function HeroSection({ data }: { data: HeroConfig }) {
             href={data.secondaryCta.href}
             target={data.secondaryCta.external ? "_blank" : undefined}
             rel={data.secondaryCta.external ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-muted px-6 py-3 text-sm font-semibold text-foreground transition hover:border-[hsl(var(--nav-theme))]/50 hover:bg-muted/80 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-white/40 dark:hover:bg-white/10"
           >
             {data.secondaryCta.label} <ArrowRight className="h-4 w-4" />
           </Link>
@@ -58,9 +58,9 @@ export function HeroSection({ data }: { data: HeroConfig }) {
         {/* Stats row */}
         <div className="mx-auto grid max-w-2xl grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
           {data.stats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl bg-white/[0.03] p-4 text-center">
-              <p className="text-lg font-bold text-[hsl(var(--nav-theme-light))] sm:text-xl">{stat.value}</p>
-              <p className="text-xs text-white/40">{stat.label}</p>
+            <div key={stat.label} className="rounded-2xl bg-muted/50 p-4 text-center dark:bg-white/[0.03]">
+              <p className="text-lg font-bold text-[hsl(var(--nav-theme))] dark:text-[hsl(var(--nav-theme-light))] sm:text-xl">{stat.value}</p>
+              <p className="text-xs text-muted-foreground dark:text-white/40">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -68,7 +68,7 @@ export function HeroSection({ data }: { data: HeroConfig }) {
         {/* Trailer */}
         {data.trailerVideoId && (
           <div className="relative mx-auto max-w-md pt-2 sm:max-w-lg">
-            <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
+            <div className="overflow-hidden rounded-2xl border border-border shadow-xl dark:border-white/10 dark:shadow-2xl dark:shadow-black/50">
               <TrailerButton videoId={data.trailerVideoId} />
             </div>
           </div>

@@ -6,7 +6,7 @@ export function Footer({ locale }: { locale: string }) {
   const lp = (href: string) => (locale === "en" ? href : `/${locale}${href}`);
 
   return (
-    <footer className="border-t border-white/10 bg-black/60">
+    <footer className="border-t border-border bg-muted dark:border-white/10 dark:bg-black/60">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -15,15 +15,15 @@ export function Footer({ locale }: { locale: string }) {
               <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-[hsl(var(--nav-theme))] text-sm font-black text-white">
                 {siteConfig.logoInitials}
               </span>
-              <span className="text-sm font-bold tracking-wide text-white">{siteConfig.siteName}</span>
+              <span className="text-sm font-bold tracking-wide text-foreground dark:text-white">{siteConfig.siteName}</span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-white/50">{footerConfig.tagline}</p>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-muted-foreground dark:text-white/50">{footerConfig.tagline}</p>
           </div>
 
           {/* Link columns */}
           {footerConfig.columns.map((col) => (
             <div key={col.title}>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/30">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60 dark:text-white/30">
                 {col.title}
               </h3>
               <ul className="space-y-2.5">
@@ -31,7 +31,7 @@ export function Footer({ locale }: { locale: string }) {
                   <li key={link.href}>
                     <Link
                       href={lp(link.href)}
-                      className="text-sm text-white/60 transition-colors hover:text-white"
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground dark:text-white/60 dark:hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -42,10 +42,10 @@ export function Footer({ locale }: { locale: string }) {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6">
-          <p className="text-xs leading-5 text-white/30">{footerConfig.bottom}</p>
+        <div className="mt-12 border-t border-border pt-6 dark:border-white/10">
+          <p className="text-xs leading-5 text-muted-foreground/60 dark:text-white/30">{footerConfig.bottom}</p>
           {siteConfig.disclaimer && (
-            <p className="mt-2 text-xs leading-5 text-white/20">{siteConfig.disclaimer}</p>
+            <p className="mt-2 text-xs leading-5 text-muted-foreground/40 dark:text-white/20">{siteConfig.disclaimer}</p>
           )}
         </div>
       </div>

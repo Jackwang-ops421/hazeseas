@@ -48,8 +48,8 @@ export function Header({ locale }: { locale: string }) {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl transition-shadow ${
-        scrolled ? "shadow-lg shadow-black/20" : ""
+      className={`sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-xl transition-shadow dark:border-white/10 dark:bg-black/80 ${
+        scrolled ? "shadow-sm dark:shadow-lg dark:shadow-black/20" : ""
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -60,8 +60,8 @@ export function Header({ locale }: { locale: string }) {
               {siteConfig.logoInitials}
             </span>
             <div className="hidden leading-tight sm:block">
-              <span className="block text-sm font-bold tracking-wide text-white">{siteConfig.siteName}</span>
-              <span className="block text-[10px] font-medium uppercase tracking-widest text-white/40">Wiki Hub</span>
+              <span className="block text-sm font-bold tracking-wide text-foreground dark:text-white">{siteConfig.siteName}</span>
+              <span className="block text-[10px] font-medium uppercase tracking-widest text-muted-foreground dark:text-white/40">Wiki Hub</span>
             </div>
           </Link>
 
@@ -75,8 +75,8 @@ export function Header({ locale }: { locale: string }) {
                   href={lp(item.href)}
                   className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive(item.href)
-                      ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                      : "text-white/70 hover:bg-white/5 hover:text-white"
+                      ? "bg-muted text-[hsl(var(--nav-theme))] dark:bg-white/5 dark:text-[hsl(var(--nav-theme-light))]"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
                   }`}
                 >
                   {Icon && <Icon className="h-4 w-4" />}
@@ -90,13 +90,13 @@ export function Header({ locale }: { locale: string }) {
               <div className="relative" ref={moreRef}>
                 <button
                   onClick={() => setMoreOpen((v) => !v)}
-                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                  className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
                 >
                   More
                   <ChevronDown className={`h-4 w-4 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
                 </button>
                 {moreOpen && (
-                  <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0f0f14] p-2 shadow-2xl">
+                  <div className="absolute right-0 top-full mt-2 w-56 rounded-2xl border border-border bg-popover p-2 shadow-2xl dark:border-white/10 dark:bg-[#0f0f14]">
                     {SECONDARY_NAV.map((item) => {
                       const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
                       return (
@@ -106,8 +106,8 @@ export function Header({ locale }: { locale: string }) {
                           onClick={() => setMoreOpen(false)}
                           className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm transition-colors ${
                             isActive(item.href)
-                              ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                              : "text-white/70 hover:bg-white/5 hover:text-white"
+                              ? "bg-muted text-[hsl(var(--nav-theme))] dark:bg-white/5 dark:text-[hsl(var(--nav-theme-light))]"
+                              : "text-muted-foreground hover:bg-muted hover:text-foreground dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
                           }`}
                         >
                           {Icon && <Icon className="h-4 w-4" />}
@@ -136,7 +136,7 @@ export function Header({ locale }: { locale: string }) {
             </Link>
 
             <button
-              className="rounded-lg p-2 text-white/70 transition-colors hover:bg-white/5 lg:hidden"
+              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-muted dark:text-white/70 dark:hover:bg-white/5 lg:hidden"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -148,7 +148,7 @@ export function Header({ locale }: { locale: string }) {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-200 lg:hidden ${
+        className={`overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl transition-all duration-200 dark:border-white/10 dark:bg-black/95 lg:hidden ${
           mobileOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -163,8 +163,8 @@ export function Header({ locale }: { locale: string }) {
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                     isActive(item.href)
-                      ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                      : "text-white/70 hover:bg-white/5 hover:text-white"
+                      ? "bg-muted text-[hsl(var(--nav-theme))] dark:bg-white/5 dark:text-[hsl(var(--nav-theme-light))]"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
                   }`}
                 >
                   {Icon && <Icon className="h-4 w-4" />}
@@ -174,8 +174,8 @@ export function Header({ locale }: { locale: string }) {
             })}
             {SECONDARY_NAV.length > 0 && (
               <>
-                <div className="mt-3 border-t border-white/10 pt-3">
-                  <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-white/30">More</p>
+                <div className="mt-3 border-t border-border pt-3 dark:border-white/10">
+                  <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60 dark:text-white/30">More</p>
                   {SECONDARY_NAV.map((item) => {
                     const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
                     return (
@@ -185,8 +185,8 @@ export function Header({ locale }: { locale: string }) {
                         onClick={() => setMobileOpen(false)}
                         className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                           isActive(item.href)
-                            ? "bg-white/5 text-[hsl(var(--nav-theme-light))]"
-                            : "text-white/70 hover:bg-white/5 hover:text-white"
+                            ? "bg-muted text-[hsl(var(--nav-theme))] dark:bg-white/5 dark:text-[hsl(var(--nav-theme-light))]"
+                            : "text-muted-foreground hover:bg-muted hover:text-foreground dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
                         }`}
                       >
                         {Icon && <Icon className="h-4 w-4" />}

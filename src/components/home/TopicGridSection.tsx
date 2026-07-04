@@ -17,14 +17,14 @@ interface TopicGridSectionProps {
 }
 
 const cardClass =
-  "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-slate-900/80 sm:p-5";
+  "group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:border-[hsl(var(--nav-theme))]/50 hover:-translate-y-1 hover:bg-card/80 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-[hsl(var(--nav-theme))]/50 dark:hover:bg-slate-900/80 sm:p-5";
 
 export function TopicGridSection({ title, description, cards, ctaLabel, ctaHref }: TopicGridSectionProps) {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
-        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
-        <p className="mt-2 text-sm leading-6 text-white/50">{description}</p>
+        <h2 className="text-2xl font-bold tracking-tight text-foreground dark:text-white sm:text-3xl">{title}</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">{description}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -33,15 +33,15 @@ export function TopicGridSection({ title, description, cards, ctaLabel, ctaHref 
             <div className="mb-3">
               <Badge
                 variant="outline"
-                className="border-[hsl(var(--nav-theme))]/40 bg-[hsl(var(--nav-theme))]/10 text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--nav-theme-light))]"
+                className="border-[hsl(var(--nav-theme))]/40 bg-[hsl(var(--nav-theme))]/10 text-[10px] font-semibold uppercase tracking-wider text-[hsl(var(--nav-theme))] dark:text-[hsl(var(--nav-theme-light))]"
               >
                 {card.badge}
               </Badge>
             </div>
-            <h3 className="font-bold text-white group-hover:text-[hsl(var(--nav-theme-light))]">
+            <h3 className="font-bold text-foreground group-hover:text-[hsl(var(--nav-theme))] dark:text-white dark:group-hover:text-[hsl(var(--nav-theme-light))]">
               {card.title}
             </h3>
-            <div className="mt-auto flex items-center gap-1 pt-4 text-xs font-semibold text-[hsl(var(--nav-theme-light))]">
+            <div className="mt-auto flex items-center gap-1 pt-4 text-xs font-semibold text-[hsl(var(--nav-theme))] dark:text-[hsl(var(--nav-theme-light))]">
               Explore <ChevronRight className="h-3 w-3 transition group-hover:translate-x-0.5" />
             </div>
           </Link>
@@ -50,7 +50,7 @@ export function TopicGridSection({ title, description, cards, ctaLabel, ctaHref 
 
       <Link
         href={ctaHref}
-        className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme-light))] hover:underline"
+        className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline dark:text-[hsl(var(--nav-theme-light))]"
       >
         {ctaLabel} <ChevronRight className="h-4 w-4" />
       </Link>
