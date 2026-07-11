@@ -124,4 +124,7 @@ grep -E '"name".*".*"' {{PROJECT_PATH}}/src/locales/en.json | grep -v "{{GAME_NA
 # 验证 JSON 合法性
 python3 -c "import json; json.load(open('{{PROJECT_PATH}}/src/locales/en.json'))"
 ```
-数据同步约束：所有同时出现在 src/locales/en.json 和 src/site-data/*.ts 的字段（如 hero/badge/stats/CTA、footer tagline、codes 列表、faq、site description/keywords），两文件必须保持完全一致。*.ts 文件没有 i18n 要求但需同步更新到当前游戏的硬编码数据。
+数据同步约束：所有同时出现在 src/locales/en.json 和 src/site-data/*.ts 的字段
+（hero/badge/stats/CTA、footer tagline、codes 列表、faq、site description/keywords、
+**首页 resourceModules 数组与 home.explore.modules 数组**），两文件必须保持完全一致。
+*.ts 文件没有 i18n 要求但需同步更新到当前游戏的硬编码数据。

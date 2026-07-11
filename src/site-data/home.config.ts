@@ -124,46 +124,46 @@ export const resourceModules: ResourceModule[] = [
     icon: "Code2",
   },
   {
-    title: "Fruit Tier List",
+    title: "Haze Seas Trello and Discord",
+    href: "/community",
+    description: "Quick access hub for Haze Seas Trello, Discord, and other official community resources.",
+    icon: "Link",
+  },
+  {
+    title: "Haze Seas Tier List",
+    href: "/tier-list",
+    description: "Compare fruits, races, and swords by tier for grinding, boss fights, and PvP.",
+    icon: "Trophy",
+  },
+  {
+    title: "Haze Seas Fruits",
     href: "/fruits",
-    description: "Compare fruits by grinding, boss fights, mobility, and beginner comfort.",
+    description: "Browse all 35 Devil Fruits by rarity, cost, and one-hour world-spawn timer.",
     icon: "Compass",
   },
   {
-    title: "Beginner Guide",
+    title: "Haze Seas Beginner Guide",
     href: "/guide",
-    description: "Start Haze Seas with codes, early routes, fruit decisions, and safe progression steps.",
+    description: "Start Haze Seas with codes, first-hour routes, fruit decisions, and safe progression steps.",
     icon: "BookOpen",
   },
   {
-    title: "Leveling Guide",
-    href: "/guide#leveling",
-    description: "Plan progression around farming sessions, maps, bosses, upgrades, and update checks.",
-    icon: "TrendingUp",
-  },
-  {
-    title: "Boss Guide",
-    href: "/bosses",
-    description: "Use boss pages for route planning, fight preparation, and verified drop tracking.",
-    icon: "Skull",
-  },
-  {
-    title: "Map Guide",
-    href: "/maps",
-    description: "Understand island routes, locations, progression paths, and where to go next.",
-    icon: "Map",
-  },
-  {
-    title: "Fighting Styles",
-    href: "/skills",
-    description: "Compare fighting style unlock intent, combat flow, and progression value.",
+    title: "Haze Seas Haki Guide",
+    href: "/haki",
+    description: "Unlock and upgrade Armament, Observation, and Conquerors Haki with trainer requirements.",
     icon: "Zap",
   },
   {
-    title: "Races",
-    href: "/races",
-    description: "Learn race reroll intent, beginner notes, and how to avoid wasting race spins.",
-    icon: "Users",
+    title: "Haze Seas Bosses and Drops",
+    href: "/bosses",
+    description: "Find boss locations, summon requirements, respawn windows, and verified drops.",
+    icon: "Skull",
+  },
+  {
+    title: "Haze Seas Sea 2 and Sea 3",
+    href: "/guide",
+    description: "Follow the Sea 1 to Sea 2 to Sea 3 unlock path with required levels and quest steps.",
+    icon: "Map",
   },
 ];
 
@@ -172,7 +172,7 @@ export const resourceModules: ResourceModule[] = [
 export const codesSection = {
   title: "Haze Seas Codes",
   description:
-    "Haze Seas codes are one of the fastest things to check before you start playing. They can give useful rewards such as money, gems, race spins, or EXP boosts, depending on the current update.",
+    "Use the latest working Haze Seas codes for Race Spins, Gems, Cash, and timed EXP boosts. Haze Seas was formerly Haze Piece, so this section also serves legacy code searches while clearly separating active and expired entries.",
   note: "Code availability can change after updates. Redeem codes exactly as shown and check the official community links when a code stops working.",
   cta: { label: "View Full Codes Guide", href: "/codes" },
 };
@@ -216,34 +216,34 @@ export const expiredCodes: string[] = [];
 // ─── Official Links ──────────────────────────────────────────────────────────
 
 export const officialLinksSection = {
-  title: "Haze Seas Official Links",
+  title: "Haze Seas Trello and Discord",
   description:
-    "Use verified Haze Seas resource links to avoid fake mirrors, unsafe script pages, and outdated community posts.",
+    "Open the verified Haze Seas Trello, Discord, Roblox experience, and developer channel without relying on fan-made wikis. These official links also help players who still search for the game under its former Haze Piece name.",
   links: [
     {
-      title: "Roblox Game Page",
-      description: "Verified game access link.",
+      title: "Roblox Game",
+      description: "The official Haze Seas experience page by Haze Studios, currently labeled RELEASE + UPD 1.",
       href: "https://www.roblox.com/games/6918802270/Haze-Seas",
       external: true,
       ariaLabel: "Play Haze Seas on Roblox",
     },
     {
       title: "Official Discord",
-      description: "Official Haze Studios community with code drops and updates.",
+      description: "Developer announcements, hotfixes, codes, Fruit stock updates, player questions, and bug reports.",
       href: "https://discord.com/invite/hazeseas",
       external: true,
       ariaLabel: "Official Haze Seas Discord",
     },
     {
-      title: "Official YouTube",
-      description: "Official Haze Studios channel with trailers and showcases.",
+      title: "Haze Studios YouTube",
+      description: "Official trailers, showcases, rework previews, and update videos from the developer.",
       href: "https://www.youtube.com/@RealHazeStudios",
       external: true,
       ariaLabel: "Official Haze Studios YouTube",
     },
     {
-      title: "Trello Board",
-      description: "Official Haze Seas resource board with game updates and guides.",
+      title: "Official Trello",
+      description: "Game information, codes, controls, chest and mastery systems, sea events, Fruits, Swords, Fighting Styles, Races, NPCs, Bosses, and locations.",
       href: "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
       external: true,
       ariaLabel: "Official Haze Seas Trello Board",
