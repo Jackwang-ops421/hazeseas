@@ -198,61 +198,20 @@ export const codeSteps: CodeStep[] = [
 
 export const activeCodes: ActiveCode[] = [
   {
-    code: "RELEASE",
+    code: "OKUCHI",
     status: "Active",
-    reward: "60 minutes of double EXP",
-    note: "Use before a grinding session.",
+    reward: "5 Race Spins",
+    note: "Verified as of Jul 10, 2026 — may expire after updates.",
   },
   {
-    code: "FREECASH",
+    code: "Sub2XenoTy",
     status: "Active",
-    reward: "50,000 Money",
-    note: "Useful for early purchases and progression.",
-  },
-  {
-    code: "FREEGEMS",
-    status: "Active",
-    reward: "50 Gems",
-    note: "Use gems carefully before committing to upgrades or rerolls.",
-  },
-  {
-    code: "PATCH",
-    status: "Active",
-    reward: "25 Gems and 15 minutes of double EXP",
-    note: "Best redeemed when you are ready to play.",
-  },
-  {
-    code: "SUBSCRIBETOHAZEYT",
-    status: "Active",
-    reward: "50,000 Money",
-    note: "Enter exactly as shown.",
-  },
-  {
-    code: "HAZESEAS2026",
-    status: "Active",
-    reward: "10 Race Spins",
-    note: "Useful if you are planning race rerolls.",
-  },
-  {
-    code: "GROUPONLY",
-    status: "Active",
-    reward: "10,000 Cash",
-    note: "Requires joining the Roblox group.",
+    reward: "20 minutes of 2x EXP",
+    note: "Verified as of Jul 10, 2026 — may expire after updates.",
   },
 ];
 
-export const expiredCodes = [
-  "GEAR5TH",
-  "WOW325KMLG",
-  "GOGOGAGA",
-  "XMAS2023",
-  "VALENTINES2024",
-  "NEXT300KCOOL",
-  "NEXTAT350KLIKES",
-  "LETSGO375KHAZE",
-  "425KNEXTCODE123",
-  "LETSGET450K2024",
-];
+export const expiredCodes: string[] = [];
 
 // ─── Official Links ──────────────────────────────────────────────────────────
 
@@ -345,55 +304,47 @@ export const progressionCards: ProgressionCard[] = [
 
 export const faqItems: FAQItem[] = [
   {
-    question: "What is Haze Seas Hub?",
-    answer: "Haze Seas Hub is a fan-made guide website for Haze Seas players. It organizes codes, beginner guides, fruits, bosses, maps, races, fighting styles, weapons, materials, and official resource links in one place.",
+    question: "What is Haze Seas?",
+    answer: "Haze Seas is a free Roblox Action RPG developed by [HS] Haze Studios and launched as a major rebuild of Haze Piece on June 30, 2026. Players explore islands, master Devil Fruits and Haki, collect weapons, and challenge bosses across three seas.",
   },
   {
-    question: "Is Haze Seas Hub official?",
-    answer: "No. Haze Seas Hub is not affiliated with Roblox, Haze Seas, or the game developers. It is an unofficial fan-made resource site that links to verified official resources when available.",
+    question: "Is Haze Seas free to play?",
+    answer: "Yes, Haze Seas is a free-to-play Roblox experience available on PC, Mobile, and Xbox. You can join via the official Roblox page and start playing immediately.",
   },
   {
-    question: "Where can I find Haze Seas codes?",
-    answer: "Use the Haze Seas Codes page for active codes, expired codes, and redemption steps. If a code fails, rejoin a newer server and check the official community links before assuming the code is expired.",
+    question: "How do I redeem codes in Haze Seas?",
+    answer: "Open the Roblox game, find the in-game Shop or Codes menu, enter the code exactly as shown, and confirm. Rewards such as EXP boosts, Race Spins, Gems, and Stat Refunds are added to your account instantly.",
   },
   {
     question: "What is the best fruit in Haze Seas?",
-    answer: "The best fruit depends on your goal. For beginners, compare fruits by grinding comfort, boss usefulness, mobility, and ease of use instead of rarity alone.",
+    answer: "Dragon, Dough, Gum with Gear 4 or Gear 5, Darkness, Phoenix, Electricity, and Tremor are the most commonly cited S-tier Fruits in Haze Seas for grinding, bosses, and PvP.",
   },
   {
-    question: "How should beginners start Haze Seas?",
-    answer: "Beginners should redeem active codes, learn the first route, choose a simple fruit path, understand maps, and avoid chasing bosses or materials without a clear progression goal.",
+    question: "How do I progress from Sea 1 to Sea 2 and Sea 3?",
+    answer: "Reach Level 2200 to unlock Sea 2, then find the Dimensional Sailor at Starter Island docks, collect the Poneglyph Scroll in Rocky Pillars cave, and return it to teleport to Sea 2. For Sea 3, reach Level 4200 and defeat the Red Emperor at Flower Capital.",
   },
   {
-    question: "Where do I find bosses and map routes?",
-    answer: "Use the Boss Guide and Map Guide together. Boss pages help with fight planning, while map pages help you understand routes, islands, and where to go next.",
-  },
-  {
-    question: "Does this site provide scripts or hacks?",
-    answer: "No. Haze Seas Hub does not provide scripts, hacks, exploits, auto farm tools, injectors, or cheating tools. The site only provides safe guide content and official resource links.",
-  },
-  {
-    question: "What should be updated first on this wiki?",
-    answer: "Codes should be updated first because they expire often. After that, update fruits, beginner progression, bosses, maps, materials, and official links whenever the game changes.",
+    question: "Where do I find active codes for Haze Seas?",
+    answer: "The Codes page on this wiki tracks Haze Seas codes from the official Roblox description, official Discord announcements, and official Haze Studios YouTube channel. Always verify codes in-game before relying on them.",
   },
 ];
 
 // ─── Final CTA ───────────────────────────────────────────────────────────────
 
 export const finalCtaConfig: FinalCtaConfig = {
-  title: "Ready to Explore Haze Seas?",
-  description: "Start with verified codes, beginner progression, fruits, maps, bosses, and official resource links.",
-  primary: { label: "Get Codes", href: "/codes" },
-  secondary: { label: "Start Beginner Guide", href: "/guide" },
+  title: "Ready to Master Haze Seas?",
+  description: "From your first quests and code rewards to Fruit awakenings, Haki training, boss drops, and Sea 3 progression, this fan-made wiki keeps your next objective clear.",
+  primary: { label: "Read the Beginner Guide", href: "/beginner-guide" },
+  secondary: { label: "Play Haze Seas on Roblox", href: "https://www.roblox.com/games/6918802270/Haze-Seas" },
 };
 
 // ─── Footer ──────────────────────────────────────────────────────────────────
 
 export const footerConfig = {
-  tagline: "Your fan-made resource hub for Haze Seas codes, fruits, races, bosses, maps, fighting styles, weapons, materials, and beginner guides.",
+  tagline: "Haze Seas Wiki is an independent, fan-made guide for Haze Seas and returning Haze Piece players. It covers active codes, Devil Fruits, tier lists, Haki, bosses, weapons, and Sea 1–3 progression. It is not affiliated with Haze Studios or Roblox.",
   columns: FOOTER_COLUMNS,
   bottom:
-    "© 2026 Haze Seas Hub. Not affiliated with Roblox Corporation or the Haze Seas developers. Unofficial fan-made resource website.",
+    "© 2026 Haze Seas Hub. Not affiliated with Haze Studios or Roblox Corporation.",
   moreWikis: MORE_WIKIS_BUTTON,
 };
 

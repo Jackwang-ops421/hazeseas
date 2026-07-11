@@ -54,9 +54,9 @@ export const siteConfig: SiteConfig = {
   genre: "Action RPG",
   officialOldName: "Haze Piece",
   description:
-    "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides.",
+    "Haze Seas Wiki for active codes, Devil Fruits, tier lists, Haki, bosses, and Sea 1–3 routes, updated for new players and returning Haze Piece fans.",
   disclaimer:
-    "Not affiliated with Roblox Corporation or the Haze Seas developers. Unofficial fan-made resource website.",
+    "Not affiliated with Haze Studios or Roblox. Unofficial fan-made guide.",
   logoInitials: "HS",
   officialLinks: {
     game: "https://www.roblox.com/games/6918802270/Haze-Seas",
@@ -68,18 +68,19 @@ export const siteConfig: SiteConfig = {
     trello: "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
   },
   seo: {
-    title: "Haze Seas Wiki — Codes, Fruits & Beginner Guide",
+    title: "Haze Seas Wiki — Codes, Fruits & Haze Piece Guides",
     description:
-      "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides.",
+      "Haze Seas Wiki for active codes, Devil Fruits, tier lists, Haki, bosses, and Sea 1–3 routes, updated for new players and returning Haze Piece fans.",
     keywords: [
       "Haze Seas",
+      "Haze Piece",
       "Roblox",
       "codes",
       "fruits",
       "tier list",
-      "wiki",
-      "Trello",
-      "Discord",
+      "Haki",
+      "bosses",
+      "Sea 3",
     ],
   },
 };
