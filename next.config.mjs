@@ -45,6 +45,7 @@ const nextConfig = {
       { source: "/official/:slug", destination: "/official-links/:slug", permanent: true },
       { source: "/progression", destination: "/guide", permanent: true },
       { source: "/progression/:slug", destination: "/guide/:slug", permanent: true },
+      { source: "/codes/haze-seas-codes", destination: "/codes", permanent: true },
       // Legacy catch-all redirects for removed categories
       { source: "/maps", destination: "/guide", permanent: true },
       { source: "/maps/:slug", destination: "/guide/:slug", permanent: true },

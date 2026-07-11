@@ -85,7 +85,7 @@
           "badge": "Updated",
           "title": "Active Codes",
           "description": "All working Haze Seas codes with rewards and redemption steps.",
-          "href": "/codes/haze-seas-codes"
+          "href": "/codes"
         },
         {
           "badge": "Beginner",
@@ -404,6 +404,89 @@
   "bosses": {
     "overviewTitle": "Bosses",
     "overviewDescription": "Haze Seas boss guides and routes for island bosses and super bosses."
+  },
+  "codes": {
+    "meta": {
+      "title": "Haze Seas Codes (July 2026) — Active & Verified",
+      "description": "Use the latest Haze Seas codes for free Race Spins, Stat Refunds, Cash, Gems, and 2x EXP. Updated July 11, 2026 for returning Haze Piece players.",
+      "h1": "Haze Seas Codes (July 2026)",
+      "lastUpdated": "2026-07-11",
+      "intro": "Haze Seas codes can grant Race Spins, a Stat Refund, Cash, Gems, and timed 2x EXP. Haze Seas was formerly Haze Piece; enter every code with the exact capitalization shown below.",
+      "verificationNotice": "Last checked: July 11, 2026. Codes are case-sensitive and can expire without notice. HAZESEAS2026 may work only in newly started servers.",
+      "breadcrumb": "Home > Haze Seas Codes"
+    },
+    "active": [
+      { "code": "STATREFUND", "reward": "1 Stat Refund", "status": "New", "badgeVariant": "new" },
+      { "code": "DRAGONUPD", "reward": "5 Race Spins", "status": "New", "badgeVariant": "new" },
+      { "code": "OKUCHI", "reward": "5 Race Spins", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2XenoTy", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2CaptainMaui", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "PATCH", "reward": "25 Gems and 15 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "RELEASE", "reward": "60 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "FREECASH", "reward": "50,000 Cash", "status": "Active", "badgeVariant": "active" },
+      { "code": "FREEGEMS", "reward": "50 Gems", "status": "Active", "badgeVariant": "active" },
+      { "code": "SUBSCRIBETOHAZEYT", "reward": "50,000 Cash", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2Nikkolapz", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2BadiTubes", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2BrosSiam", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "Sub2BuilderboyTV", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
+      { "code": "HAZESEAS2026", "reward": "10 Race Spins", "status": "Conditional", "badgeVariant": "conditional", "note": "May work only in newly started servers." }
+    ],
+    "copyButton": {
+      "ariaLabelTemplate": "Copy {CODE} code",
+      "successLabel": "Copied"
+    },
+    "redemption": {
+      "h2": "How to redeem Haze Seas codes",
+      "robloxLinkLabel": "Open Haze Seas on Roblox",
+      "robloxUrl": "https://www.roblox.com/games/6918802270/Haze-Seas",
+      "steps": [
+        "Open Haze Seas on Roblox and load your character.",
+        "Press the Menu button at the bottom left of the screen.",
+        "Select the white Treasure Chest or Gift icon.",
+        "Paste the code into the Enter Code field with the exact capitalization shown above.",
+        "Press the green Redeem button to claim the reward."
+      ]
+    },
+    "troubleshooting": {
+      "h2": "Why is a Haze Seas code not working?",
+      "items": [
+        { "title": "Invalid Code", "body": "Check capitalization and remove spaces before or after the code." },
+        { "title": "Already Redeemed", "body": "Each code can normally be used once per Roblox account." },
+        { "title": "No Reward Appeared", "body": "Rejoin a newly started server and try once more. If the code still fails, it may have expired." }
+      ]
+    },
+    "expired": {
+      "h2": "Expired Haze Seas codes",
+      "codes": [
+        "275KNEXTLETSGO", "XMAS2023", "NEXTCODEAT400KLIKES", "NEXT300KCOOL", "NEXTAT350KLIKES",
+        "VALENTINES2024", "HAZEPIECE23", "WOW325KMLG", "GOGOGAGA", "LETSGET450K2024",
+        "LETSGO375KHAZE", "425KNEXTCODE123", "GROUPONLY"
+      ]
+    },
+    "faq": [
+      {
+        "question": "Are Haze Seas and Haze Piece codes the same?",
+        "answer": "Haze Seas is the rebuilt version of Haze Piece. Use the current Haze Seas list above; old Haze Piece codes belong in the expired section unless the developers reactivate them."
+      },
+      {
+        "question": "Are Haze Seas codes case-sensitive?",
+        "answer": "Yes. Copy the capitalization exactly and remove any spaces before or after the code."
+      },
+      {
+        "question": "Why does HAZESEAS2026 fail?",
+        "answer": "It may work only in newly started servers or may have expired. Rejoin once and try again; if it still fails, treat it as inactive."
+      }
+    ],
+    "sidebarCodes": [
+      { "code": "STATREFUND", "reward": "1 Stat Refund" },
+      { "code": "DRAGONUPD", "reward": "5 Race Spins" }
+    ],
+    "officialSources": [
+      { "label": "Official Roblox Game", "url": "https://www.roblox.com/games/6918802270/Haze-Seas" },
+      { "label": "Official Haze Seas Trello", "url": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello" },
+      { "label": "Official Haze Studios Discord", "url": "https://discord.com/invite/hazeseas" }
+    ]
   },
   "shared": {
     "wikiNavigation": "Wiki Navigation",

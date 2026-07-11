@@ -23,7 +23,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/about",
   ];
 
-  const staticPaths = ["/", ...categoryDirs, ...legalPaths];
+  const staticPaths = [
+    "/",
+    "/codes",
+    "/trello-discord",
+    "/sea-2-sea-3",
+    ...categoryDirs,
+    ...legalPaths,
+  ];
 
   // Dynamic paths: scan actual MDX content files
   const contentPaths = await getAllContentPaths("en");

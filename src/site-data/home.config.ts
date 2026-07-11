@@ -40,7 +40,7 @@ export interface ActiveCode {
   code: string;
   status: string;
   reward: string;
-  note: string;
+  note?: string;
 }
 
 export interface OfficialLink {
@@ -183,18 +183,10 @@ export const codeSteps: CodeStep[] = [
 ];
 
 export const activeCodes: ActiveCode[] = [
-  {
-    code: "OKUCHI",
-    status: "Active",
-    reward: "5 Race Spins",
-    note: "Verified as of Jul 10, 2026 — may expire after updates.",
-  },
-  {
-    code: "Sub2XenoTy",
-    status: "Active",
-    reward: "20 minutes of 2x EXP",
-    note: "Verified as of Jul 10, 2026 — may expire after updates.",
-  },
+  { code: "STATREFUND", status: "New", reward: "1 Stat Refund" },
+  { code: "DRAGONUPD", status: "New", reward: "5 Race Spins" },
+  { code: "OKUCHI", status: "Active", reward: "5 Race Spins" },
+  { code: "Sub2XenoTy", status: "Active", reward: "20 minutes of 2x EXP" },
 ];
 
 export const expiredCodes: string[] = [];
@@ -250,7 +242,7 @@ export const beginnerSteps: BeginnerStep[] = [
   },
   {
     label: "Choose a simple fruit path",
-    detail: "A beginner fruit choice should be easy to use, comfortable for farming, and helpful in common fights.",
+    detail: "For a first build, choose a Fruit with simple targeting, reliable area attacks, and a movement skill, then keep most of your damage points in one main stat.",
   },
   {
     label: "Farm before chasing bosses",
@@ -365,24 +357,24 @@ export const homeSections: HomeSection[] = [
   {
     type: "article",
     title: "Haze Seas Fruits Guide",
-    description: "Fruits are one of the most important Haze Seas decisions because they affect how comfortable your farming, fighting, and progression feel.",
-    body: "A fruit should not be judged only by rarity. For most players, the better question is whether the fruit is useful for your current goal.\n\nWhen comparing fruits, use four simple checks: grinding speed, boss fight usefulness, mobility, and ease of use.",
+    description: "Haze Seas currently lists 35 Devil Fruits. World Fruits spawn every 60 minutes and despawn after 20 minutes, and VIP servers allow up to five Fruit spawns.",
+    body: "Choose a Fruit for your current goal: quest grinding, boss fights, PvP, or travel.\n\nUse the Fruits database to compare rarity, acquisition, grinding, bossing, PvP, and mobility before replacing your current Fruit.",
     subsections: [
       {
         title: "Beginner Fruit Picks",
-        body: "Beginner-friendly fruits should be simple to use and helpful in common fights. This section should link players to safe starter recommendations without inventing exact damage numbers.",
+        body: "For a first build, prioritize easy targeting, reliable area attacks, and a movement skill. Open the grinding guide before replacing a Fruit that already clears quests consistently.",
       },
       {
         title: "Grinding Fruits",
-        body: "Grinding fruits should help players clear enemies more smoothly. The page should focus on comfort, range, cooldown feel, and farming rhythm instead of unverified damage rankings.",
+        body: "Use the grinding guide to compare crowd control, range, mobility, and how easily each Fruit clears grouped quest enemies.",
       },
       {
         title: "Boss Fight Fruits",
-        body: "Boss-focused fruits should be evaluated by how well they help players survive, move, and keep pressure during longer fights. Do not claim exact boss performance unless the data is verified.",
+        body: "For bosses, prioritize safe range, mobility, survivability, and consistent damage windows rather than rarity alone.",
       },
       {
         title: "Fruit Tier List",
-        body: "The tier list should explain why a fruit is placed in a tier. Avoid unsupported claims such as exact drop rates, hidden multipliers, or guaranteed best choices.",
+        body: "The Fruit Tier List ranks the current roster for grinding, bosses, PvP, mobility, and ease of use.",
       },
     ],
     ctaLabel: "Read Full Fruit Guide",
@@ -392,20 +384,20 @@ export const homeSections: HomeSection[] = [
   {
     type: "article",
     title: "Haze Seas Fighting Styles Guide",
-    description: "Fighting styles are part of long-term combat planning in Haze Seas.",
-    body: "A good fighting style guide should help players understand unlock intent, combat use, and progression value without inventing hidden stats.\n\nFor homepage content, keep the section simple. Explain that fighting styles should be compared by ease of use, skill flow, movement, and how well they match the player's current build.",
+    description: "Fighting styles are a separate combat path from Fruits and swords. Use the Haki and guide pages to check each trainer, unlock requirement, upgrade path, and build role.",
+    body: "",
     subsections: [
       {
         title: "Unlock Path",
-        body: "Players need to know how to start working toward a style and whether it is realistic for their current stage.",
+        body: "Confirm the trainer, sea, level, currency, and required items before travelling.",
       },
       {
         title: "Combat Flow",
-        body: "A style should feel comfortable in normal fights. Mention skill rhythm, movement, and ease of use, but do not invent cooldowns or exact damage.",
+        body: "Compare range, movement, crowd control, combo setup, and mastery requirements with your current build.",
       },
       {
         title: "Progression Value",
-        body: "Some styles may be better for early progression, while others may become more useful later. If the page lacks verified details, keep the explanation general and link to the full guide.",
+        body: "Use the full guide to decide whether to unlock a new style now or save the required currency and materials for a later upgrade.",
       },
     ],
     ctaLabel: "Read Fighting Styles Guide",
@@ -414,30 +406,30 @@ export const homeSections: HomeSection[] = [
   // Section 9: Bosses/Maps/Progression
   {
     type: "progression",
-    title: "Haze Seas Bosses, Maps and Progression",
-    description: "Bosses, maps, materials, and weapons should be connected on the homepage because players usually search for them together.",
+    title: "Haze Seas Bosses, Haki and Progression",
+    description: "Start with the upgrade you want, then follow the required boss, trainer, or material route. The Bosses page covers locations and drops, Haki covers unlock requirements, and Items tracks materials such as Lava Ore and Sea Beast Core.",
   },
   // Section 10: Races article
   {
     type: "article",
     title: "Haze Seas Races Guide",
-    description: "Races matter because players often use race spins and rerolls early.",
-    body: "The homepage should help users understand how to think about races without promising exact best choices or hidden values.\n\nA race guide should not tell players to reroll endlessly just because a race is rare. Instead, it should explain whether a race supports the player's current build, combat style, and progression goal.",
+    description: "Race Spins are limited, so check each race before rerolling. Compare races by PvE value, PvP value, mobility, survivability, and fit with your Fruit, sword, or fighting-style build.",
+    body: "",
     subsections: [
       {
         title: "Do not reroll blindly",
-        body: "Race spins are limited. Players should check what each race is useful for before spending rerolls.",
+        body: "Keep a useful race until you have enough spins and a specific target.",
       },
       {
         title: "Match race to build",
-        body: "A race is more valuable when it supports the way the player actually fights or farms.",
+        body: "Prioritize bonuses that support the damage type and movement you use most.",
       },
       {
         title: "Update after patches",
-        body: "Race value can shift after balance changes. If race data is uncertain, mark it as pending verification.",
+        body: "Recheck the Race Tier List after balance updates before spending saved spins.",
       },
     ],
     ctaLabel: "Read Race Guide",
-    ctaHref: "/community",
+    ctaHref: "/tier-list/haze-seas-race-tier-list",
   },
 ];

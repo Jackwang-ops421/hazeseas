@@ -79,7 +79,7 @@ const RELATED_BY_TYPE: Record<string, Array<{ title: string; description: string
     { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
   ],
   "guide": [
-    { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes/haze-seas-codes" },
+    { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes" },
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
     { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
     { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
@@ -115,7 +115,7 @@ const RELATED_BY_TYPE: Record<string, Array<{ title: string; description: string
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
   ],
   "community": [
-    { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes/haze-seas-codes" },
+    { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes" },
     { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
     { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
