@@ -15,7 +15,7 @@ export function ProgressionSection() {
       <div className="max-w-2xl">
         <h2 className="text-2xl font-bold tracking-tight text-foreground dark:text-white sm:text-3xl">Haze Seas Bosses, Haki and Progression</h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">
-          Bosses, Haki, items, and progression should be connected on the homepage because players usually search for them together.
+          Find progression-critical bosses, train Armament and Observation Haki, and track the weapons, accessories, and upgrade materials your build needs.
         </p>
       </div>
 
