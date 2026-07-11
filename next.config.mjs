@@ -45,6 +45,19 @@ const nextConfig = {
       { source: "/official/:slug", destination: "/official-links/:slug", permanent: true },
       { source: "/progression", destination: "/guide", permanent: true },
       { source: "/progression/:slug", destination: "/guide/:slug", permanent: true },
+      // Legacy catch-all redirects for removed categories
+      { source: "/maps", destination: "/guide", permanent: true },
+      { source: "/maps/:slug", destination: "/guide/:slug", permanent: true },
+      { source: "/skills", destination: "/guide", permanent: true },
+      { source: "/skills/:slug", destination: "/guide/:slug", permanent: true },
+      { source: "/races", destination: "/guide", permanent: true },
+      { source: "/races/:slug", destination: "/guide/:slug", permanent: true },
+      { source: "/weapons", destination: "/items", permanent: true },
+      { source: "/weapons/:slug", destination: "/items/:slug", permanent: true },
+      { source: "/materials", destination: "/items", permanent: true },
+      { source: "/materials/:slug", destination: "/items/:slug", permanent: true },
+      { source: "/official-links", destination: "/community", permanent: true },
+      { source: "/official-links/:slug", destination: "/community/:slug", permanent: true },
     ];
   },
 };

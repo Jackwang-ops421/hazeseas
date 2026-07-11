@@ -177,7 +177,7 @@
           "order": 2,
           "name": "Haze Seas Trello and Discord",
           "description": "Open the verified Haze Seas Trello, Discord, Roblox experience, and developer channel without relying on fan-made wikis. These official links also help players who still search for the game under its former Haze Piece name.",
-          "href": "/trello-discord",
+          "href": "/community",
           "displayType": "card-list",
           "highlights": [
             {
@@ -247,7 +247,7 @@
           "order": 5,
           "name": "Haze Seas Beginner Guide",
           "description": "Start efficiently in Haze Seas, formerly Haze Piece, by following island quests instead of grinding random enemies and by committing to one main damage path. The guide connects codes, Fruit acquisition, stats, bosses, Haki, and later sea progression in the order a new player encounters them.",
-          "href": "/beginner-guide",
+          "href": "/guide",
           "displayType": "step-by-step",
           "highlights": [
             {
@@ -333,7 +333,7 @@
           "order": 8,
           "name": "Haze Seas Sea 2 and Sea 3",
           "description": "Follow the current unlock path from the First Sea to the Second and Third Seas. This progression guide also covers legacy Haze Piece searches for Sea 2, Poneglyph Scroll, Gatekeeper, Red Emperor, and Sea 3.",
-          "href": "/sea-2-sea-3",
+          "href": "/guide",
           "displayType": "step-by-step",
           "highlights": [
             {
