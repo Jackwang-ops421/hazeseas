@@ -11,12 +11,9 @@ export const CONTENT_TYPES = [
   "fruits",
   "tier-list",
   "bosses",
-  "maps",
-  "skills",
-  "races",
-  "weapons",
-  "materials",
-  "official-links",
+  "items",
+  "haki",
+  "community",
 ] as const;
 
 export type ContentType = (typeof CONTENT_TYPES)[number];
@@ -343,21 +340,18 @@ export interface NavGroup {
 }
 
 const GROUP_TITLES: Record<string, string> = {
-  bosses: "Bosses",
-  races: "Races",
-  maps: "Maps & Areas",
-  skills: "Skills",
   codes: "Codes",
-  guide: "Getting Started",
-  "tier-list": "Tier Lists",
+  guide: "Guide",
   fruits: "Fruits",
-  materials: "Materials",
-  "official-links": "Official Links",
+  "tier-list": "Tier List",
+  bosses: "Bosses",
+  items: "Items",
+  haki: "Haki",
+  community: "Community",
 };
 
 const GROUP_ORDER: string[] = [
-  "guide", "races", "bosses", "maps", "skills", "codes",
-  "tier-list", "fruits", "materials", "official-links",
+  "guide", "codes", "fruits", "tier-list", "bosses", "items", "haki", "community",
 ];
 
 // ─── Header dropdown data (per primary nav item) ───────────────────────────

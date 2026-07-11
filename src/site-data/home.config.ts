@@ -17,6 +17,7 @@ export interface HeroConfig {
   description: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string; external?: boolean };
+  tertiaryCta?: { label: string; href: string };
   /** YouTube video ID for the hero trailer. Empty string = no trailer. */
   trailerVideoId: string;
   stats: Array<{ value: string; label: string }>;
@@ -93,22 +94,23 @@ export interface FinalCtaConfig {
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
 export const heroConfig: HeroConfig = {
-  badge: "Roblox Adventure Wiki",
-  title: "Haze Seas Wiki",
+  badge: "Independent Fan-Made Community Wiki",
+  title: "Haze Seas",
   description:
-    "Haze Seas Hub is a fan-made Roblox guide hub for Haze Seas codes, fruits, races, bosses, maps, fighting styles, weapons, materials, and beginner progression.",
-  primaryCta: { label: "Get Free Codes", href: "/codes" },
+    "Haze Seas is the rebuilt form of Haze Piece, a Roblox pirate action RPG where you explore islands, master Devil Fruits and Haki, collect weapons, and challenge bosses. Use this fan-made wiki to check active codes, compare builds, and plan your route through Sea 1, Sea 2, and Sea 3.",
+  primaryCta: { label: "Start the Beginner Guide", href: "/beginner-guide" },
   secondaryCta: {
-    label: "Play on Roblox",
-    href: "https://www.roblox.com/games/6918802270/Haze-Seas",
-    external: true,
+    label: "Compare Devil Fruits",
+    href: "/fruits",
   },
+  tertiaryCta: { label: "Check Active Codes", href: "/codes" },
   trailerVideoId: "fI0K5bc29EE",
   stats: [
-    { value: "Guide Hub", label: "Site Type" },
-    { value: "Codes", label: "Popular Search" },
-    { value: "Fruits", label: "Key Topic" },
-    { value: "Fan-made", label: "Source Note" },
+    { value: "Launched Jun 30, 2026", label: "" },
+    { value: "Updated Jul 8, 2026", label: "" },
+    { value: "249.7M+ Visits", label: "" },
+    { value: "3.4M+ Favorites", label: "" },
+    { value: "35 Devil Fruits", label: "" },
   ],
 };
 

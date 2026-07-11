@@ -1,1 +1,472 @@
-{}
+{
+  "site": {
+    "name": "Haze Seas Wiki",
+    "shortName": "Haze Seas",
+    "tagline": "Wiki Comunitaria Hecha por Fans",
+    "description": "Wiki de Haze Seas con codigos activos, Devil Fruits, listas de niveles, Haki, bosses y rutas del Mar 1 al 3, actualizada para nuevos jugadores y fans de Haze Piece.",
+    "legalNotice": "Wiki fan no oficial. Hecha por jugadores, para jugadores."
+  },
+  "nav": {
+    "home": "Inicio",
+    "codes": "Codigos",
+    "guide": "Guia",
+    "fruits": "Frutas",
+    "tierList": "Ranking",
+    "bosses": "Bosses",
+    "items": "Objetos",
+    "haki": "Haki",
+    "community": "Comunidad",
+    "menu": "Menu",
+    "toggleTheme": "Cambiar tema"
+  },
+  "home": {
+    "meta": {
+      "title": "Haze Seas Wiki — Codigos, Frutas y Guia para Principiantes",
+      "description": "La wiki central de Haze Seas ofrece a jugadores de Roblox codigos, listas de frutas por nivel, espadas, estilos de combate, bosses, mapas, races y guias de progresion para principiantes."
+    },
+    "hero": {
+      "eyebrow": "Wiki Comunitaria Independiente Hecha por Fans",
+      "title": "Haze Seas",
+      "description": "Haze Seas es la version reconstruida de Haze Piece, un RPG de accion pirata en Roblox donde exploras islas, dominas Devil Fruits y Haki, recolectas armas y desafias bosses. Usa esta wiki fan para verificar codigos activos, comparar builds y planificar tu ruta por el Mar 1, Mar 2 y Mar 3.",
+      "stats": [
+        "Lanzado el 30 de jun de 2026",
+        "Actualizado el 8 de jul de 2026",
+        "249.7M+ Visitas",
+        "3.4M+ Favoritos",
+        "35 Devil Fruits"
+      ],
+      "primaryCta": "Comenzar la Guia para Principiantes",
+      "secondaryCta": "Comparar Devil Fruits",
+      "tertiaryCta": "Ver Codigos Activos",
+      "videoLabel": "Trailer Final Oficial"
+    },
+    "updates": {
+      "title": "Actualizaciones Dinamicas",
+      "browse": "Explorar Todas las Guias",
+      "viewAll": "Ver Todo"
+    },
+    "start": {
+      "eyebrow": "Comienza Aqui",
+      "title": "Tu Viaje en Haze Seas",
+      "cards": [
+        {
+          "number": "1",
+          "title": "Guia para Principiantes",
+          "description": "Aprende la ruta de la primera hora, canjea recompensas de lanzamiento, elige tu estadistica principal de dano, obten una Fruta temprana y evita desperdiciar Cash, Gemas o Race Spins."
+        },
+        {
+          "number": "2",
+          "title": "Subida de Nivel y Rutas del Mar",
+          "description": "Sigue el camino de misiones de islas, sube de nivel eficientemente y preparate para los requisitos que mueven a tu personaje del Mar 1 al Mar 2 y Mar 3."
+        },
+        {
+          "number": "3",
+          "title": "Devil Fruits y Lista de Niveles",
+          "description": "Compara las 35 Frutas por rareza y valor practico para farming, bosses, movilidad y PvP antes de comprometerte con una build."
+        },
+        {
+          "number": "4",
+          "title": "Bosses, Haki y Equipamiento",
+          "description": "Encuentra bosses criticales para progresion, entrena Haki de Armadura y de Observacion, y rastrea las armas, accesorios y materiales de mejora que tu build necesita."
+        }
+      ]
+    },
+    "popular": {
+      "eyebrow": "Paginas Populares",
+      "title": "Tendencias Ahora",
+      "quickLinks": [
+        "Codigos de Haze Seas",
+        "Guia para Principiantes",
+        "Ranking de Frutas",
+        "Guia de Bosses"
+      ],
+      "cards": [
+        {
+          "badge": "Actualizado",
+          "title": "Codigos Activos",
+          "description": "Todos los codigos de Haze Seas que funcionan con recompensas y pasos para canjearlos.",
+          "href": "/codes/haze-seas-codes"
+        },
+        {
+          "badge": "Principiante",
+          "title": "Guia para Principiantes",
+          "description": "Comienza tu sesion en Haze Seas con una ruta clara que cubre misiones de islas, conceptos basicos de frutas y progresion.",
+          "href": "/guide/haze-seas-beginner-guide"
+        },
+        {
+          "badge": "Popular",
+          "title": "Ranking de Frutas",
+          "description": "Compara todas las frutas por nivel para farming, bosses y PvP en un solo lugar.",
+          "href": "/tier-list/haze-seas-fruit-tier-list"
+        },
+        {
+          "badge": "Popular",
+          "title": "Guia de Bosses",
+          "description": "Rutas, requisitos y consejos de combate para los bosses de Haze Seas.",
+          "href": "/bosses/haze-seas-boss-guide"
+        }
+      ]
+    },
+    "aboutGame": {
+      "title": "¿Que es Haze Seas?",
+      "paragraphs": [
+        "Haze Seas es un RPG de Accion gratuito de Roblox desarrollado por [HS] Haze Studios y lanzado como una reconstruccion major de Haze Piece. Los jugadores eligen el camino de Pirata o Marino, completan misiones de islas, asignan estadisticas y combaten con Devil Fruits, espadas, estilos de combate y Haki.",
+        "El juego actual cuenta con 35 Devil Fruits y progresion en tres mares. Su bucle a largo plazo es subir de nivel, cazar drops de bosses raros, desbloquear formas mas fuertes y mejoras V2, y refinar una build de PvE o PvP con amigos o una banda."
+      ],
+      "stats": [
+        {
+          "label": "Desarrollador",
+          "value": "[HS] Haze Studios"
+        },
+        {
+          "label": "Plataforma",
+          "value": "Roblox — PC, Movil y Xbox"
+        },
+        {
+          "label": "Genero",
+          "value": "RPG de Accion"
+        },
+        {
+          "label": "Visitas",
+          "value": "249.7M+"
+        },
+        {
+          "label": "Favoritos",
+          "value": "3.4M+"
+        },
+        {
+          "label": "Devil Fruits",
+          "value": "35"
+        },
+        {
+          "label": "Mares",
+          "value": "3"
+        }
+      ],
+      "cta": "Explorar Todas las Guias"
+    },
+    "explore": {
+      "title": "Explorar Haze Seas",
+      "description": "Salta a la seccion que necesitas.",
+      "modules": [
+        {
+          "order": 1,
+          "name": "Codigos de Haze Seas",
+          "description": "Usa los ultimos codigos funcionales de Haze Seas para Race Spins, Gemas, Cash y boosts de EXP limitados. Haze Seas era anteriormente Haze Piece, por lo que esta seccion tambien sirve para busquedas de codigos heredados mientras separa claramente los activos y los expirados.",
+          "href": "/codes",
+          "displayType": "code-cards",
+          "highlights": [
+            {
+              "label": "OKUCHI",
+              "detail": "5 Race Spins",
+              "badge": "Nuevo"
+            },
+            {
+              "label": "Sub2XenoTy",
+              "detail": "20 minutos de 2x EXP",
+              "badge": "Nuevo"
+            },
+            {
+              "label": "FREECASH",
+              "detail": "50,000 Cash",
+              "badge": "Activo"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Trello y Discord de Haze Seas",
+          "description": "Abre el Trello verificado de Haze Seas, Discord, experiencia de Roblox y canal del desarrollador sin depender de wikis feitas por fans. Estos enlaces oficiales tambien ayudan a jugadores que todavia buscan el juego bajo su antiguo nombre Haze Piece.",
+          "href": "/trello-discord",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Trello Oficial",
+              "detail": "Informacion del juego, codigos, controles, sistemas de cofres y maestria, eventos del mar, Frutas, Espadas, Estilos de Combate, Razas, NPCs, Bosses y ubicaciones.",
+              "badge": "Oficial"
+            },
+            {
+              "label": "Discord Oficial",
+              "detail": "Anuncios de desarrolladores, hotfixes, codigos, actualizaciones de stock de Frutas, preguntas de jugadores e informes de errores.",
+              "badge": "Oficial"
+            },
+            {
+              "label": "Juego en Roblox",
+              "detail": "La pagina oficial de la experiencia Haze Seas de Haze Studios, actualmente etiquetada como RELEASE + UPD 1.",
+              "badge": "Oficial"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Ranking de Haze Seas",
+          "description": "Compara las Frutas actuales por farming de PvE, rendimiento en PvP, dano, movilidad y utilidad general. Los rankings son editoriales en lugar de oficiales, y la lista de niveles completa tambien explica las Frutas comunes de bajo nivel y los cambios causados por nuevos parches.",
+          "href": "/tier-list",
+          "displayType": "tier-grid",
+          "highlights": [
+            {
+              "label": "S",
+              "detail": "Electricidad, Dragon, Goma con Gear 4 o Gear 5, Oscuridad, Fenix, Temblor"
+            },
+            {
+              "label": "A",
+              "detail": "Okuchi, Masa, Magma, Sombra, Veneno"
+            },
+            {
+              "label": "B",
+              "detail": "Leopardo, Lobo, Alma, Hielo, Iman, Llama, Luz, Gas, Gravedad, Cuerda"
+            },
+            {
+              "label": "C",
+              "detail": "Operacion, Humo, Arena, Nieve, Pata, Buda"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "name": "Frutas de Haze Seas",
+          "description": "La pagina oficial de Roblox lista actualmente 35 Frutas, con Okuchi añadido en la Actualizacion 1. Explora el roster por rareza, verifica los costos del Vendedor de Frutas y usa el temporizador verificado de una hora para world-spawn antes de elegir qué conservar, trocar o reemplazar.",
+          "href": "/fruits",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Frutas Miticas",
+              "detail": "Goma, Masa, Dragon, Electricidad; Okuchi es la mas reciente adicion Mitica."
+            },
+            {
+              "label": "Frutas Legendarias",
+              "detail": "Magma, Leopardo, Veneno, Oscuridad, Fenix, Alma, Iman, Lobo, Temblor, Sombra."
+            },
+            {
+              "label": "Vendedor de Frutas",
+              "detail": "Una tirada de Fruta aleatoria cuesta 125,000 Cash o 50 Gemas; las Frutas especificas tambien se pueden comprar cuando hay stock."
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "name": "Guia para Principiantes de Haze Seas",
+          "description": "Comienza eficientemente en Haze Seas, anteriormente Haze Piece, siguiendo misiones de islas en lugar de farmear enemigos random y comprometiendote con un camino de dano principal. La guia conecta codigos, adquisicion de Frutas, estadisticas, bosses, Haki y progresion de mares posteriores en el orden que un nuevo jugador los encuentra.",
+          "href": "/beginner-guide",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Canjea codigos activos y reclama las recompensas iniciales disponibles antes de comenzar el farming principal."
+            },
+            {
+              "label": "2",
+              "detail": "Completa las misiones en la isla actual; cuando se cumple el requisito de nivel, el juego destaca el siguiente destino."
+            },
+            {
+              "label": "3",
+              "detail": "Elige una estadistica de dano principal: Fruta, Espada o Combate, luego mantén Defensa como la inversion secundaria."
+            },
+            {
+              "label": "4",
+              "detail": "Obtén una Fruta de Cynthia por 125,000 Cash o 50 Gemas por tirada aleatoria, o espera los spawns de arbol cada 60 minutos."
+            },
+            {
+              "label": "5",
+              "detail": "Derrota a los bosses de isla a lo largo de la ruta de misiones para EXP adicional, Cash y oportunidades de armas o accesorios."
+            },
+            {
+              "label": "6",
+              "detail": "Desbloquea Buso Haki en Nivel 350 y Observation Haki en Nivel 600 tan pronto como se cumplan sus requisitos."
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "name": "Guia de Haki de Haze Seas",
+          "description": "Aprende cómo desbloquear y mejorar el Haki de Armadura, de Observacion y de Conqueror con requisitos exactos de nivel, Cash, raza y entrenador. Esta seccion responde directamente a busquedas de alta intención como cómo obtener Haki, Buso Nivel 2 y Observation Haki en Haze Seas o Haze Piece.",
+          "href": "/haki",
+          "displayType": "card-list",
+          "highlights": [
+            {
+              "label": "Haki de Armadura",
+              "detail": "Compra Nivel 1 del Viejo Hombre Silver en Logue City en Nivel 350 por 100,000 Cash; impulsa el dano de Espada y Estilo de Combate y te permite golpear usuarios de Logia.",
+              "badge": "Nivel 350"
+            },
+            {
+              "label": "Haki de Observacion",
+              "detail": "Compra Nivel 1 del entrenador en Marine Base Town en Nivel 600 por 150,000 Cash; comienza con tres esquivas automaticas.",
+              "badge": "Nivel 600"
+            },
+            {
+              "label": "Haki de Conqueror",
+              "detail": "Se desbloquea automaticamente solo con la raza D. Clan; cada uso cuesta 250 Stamina, reducido a 200 con D. Clan V2.",
+              "badge": "D. Clan"
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "name": "Bosses y Drops de Haze Seas",
+          "description": "Encuentra la ubicacion de cada boss, requisito de invocacion, ventana de respawn y drop confirmado antes de comenzar a farmear. La guia completa cubre Island Bosses y Super Bosses, incluyendo busquedas heredadas de Haze Piece de alta demanda para G4, Mace, Sea Beast, Enma y Dough Boss.",
+          "href": "/bosses",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "G4 Boss — Spawnea en Bubble Island, reaparece 30 segundos despues de ser derrotado y tiene un 5% de probabilidad de dropping el Gear 4 Book."
+            },
+            {
+              "label": "2",
+              "detail": "Mace Boss — Un Super Boss de Nivel 700 en la cueva detras de Marine Base Town; coloca Lava Ore en el caldero para invocarlo por drops de Mace V1 y Coded Mask."
+            },
+            {
+              "label": "3",
+              "detail": "Sea Beast — La version del Mar 1 spawnea en Rocky Pillars cada 30 a 120 minutos, suelta un Sea Beast Core y tiene un 50% de probabilidad de Sea Beast Hammer V1."
+            },
+            {
+              "label": "4",
+              "detail": "Enma Boss — Un Super Boss de Nivel 2500 en Flower Capital en el Mar 2 con un respawn de 60 minutos y un 10% de probabilidad de soltar la Espada Enma."
+            },
+            {
+              "label": "5",
+              "detail": "Dough Boss — Spawnea en Mirror World por 50 Gemas; tiene un respawn de 120 minutos, un 10% de drop de Dough Scarf y un 50% de drop de Dough Trident."
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "name": "Mar 2 y Mar 3 de Haze Seas",
+          "description": "Sigue el camino de desbloqueo actual del Primer Mar al Segundo y Tercer Mar. Esta guia de progresion tambien cubre busquedas heredadas de Haze Piece para Sea 2, Poneglyph Scroll, Gatekeeper, Red Emperor y Sea 3.",
+          "href": "/sea-2-sea-3",
+          "displayType": "step-by-step",
+          "highlights": [
+            {
+              "label": "1",
+              "detail": "Alcanza el Nivel 2200 antes de aceptar la mision del Mar 2."
+            },
+            {
+              "label": "2",
+              "detail": "Habla con el Dimensional Sailor en los muelles de Starter Island, luego entra en la cueva central en Rocky Pillars y recolecta el Poneglyph Scroll."
+            },
+            {
+              "label": "3",
+              "detail": "Devuelve el Poneglyph Scroll al Dimensional Sailor e interactua con el de nuevo para teleportarte al Mar 2."
+            },
+            {
+              "label": "4",
+              "detail": "Alcanza el Nivel 4200, luego encuentra al Gatekeeper dentro del edificio principal en Flower Capital en el Mar 2."
+            },
+            {
+              "label": "5",
+              "detail": "Elige el desafio del Mar 3 y pelea al Red Emperor solo hasta que se active la escena de victoria."
+            },
+            {
+              "label": "6",
+              "detail": "Regresa al Gatekeeper, selecciona Si y viaja a la isla inicial Land of the Gods en el Mar 3."
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "description": "Respuestas rapidas a las preguntas mas comunes sobre Haze Seas.",
+      "items": [
+        {
+          "question": "¿Que es Haze Seas?",
+          "answer": "Haze Seas es un RPG de Accion gratuito de Roblox desarrollado por [HS] Haze Studios y lanzado como una reconstruccion major de Haze Piece el 30 de junio de 2026. Los jugadores exploran islas, dominan Devil Fruits y Haki, recolectan armas y desafian bosses en tres mares."
+        },
+        {
+          "question": "¿Haze Seas es gratis para jugar?",
+          "answer": "Si, Haze Seas es una experiencia gratuita de Roblox disponible en PC, Movil y Xbox. Puedes unirte a traves de la pagina oficial de Roblox y comenzar a jugar de inmediato."
+        },
+        {
+          "question": "¿Cómo canjeo codigos en Haze Seas?",
+          "answer": "Abre el juego de Roblox, encuentra el menu de Tienda o Codigos en el juego, ingresa el codigo exactamente como se muestra y confirma. Las recompensas como boosts de EXP, Race Spins, Gemas y Reembolsos de Estadisticas se añaden a tu cuenta instantaneamente."
+        },
+        {
+          "question": "¿Cuál es la mejor fruta en Haze Seas?",
+          "answer": "Dragon, Dough, Goma con Gear 4 o Gear 5, Oscuridad, Fenix, Electricidad y Temblor son las Frutas de nivel S mas citadas en Haze Seas para farming, bosses y PvP."
+        },
+        {
+          "question": "¿Cómo progres del Mar 1 al Mar 2 y Mar 3?",
+          "answer": "Alcanza el Nivel 2200 para desbloquear el Mar 2, luego encuentra al Dimensional Sailor en los muelles de Starter Island, recolecta el Poneglyph Scroll en la cueva de Rocky Pillars y devuelvelo para teleportarte al Mar 2. Para el Mar 3, alcanza el Nivel 4200 y derrota al Red Emperor en Flower Capital."
+        },
+        {
+          "question": "¿Dónde encuentro codigos activos para Haze Seas?",
+          "answer": "La pagina de Codigos de esta wiki rastrea los codigos de Haze Seas desde la descripcion oficial de Roblox, anuncios del Discord oficial y el canal oficial de YouTube de Haze Studios. Siempre verifica los codigos en el juego antes de depender de ellos."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Listo para Dominar Haze Seas?",
+      "description": "Desde tus primeras misiones y recompensas de codigos hasta awakening de Frutas, entrenamiento de Haki, drops de bosses y progresion del Mar 3, esta wiki fan mantiene claro tu proximo objetivo.",
+      "primary": "Leer la Guia para Principiantes",
+      "secondary": "Jugar Haze Seas en Roblox"
+    }
+  },
+  "bosses": {
+    "overviewTitle": "Bosses",
+    "overviewDescription": "Guias de bosses de Haze Seas y rutas para island bosses y super bosses."
+  },
+  "shared": {
+    "wikiNavigation": "Navegacion de la Wiki",
+    "activeCodes": "Codigos Activos",
+    "updated": "Actualizado",
+    "viewAllCodes": "Ver todos los codigos",
+    "playOnRoblox": "Jugar en Roblox",
+    "inThisSection": "En esta seccion",
+    "tableOfContents": "Tabla de Contenidos",
+    "nextSteps": "Proximos Pasos",
+    "needHelp": "¿Necesitas Ayuda?",
+    "relatedReading": "Lectura Relacionada",
+    "relatedGuides": "Guias Relacionadas",
+    "readMore": "Leer mas",
+    "officialMedia": "Medios oficiales",
+    "home": "Inicio",
+    "noGuidesAvailable": "No hay guias disponibles todavia. Vuelve pronto!"
+  },
+  "footer": {
+    "aboutTitle": "Wiki de Haze Seas",
+    "about": "Wiki de Haze Seas es una guia independiente hecha por fans para Haze Seas y jugadores que regresan de Haze Piece. Cubre codigos activos, Devil Fruits, listas de niveles, Haki, bosses, armas y progresion del Mar 1 al 3. No esta afiliada con Haze Studios ni Roblox.",
+    "quickLinks": "Enlaces Rapidos",
+    "guides": "Guias",
+    "legal": "Legal",
+    "copyright": "© 2026 Haze Seas Hub. No afiliado con Haze Studios o Roblox Corporation.",
+    "description": "RPG de accion pirata gratuito en Roblox con 35 Devil Fruits, Haki, drops de bosses y tres mares para explorar.",
+    "playGame": "Jugar Haze Seas en Roblox",
+    "officialDiscord": "Discord Oficial",
+    "officialYoutube": "YouTube Oficial",
+    "communityTool": "Trello Oficial de Haze Seas",
+    "beginnerGuide": "Guia para Principiantes",
+    "raceGuides": "Guias de Razas",
+    "bossGuides": "Guias de Bosses",
+    "buildGuide": "Guia de Builds",
+    "privacyPolicy": "Politica de Privacidad",
+    "termsOfService": "Terminos de Servicio"
+  },
+  "codes": {
+    "overviewTitle": "Codigos",
+    "overviewDescription": "Codigos activos de Haze Seas, pasos para canjear y notas de codigos expirados."
+  },
+  "guide": {
+    "overviewTitle": "Guias",
+    "overviewDescription": "Guias para principiantes y rutas de progresion para Haze Seas."
+  },
+  "tier-list": {
+    "overviewTitle": "Ranking",
+    "overviewDescription": "Ranking y clasificaciones de Haze Seas para frutas, razas y espadas."
+  },
+  "fruits": {
+    "overviewTitle": "Frutas",
+    "overviewDescription": "Guia de Devil Fruits de Haze Seas, lista de rareza e informacion del Vendedor de Frutas."
+  },
+  "haki": {
+    "overviewTitle": "Haki",
+    "overviewDescription": "Guia de Haki de Haze Seas cubriendo Haki de Armadura, de Observacion y de Conqueror."
+  },
+  "items": {
+    "overviewTitle": "Objetos",
+    "overviewDescription": "Objetos de Haze Seas, accesorios, materiales y recursos de mejora."
+  },
+  "community": {
+    "overviewTitle": "Comunidad",
+    "overviewDescription": "Enlaces de la comunidad oficial de Haze Seas incluyendo Discord, Trello y canales de actualizaciones."
+  }
+}

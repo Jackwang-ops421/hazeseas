@@ -6,7 +6,19 @@
     "description": "Haze Seas Wiki for active codes, Devil Fruits, tier lists, Haki, bosses, and Sea 1–3 routes, updated for new players and returning Haze Piece fans.",
     "legalNotice": "Non-official fan wiki. Made by players, for players."
   },
-  "nav": {},
+  "nav": {
+    "home": "Home",
+    "codes": "Codes",
+    "guide": "Guide",
+    "fruits": "Fruits",
+    "tierList": "Tier List",
+    "bosses": "Bosses",
+    "items": "Items",
+    "haki": "Haki",
+    "community": "Community",
+    "menu": "Menu",
+    "toggleTheme": "Toggle theme"
+  },
   "home": {
     "meta": {
       "title": "Haze Seas Wiki — Codes, Fruits & Beginner Guide",
@@ -23,8 +35,8 @@
         "3.4M+ Favorites",
         "35 Devil Fruits"
       ],
-      "primaryCta": "Get Free Codes",
-      "secondaryCta": "Play on Roblox",
+      "primaryCta": "Start the Beginner Guide",
+      "secondaryCta": "Compare Devil Fruits",
       "tertiaryCta": "Check Active Codes",
       "videoLabel": "Official Final Trailer"
     },
@@ -389,7 +401,10 @@
       "secondary": "Play Haze Seas on Roblox"
     }
   },
-  "bosses": {},
+  "bosses": {
+    "overviewTitle": "Bosses",
+    "overviewDescription": "Haze Seas boss guides and routes for island bosses and super bosses."
+  },
   "shared": {
     "wikiNavigation": "Wiki Navigation",
     "activeCodes": "Active Codes",
@@ -414,11 +429,11 @@
     "guides": "Guides",
     "legal": "Legal",
     "copyright": "© 2026 Haze Seas Hub. Not affiliated with Haze Studios or Roblox Corporation.",
-    "description": "Roblox pirate Action RPG rework with fruits, swords, fighting styles, races, bosses, and code rewards.",
+    "description": "Free pirate Action RPG on Roblox with 35 Devil Fruits, Haki, boss drops, and three seas to explore.",
     "playGame": "Play Haze Seas on Roblox",
     "officialDiscord": "Official Discord",
     "officialYoutube": "Official YouTube",
-    "communityTool": "Trello Board",
+    "communityTool": "Official Haze Seas Trello",
     "beginnerGuide": "Beginner Guide",
     "raceGuides": "Race Guides",
     "bossGuides": "Boss Guides",
@@ -426,14 +441,32 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
-  "codes": {},
-  "guide": {},
-  "tier-list": {},
-  "skills": {},
-  "races": {},
-  "maps": {},
-  "weapons": {},
-  "fruits": {},
-  "materials": {},
-  "official-links": {}
+  "codes": {
+    "overviewTitle": "Codes",
+    "overviewDescription": "Haze Seas active codes, redemption steps, and expired code notes."
+  },
+  "guide": {
+    "overviewTitle": "Guides",
+    "overviewDescription": "Beginner guides and progression routes for Haze Seas."
+  },
+  "tier-list": {
+    "overviewTitle": "Tier List",
+    "overviewDescription": "Haze Seas tier list and rankings for fruits, races, and swords."
+  },
+  "fruits": {
+    "overviewTitle": "Fruits",
+    "overviewDescription": "Haze Seas Devil Fruits guide, rarity list, and Fruit Dealer information."
+  },
+  "haki": {
+    "overviewTitle": "Haki",
+    "overviewDescription": "Haze Seas Haki guide covering Armament, Observation, and Conquerors Haki."
+  },
+  "items": {
+    "overviewTitle": "Items",
+    "overviewDescription": "Haze Seas items, accessories, materials, and upgrade resources."
+  },
+  "community": {
+    "overviewTitle": "Community",
+    "overviewDescription": "Official Haze Seas community links including Discord, Trello, and update channels."
+  }
 }
