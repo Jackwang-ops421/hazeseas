@@ -6,6 +6,7 @@
  */
 
 import { FooterColumn, FOOTER_COLUMNS, MORE_WIKIS_BUTTON } from "./nav.config";
+import enJson from "@/locales/en.json";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -116,56 +117,41 @@ export const heroConfig: HeroConfig = {
 
 // ─── Resource Cards (Homepage Modules) ───────────────────────────────────────
 
-export const resourceModules: ResourceModule[] = [
-  {
-    title: "Haze Seas Codes",
-    href: "/codes",
-    description: "Active codes, expired code notes, redemption steps, and update reminders.",
-    icon: "Code2",
-  },
-  {
-    title: "Haze Seas Trello and Discord",
-    href: "/community",
-    description: "Quick access hub for Haze Seas Trello, Discord, and other official community resources.",
-    icon: "Link",
-  },
-  {
-    title: "Haze Seas Tier List",
-    href: "/tier-list",
-    description: "Compare fruits, races, and swords by tier for grinding, boss fights, and PvP.",
-    icon: "Trophy",
-  },
-  {
-    title: "Haze Seas Fruits",
-    href: "/fruits",
-    description: "Browse all 35 Devil Fruits by rarity, cost, and one-hour world-spawn timer.",
-    icon: "Compass",
-  },
-  {
-    title: "Haze Seas Beginner Guide",
-    href: "/guide",
-    description: "Start Haze Seas with codes, first-hour routes, fruit decisions, and safe progression steps.",
-    icon: "BookOpen",
-  },
-  {
-    title: "Haze Seas Haki Guide",
-    href: "/haki",
-    description: "Unlock and upgrade Armament, Observation, and Conquerors Haki with trainer requirements.",
-    icon: "Zap",
-  },
-  {
-    title: "Haze Seas Bosses and Drops",
-    href: "/bosses",
-    description: "Find boss locations, summon requirements, respawn windows, and verified drops.",
-    icon: "Skull",
-  },
-  {
-    title: "Haze Seas Sea 2 and Sea 3",
-    href: "/guide",
-    description: "Follow the Sea 1 to Sea 2 to Sea 3 unlock path with required levels and quest steps.",
-    icon: "Map",
-  },
-];
+// ─── Derive resourceModules from en.json home.explore.modules ──────────────
+
+function moduleIcon(displayType: string, name: string): string {
+  const dt = (displayType ?? "").toLowerCase();
+  const nm = (name ?? "").toLowerCase();
+  if (dt === "code-cards") return "Code2";
+  if (dt === "step-by-step") return "BookOpen";
+  if (dt === "tier-grid") return "Trophy";
+  if (dt === "card-list") return "Zap";
+  // fallbacks by keyword
+  if (nm.includes("code")) return "Code2";
+  if (nm.includes("guide") || nm.includes("beginner")) return "BookOpen";
+  if (nm.includes("tier")) return "Trophy";
+  if (nm.includes("fruit")) return "Compass";
+  if (nm.includes("boss")) return "Skull";
+  if (nm.includes("haki")) return "Zap";
+  if (nm.includes("sea") || nm.includes("map")) return "Map";
+  if (nm.includes("trello") || nm.includes("discord") || nm.includes("community")) return "Link";
+  if (nm.includes("item")) return "Package";
+  return "BookOpen";
+}
+
+export const resourceModules: ResourceModule[] = (
+  (enJson.home.explore?.modules ?? []) as Array<{
+    name: string;
+    description: string;
+    href: string;
+    displayType: string;
+  }>
+).map((m) => ({
+  title: m.name,
+  href: m.href,
+  description: m.description,
+  icon: moduleIcon(m.displayType, m.name),
+}));
 
 // ─── Codes Section ───────────────────────────────────────────────────────────
 
