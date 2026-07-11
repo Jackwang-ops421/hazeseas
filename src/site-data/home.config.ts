@@ -289,14 +289,14 @@ export const progressionCards: ProgressionCard[] = [
     description: "Use boss pages to plan what to fight next, what preparation is needed, and whether the fight connects to a material, weapon, or progression goal.",
   },
   {
-    title: "Map Guide",
-    href: "/maps",
-    description: "Use the map guide to understand where each route leads. Map content should help players avoid getting lost.",
+    title: "Haki Guide",
+    href: "/haki",
+    description: "Unlock and upgrade Armament, Observation, and Conquerors Haki with trainer location and level requirements.",
   },
   {
-    title: "Materials and Drops",
-    href: "/materials",
-    description: "Use materials pages to track upgrade goals. If a material source is not verified, mark it as unconfirmed.",
+    title: "Items and Drops",
+    href: "/items",
+    description: "Use items pages to track upgrade goals, lava ore, sea beast cores, and accessory locations.",
   },
 ];
 
@@ -423,7 +423,7 @@ export const homeSections: HomeSection[] = [
       },
     ],
     ctaLabel: "Read Fighting Styles Guide",
-    ctaHref: "/skills",
+    ctaHref: "/haki",
   },
   // Section 9: Bosses/Maps/Progression
   {
@@ -452,6 +452,6 @@ export const homeSections: HomeSection[] = [
       },
     ],
     ctaLabel: "Read Race Guide",
-    ctaHref: "/races",
+    ctaHref: "/community",
   },
 ];

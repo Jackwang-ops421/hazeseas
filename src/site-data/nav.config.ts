@@ -1,46 +1,81 @@
 /**
- * Navigation configuration — drives Header nav items and footer columns.
+ * Navigation configuration — driven by `en.json` home.explore.modules.
  *
  * Rules:
- * - nav items with showInNav=false are hidden everywhere
- * - primary items appear in the top nav bar (max 5)
- * - secondary items appear in the "More" dropdown
- * - href must point to an existing MDX listing page or static route
- * - category must match a content/ directory name
+ * - First 5 modules → primary nav bar
+ * - Modules 6+ → "More" dropdown
+ * - Footer guides/resources columns derived from same module list
+ * - Legal column is static (always the same 4 links)
+ * - Icons inferred from displayType, fallback to a default
  */
 
 import {
-  Gift, BookOpen, Compass, Skull, Map, Link as LinkIcon,
-  Zap, Users, Sword, Package, Trophy,
+  Gift, BookOpen, Compass, Skull, Link as LinkIcon,
+  Zap, Package, Trophy, Map,
 } from "lucide-react";
+import enJson from "@/locales/en.json";
+
+// ─── Derive from en.json ────────────────────────────────────────────────────
+
+interface ModuleItem {
+  order: number;
+  name: string;
+  description?: string;
+  href: string;
+  displayType: string;
+  highlights?: unknown[];
+}
+
+const allModules: ModuleItem[] = (
+  enJson.home.explore?.modules ?? []
+) as ModuleItem[];
+
+/** Strip game name prefix, keep only the functional label */
+function shortLabel(name: string): string {
+  return name
+    .replace(/^Haze\s+Seas\s+/i, "") // remove game prefix
+    .replace(/^[A-Z][a-z]+\s+Seas\s+/i, "");
+}
+
+/** Pick a lucide icon name based on displayType */
+function iconFor(displayType: string, label: string): string {
+  const map: Record<string, string> = {
+    "code-cards": "Gift",
+    "step-by-step": "BookOpen",
+    "tier-grid": "Trophy",
+    "card-list": "Zap",
+  };
+  if (map[displayType]) return map[displayType];
+  // fallback heuristics from known labels
+  if (/code/i.test(label)) return "Gift";
+  if (/guide|beginner/i.test(label)) return "BookOpen";
+  if (/fruit/i.test(label)) return "Compass";
+  if (/tier/i.test(label)) return "Trophy";
+  if (/boss/i.test(label)) return "Skull";
+  if (/haki/i.test(label)) return "Zap";
+  if (/sea|map/i.test(label)) return "Map";
+  if (/trello|discord|community|official/i.test(label)) return "Link";
+  if (/item|material/i.test(label)) return "Package";
+  return "BookOpen";
+}
+
+// ─── Nav Items ──────────────────────────────────────────────────────────────
 
 export interface NavItem {
-  /** Display label */
   label: string;
-  /** URL path, e.g. "/guide" or "/codes/haze-seas-codes" */
   href: string;
-  /** Lucide icon name */
   icon?: string;
-  /** Show in header nav (true) or only in footer (false) */
   showInNav: boolean;
-  /** Appear in the "More" dropdown even if showInNav=true */
   isSecondary?: boolean;
 }
 
-export const NAV_ITEMS: NavItem[] = [
-  { label: "Codes", href: "/codes", icon: "Gift", showInNav: true },
-  { label: "Guide", href: "/guide", icon: "BookOpen", showInNav: true },
-  { label: "Fruits", href: "/fruits", icon: "Compass", showInNav: true },
-  { label: "Bosses", href: "/bosses", icon: "Skull", showInNav: true },
-  { label: "Maps", href: "/maps", icon: "Map", showInNav: true },
-  // Secondary — appear in "More" dropdown
-  { label: "Official Links", href: "/official-links", icon: "Link", showInNav: true, isSecondary: true },
-  { label: "Fighting Styles", href: "/skills", icon: "Zap", showInNav: true, isSecondary: true },
-  { label: "Races", href: "/races", icon: "Users", showInNav: true, isSecondary: true },
-  { label: "Weapons", href: "/weapons", icon: "Sword", showInNav: true, isSecondary: true },
-  { label: "Materials", href: "/materials", icon: "Package", showInNav: true, isSecondary: true },
-  { label: "Tier List", href: "/tier-list", icon: "Trophy", showInNav: false },
-];
+export const NAV_ITEMS: NavItem[] = allModules.map((m, i) => ({
+  label: shortLabel(m.name),
+  href: m.href,
+  icon: iconFor(m.displayType, m.name),
+  showInNav: true,
+  ...(i >= 5 ? { isSecondary: true } : {}),
+}));
 
 /** Nav items shown as primary (top bar), not secondary */
 export const PRIMARY_NAV = NAV_ITEMS.filter((i) => i.showInNav && !i.isSecondary);
@@ -51,7 +86,8 @@ export const SECONDARY_NAV = NAV_ITEMS.filter((i) => i.showInNav && i.isSecondar
 /** Nav items hidden from header but available in footer */
 export const FOOTER_ONLY_NAV = NAV_ITEMS.filter((i) => !i.showInNav);
 
-/** Footer link columns — label + href pairs */
+// ─── Footer ─────────────────────────────────────────────────────────────────
+
 export interface FooterColumn {
   title: string;
   links: Array<{ label: string; href: string }>;
@@ -60,21 +96,17 @@ export interface FooterColumn {
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Guides",
-    links: [
-      { label: "Codes", href: "/codes" },
-      { label: "Beginner Guide", href: "/guide" },
-      { label: "Fruit Tier List", href: "/fruits" },
-      { label: "Boss Guide", href: "/bosses" },
-    ],
+    links: allModules.slice(0, 4).map((m) => ({
+      label: shortLabel(m.name),
+      href: m.href,
+    })),
   },
   {
     title: "Resources",
-    links: [
-      { label: "Official Links", href: "/official-links" },
-      { label: "Maps", href: "/maps" },
-      { label: "Fighting Styles", href: "/skills" },
-      { label: "Races", href: "/races" },
-    ],
+    links: allModules.slice(4, 8).map((m) => ({
+      label: shortLabel(m.name),
+      href: m.href,
+    })),
   },
   {
     title: "Legal",
@@ -87,24 +119,24 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   },
 ];
 
-/** More Wikis button shown in header */
+// ─── More Wikis button ──────────────────────────────────────────────────────
+
 export const MORE_WIKIS_BUTTON = {
   label: "More Wikis",
   href: "#",
   ariaLabel: "More wikis coming soon",
 };
 
-/** Icon map — add every icon name referenced in NAV_ITEMS */
+// ─── Icon map ───────────────────────────────────────────────────────────────
+
 export const NAV_ICON_MAP: Record<string, React.ElementType> = {
   Gift,
   BookOpen,
   Compass,
-  Skull,
   Map,
+  Skull,
   Link: LinkIcon,
   Zap,
-  Users,
-  Sword,
   Package,
   Trophy,
 };

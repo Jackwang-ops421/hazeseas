@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Swords } from "lucide-react";
@@ -7,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { getAllContent, getAllContentPaths, getContent, getDynamicNavigation, type ContentItem } from "@/lib/content";
 import { Breadcrumbs, JsonLd, WikiSidebar, localizeHref } from "@/components/site";
 import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
-import { CONTENT_TYPES, type ContentType } from "@/lib/content";
+import { type ContentType } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/site-data/site.config";
 import en from "@/locales/en.json";
@@ -22,14 +24,19 @@ function languageAlternates(pathname: string) {
 
 export async function generateStaticParams() {
   const paths = await getAllContentPaths("en");
-  const listingPages = CONTENT_TYPES.map((ct) => ({ slug: [ct] }));
+  const contentDirs = fs.existsSync(path.join(process.cwd(), "content", "en"))
+    ? fs.readdirSync(path.join(process.cwd(), "content", "en"), { withFileTypes: true })
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name)
+    : [];
+  const listingPages = contentDirs.map((ct) => ({ slug: [ct] }));
   return [...listingPages, ...paths.map((item) => ({ slug: [item.contentType, ...item.slug] }))];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string[] }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const messages = (await getMessages({ locale })) as Messages;
-  if (slug.length === 1 && CONTENT_TYPES.includes(slug[0] as ContentType)) {
+  if (slug.length === 1) {
     const ct = slug[0] as ContentType;
     const ctTitle = ct.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
@@ -48,12 +55,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function SlugPage({ params }: { params: Promise<{ locale: Locale; slug: string[] }> }) {
   const { locale, slug } = await params;
   const navGroups = getDynamicNavigation(locale);
-  if (slug.length === 1) return <NavigationPage locale={locale} contentType={slug[0] as ContentType} navGroups={navGroups} />;
-  return <DetailPage locale={locale} contentType={slug[0] as ContentType} slug={slug.slice(1)} navGroups={navGroups} />;
+  if (slug.length === 1) return <NavigationPage locale={locale} contentType={slug[0]} navGroups={navGroups} />;
+  return <DetailPage locale={locale} contentType={slug[0]} slug={slug.slice(1)} navGroups={navGroups} />;
 }
 
 async function NavigationPage({ locale, contentType, navGroups }: { locale: Locale; contentType: string; navGroups: import("@/lib/content").NavGroup[] }) {
-  if (!CONTENT_TYPES.includes(contentType as ContentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale as Locale);
   const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — ${siteConfig.siteName}`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
@@ -67,69 +73,56 @@ async function NavigationPage({ locale, contentType, navGroups }: { locale: Loca
 
 const RELATED_BY_TYPE: Record<string, Array<{ title: string; description: string; href: string }>> = {
   "codes": [
-    { title: "Haze Seas Official Links", description: "Official Roblox page and community resources.", href: "/official-links" },
-    { title: "Release Date and Updates", description: "Update notes and new content reminders.", href: "/guide/haze-seas-release-date-and-updates" },
     { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
+    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
   ],
   "guide": [
     { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes/haze-seas-codes" },
-    { title: "Map Guide", description: "Islands, routes, and progression.", href: "/maps/haze-seas-map-guide" },
-    { title: "Race Guide", description: "Compare races and reroll tips.", href: "/races/haze-seas-race-guide" },
-    { title: "Fighting Styles", description: "Combat styles and unlock paths.", href: "/skills/haze-seas-fighting-styles" },
+    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
+    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
   ],
   "tier-list": [
     { title: "Fruits Hub", description: "Fruit guides and tier list links.", href: "/fruits" },
-    { title: "Fighting Styles", description: "Combat styles and skill planning.", href: "/skills/haze-seas-fighting-styles" },
     { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
     { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
   ],
   "bosses": [
-    { title: "Map Guide", description: "Islands, routes, and progression.", href: "/maps/haze-seas-map-guide" },
-    { title: "Swords and Weapons", description: "Weapon unlocks and progression.", href: "/weapons/haze-seas-swords-and-weapons" },
-    { title: "Materials Guide", description: "Farming routes and drop sources.", href: "/materials" },
+    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
+    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
+    { title: "Items Guide", description: "Accessories, materials, and drop sources.", href: "/items/haze-seas-items" },
+  ],
+  "fruits": [
+    { title: "Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
+    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
+    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
+  ],
+  "haki": [
+    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
+    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
+    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
+    { title: "Items Guide", description: "Accessories, materials, and drop sources.", href: "/items/haze-seas-items" },
+  ],
+  "items": [
+    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
+    { title: "Haki Guide", description: "Unlock and upgrade Haki abilities.", href: "/haki/haze-seas-haki" },
+    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
   ],
-  "official-links": [
+  "community": [
     { title: "Haze Seas Codes", description: "Active codes and redemption steps.", href: "/codes/haze-seas-codes" },
-    { title: "Release Date and Updates", description: "Update notes and new content.", href: "/guide/haze-seas-release-date-and-updates" },
-    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
-    { title: "Map Guide", description: "Islands, routes, and progression.", href: "/maps/haze-seas-map-guide" },
-  ],
-  "weapons": [
-    { title: "Materials Guide", description: "Farming routes and drop sources.", href: "/materials" },
-    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
-    { title: "Fighting Styles", description: "Combat styles and unlock paths.", href: "/skills/haze-seas-fighting-styles" },
-    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
-  ],
-  "materials": [
-    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
-    { title: "Swords and Weapons", description: "Weapon unlocks and progression.", href: "/weapons/haze-seas-swords-and-weapons" },
-    { title: "Map Guide", description: "Islands, routes, and progression.", href: "/maps/haze-seas-map-guide" },
-    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
-  ],
-  "skills": [
     { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
     { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
     { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
-    { title: "Official Links", description: "Official Roblox page and community links.", href: "/official-links" },
-  ],
-  "races": [
-    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
-    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
-    { title: "Fighting Styles", description: "Combat styles and unlock paths.", href: "/skills/haze-seas-fighting-styles" },
-    { title: "Map Guide", description: "Islands, routes, and progression.", href: "/maps/haze-seas-map-guide" },
-  ],
-  "maps": [
-    { title: "Beginner Guide", description: "Start your Haze Seas journey.", href: "/guide/haze-seas-beginner-guide" },
-    { title: "Boss Guide", description: "Boss routes and fight tips.", href: "/bosses/haze-seas-boss-guide" },
-    { title: "Fruit Tier List", description: "Compare fruits for grinding and boss fights.", href: "/tier-list/haze-seas-fruit-tier-list" },
-    { title: "Official Links", description: "Official Roblox page and community links.", href: "/official-links" },
   ],
 };
 
 async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Locale; contentType: string; slug: string[]; navGroups: import("@/lib/content").NavGroup[] }) {
-  if (!CONTENT_TYPES.includes(contentType as ContentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const item = await getContent(contentType, slug, locale as Locale);
   if (!item) notFound();

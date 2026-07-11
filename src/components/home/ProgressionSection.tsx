@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Skull, Map as MapIcon, Package, ChevronRight } from "lucide-react";
+import { Skull, Zap, Package, ChevronRight } from "lucide-react";
 import { progressionCards } from "@/site-data/home.config";
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  Skull, Map: MapIcon, Package,
+  Boss: Skull, Haki: Zap, Items: Package,
 };
 
 const cardClass =
@@ -13,9 +13,9 @@ export function ProgressionSection() {
   return (
     <section className="space-y-6">
       <div className="max-w-2xl">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground dark:text-white sm:text-3xl">Haze Seas Bosses, Maps and Progression</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-foreground dark:text-white sm:text-3xl">Haze Seas Bosses, Haki and Progression</h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/50">
-          Bosses, maps, materials, and weapons should be connected on the homepage because players usually search for them together.
+          Bosses, Haki, items, and progression should be connected on the homepage because players usually search for them together.
         </p>
       </div>
 
@@ -42,8 +42,8 @@ export function ProgressionSection() {
         <Link href="/bosses" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline dark:text-[hsl(var(--nav-theme-light))]">
           View Boss Guide <ChevronRight className="h-4 w-4" />
         </Link>
-        <Link href="/maps" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline dark:text-[hsl(var(--nav-theme-light))]">
-          View Map Guide <ChevronRight className="h-4 w-4" />
+        <Link href="/haki" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))] hover:underline dark:text-[hsl(var(--nav-theme-light))]">
+          View Haki Guide <ChevronRight className="h-4 w-4" />
         </Link>
       </div>
     </section>

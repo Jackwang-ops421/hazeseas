@@ -264,7 +264,13 @@ export interface LatestUpdateItem {
 export async function getLatestUpdates(language: Locale, limit = 12): Promise<LatestUpdateItem[]> {
   const items: LatestUpdateItem[] = [];
 
-  for (const contentType of CONTENT_TYPES) {
+  const itemTypes = fs.existsSync(path.join(CONTENT_ROOT, language))
+    ? fs.readdirSync(path.join(CONTENT_ROOT, language), { withFileTypes: true })
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name)
+    : [];
+
+  for (const contentType of itemTypes) {
     const contentDir = path.join(CONTENT_ROOT, language, contentType);
     if (!fs.existsSync(contentDir)) continue;
 
@@ -392,7 +398,6 @@ export function getHeaderNavDropdowns(
   const out: NavDropdownGroup[] = [];
 
   for (const slug of categorySlugs) {
-    if (!CONTENT_TYPES.includes(slug as ContentType)) continue;
     const groupDir = path.join(CONTENT_ROOT, language, slug);
     if (!fs.existsSync(groupDir)) continue;
 
@@ -464,7 +469,6 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
   for (const entry of fs.readdirSync(localeDir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     const groupSlug = entry.name;
-    if (!CONTENT_TYPES.includes(groupSlug as ContentType)) continue;
 
     const groupDir = path.join(localeDir, groupSlug);
     const slugPaths = getSlugsFromDirectory(groupDir);

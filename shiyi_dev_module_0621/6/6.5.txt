@@ -59,3 +59,7 @@ grep "staticPaths" {{PROJECT_PATH}}/src/app/sitemap.ts
 # 验证 GROUP_TITLES 映射完整
 grep "GROUP_TITLES" {{PROJECT_PATH}}/src/lib/content.ts
 ```
+
+**nav.config.ts** 的 NAV_ITEMS 和 FOOTER_COLUMNS 必须从
+{{PROJECT_PATH}}/src/locales/en.json 的 home.explore.modules
+数组派生，禁止单独维护硬编码的 nav 列表。
