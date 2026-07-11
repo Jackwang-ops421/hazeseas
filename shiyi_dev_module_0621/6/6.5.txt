@@ -8,7 +8,7 @@
 
 ## G1. 拉取文章到项目
 
-将生成的文章复制到项目 content 目录；homepage-only 模式下允许文章目录不存在或为空：
+将生成的文章复制到PROJECT_PATH content 目录；homepage-only 模式下允许文章目录不存在或为空：
 
 要求：
 - 文章目录不存在或为空时，不报错、不创建假文章、不终止流程
@@ -29,6 +29,7 @@
 - `en.json` 需为每个 `isContentType: true` 的分类添加顶级 key（如 `"bosses"`），包含 `overviewTitle` 和 `overviewDescription`
 - `content.ts` 的 `GROUP_TITLES` 和 `GROUP_ORDER` 需与 `NAVIGATION_CONFIG` 的分类 slug 对应（`GROUP_TITLES` 是 slug → 人类可读标题的映射）
 - `content.ts` 的 `GROUP_TITLES_BY_LOCALE` 和 `OVERVIEW_LABEL_BY_LOCALE` 如需多语言侧边栏标题，也在此步更新
+- `nav.config.ts` 的 `NAV_ITEMS` 数组必须从 keywords.json 的 categories 派生，前 5 个为 PRIMARY_NAV，其余入 "More" 下拉；禁止从 en.json 读取
 
 **⚠️ 导航栏文章排序规则**
 - Wiki Navigation 侧边栏：由 `content.ts` 的 `getDynamicNavigation()` 动态扫描 MDX 文件生成，按 `GROUP_ORDER` 排序
@@ -59,7 +60,3 @@ grep "staticPaths" {{PROJECT_PATH}}/src/app/sitemap.ts
 # 验证 GROUP_TITLES 映射完整
 grep "GROUP_TITLES" {{PROJECT_PATH}}/src/lib/content.ts
 ```
-
-**nav.config.ts** 的 NAV_ITEMS 和 FOOTER_COLUMNS 必须从
-{{PROJECT_PATH}}/src/locales/en.json 的 home.explore.modules
-数组派生，禁止单独维护硬编码的 nav 列表。

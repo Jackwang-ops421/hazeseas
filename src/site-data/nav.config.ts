@@ -1,61 +1,47 @@
 /**
- * Navigation configuration — driven by `en.json` home.explore.modules.
+ * Navigation configuration — categories derived from `keywords.json`
+ * (see `shiyi_dev_module_0621/hazeseaskyeword.json`) and must match
+ * `content/en/` subdirectory names (Part 5 G2).
  *
- * Rules:
- * - First 5 modules → primary nav bar
- * - Modules 6+ → "More" dropdown
- * - Footer guides/resources columns derived from same module list
- * - Legal column is static (always the same 4 links)
- * - Icons inferred from displayType, fallback to a default
+ * Update this list when keywords.json categories change.
  */
 
 import {
   Gift, BookOpen, Compass, Skull, Link as LinkIcon,
-  Zap, Package, Trophy, Map,
+  Zap, Package, Trophy,
 } from "lucide-react";
-import enJson from "@/locales/en.json";
 
-// ─── Derive from en.json ────────────────────────────────────────────────────
+// ─── Category slugs (mirror keywords.json categories and content/en/ subdirs) ─
 
-interface ModuleItem {
-  order: number;
-  name: string;
-  description?: string;
-  href: string;
-  displayType: string;
-  highlights?: unknown[];
+const CATEGORIES = [
+  "codes",
+  "guide",
+  "fruits",
+  "tier-list",
+  "bosses",
+  "haki",
+  "items",
+  "community",
+] as const;
+
+// ─── Label / icon helpers ───────────────────────────────────────────────────
+
+function navLabel(slug: string): string {
+  return slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-const allModules: ModuleItem[] = (
-  enJson.home.explore?.modules ?? []
-) as ModuleItem[];
-
-/** Strip game name prefix, keep only the functional label */
-function shortLabel(name: string): string {
-  return name
-    .replace(/^Haze\s+Seas\s+/i, "") // remove game prefix
-    .replace(/^[A-Z][a-z]+\s+Seas\s+/i, "");
-}
-
-/** Pick a lucide icon name based on displayType */
-function iconFor(displayType: string, label: string): string {
-  const map: Record<string, string> = {
-    "code-cards": "Gift",
-    "step-by-step": "BookOpen",
-    "tier-grid": "Trophy",
-    "card-list": "Zap",
-  };
-  if (map[displayType]) return map[displayType];
-  // fallback heuristics from known labels
-  if (/code/i.test(label)) return "Gift";
-  if (/guide|beginner/i.test(label)) return "BookOpen";
-  if (/fruit/i.test(label)) return "Compass";
-  if (/tier/i.test(label)) return "Trophy";
-  if (/boss/i.test(label)) return "Skull";
-  if (/haki/i.test(label)) return "Zap";
-  if (/sea|map/i.test(label)) return "Map";
-  if (/trello|discord|community|official/i.test(label)) return "Link";
-  if (/item|material/i.test(label)) return "Package";
+function navIcon(slug: string): string {
+  const s = slug.toLowerCase();
+  if (s.includes("code")) return "Gift";
+  if (s.includes("guide")) return "BookOpen";
+  if (s.includes("fruit")) return "Compass";
+  if (s.includes("tier")) return "Trophy";
+  if (s.includes("boss")) return "Skull";
+  if (s.includes("haki")) return "Zap";
+  if (s.includes("item")) return "Package";
+  if (s.includes("community") || s.includes("official")) return "Link";
   return "BookOpen";
 }
 
@@ -69,10 +55,10 @@ export interface NavItem {
   isSecondary?: boolean;
 }
 
-export const NAV_ITEMS: NavItem[] = allModules.map((m, i) => ({
-  label: shortLabel(m.name),
-  href: m.href,
-  icon: iconFor(m.displayType, m.name),
+export const NAV_ITEMS: NavItem[] = CATEGORIES.map((slug, i) => ({
+  label: navLabel(slug),
+  href: `/${slug}`,
+  icon: navIcon(slug),
   showInNav: true,
   ...(i >= 5 ? { isSecondary: true } : {}),
 }));
@@ -96,16 +82,16 @@ export interface FooterColumn {
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Guides",
-    links: allModules.slice(0, 4).map((m) => ({
-      label: shortLabel(m.name),
-      href: m.href,
+    links: CATEGORIES.slice(0, 4).map((slug) => ({
+      label: navLabel(slug),
+      href: `/${slug}`,
     })),
   },
   {
     title: "Resources",
-    links: allModules.slice(4, 8).map((m) => ({
-      label: shortLabel(m.name),
-      href: m.href,
+    links: CATEGORIES.slice(4, 8).map((slug) => ({
+      label: navLabel(slug),
+      href: `/${slug}`,
     })),
   },
   {
@@ -133,7 +119,6 @@ export const NAV_ICON_MAP: Record<string, React.ElementType> = {
   Gift,
   BookOpen,
   Compass,
-  Map,
   Skull,
   Link: LinkIcon,
   Zap,
