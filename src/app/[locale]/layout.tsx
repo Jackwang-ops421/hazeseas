@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -66,7 +67,16 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-3486847619136318" />
+      </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3486847619136318"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <NextIntlClientProvider messages={messages}>
             <JsonLd data={organization} />
