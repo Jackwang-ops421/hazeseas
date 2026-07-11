@@ -59,7 +59,7 @@ export const siteConfig: SiteConfig = {
     "Not affiliated with Roblox Corporation or the Haze Seas developers. Unofficial fan-made resource website.",
   logoInitials: "HS",
   officialLinks: {
-    game: "https://www.roblox.com/games/6918802270/HAZE-PIECE",
+    game: "https://www.roblox.com/games/6918802270/Haze-Seas",
     event: "https://www.roblox.com/events/4232548068492050700",
     community: "https://www.roblox.com/communities/6602131/HS-Haze-Studios",
     discord: "https://discord.com/invite/hazeseas",

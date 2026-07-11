@@ -3,43 +3,30 @@
     "name": "Haze Seas Wiki",
     "shortName": "Haze Seas",
     "tagline": "Fan-Made Community Wiki",
-    "description": "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides.",
+    "description": "Haze Seas Wiki for active codes, Devil Fruits, tier lists, Haki, bosses, and Sea 1–3 routes, updated for new players and returning Haze Piece fans.",
     "legalNotice": "Non-official fan wiki. Made by players, for players."
   },
-  "nav": {
-    "races": "Races",
-    "bosses": "Bosses",
-    "guides": "Guides",
-    "codes": "Codes",
-    "tierList": "Tier List",
-    "maps": "Maps",
-    "skills": "Skills",
-    "updates": "Updates",
-    "home": "Home",
-    "menu": "Menu",
-    "toggleTheme": "Toggle theme",
-    "weapons": "Weapons"
-  },
+  "nav": {},
   "home": {
     "meta": {
       "title": "Haze Seas Wiki — Codes, Fruits & Beginner Guide",
       "description": "Haze Seas Hub Wiki gives Roblox players codes, fruit tier lists, swords, fighting styles, bosses, maps, races, and beginner progression guides."
     },
     "hero": {
-      "eyebrow": "Fan-Made Community Wiki",
+      "eyebrow": "Independent Fan-Made Community Wiki",
       "title": "Haze Seas",
-      "description": "Haze Seas is the new rework era of Haze Piece, a Roblox action RPG about sailing, grinding quests, collecting fruits, and building a stronger pirate or marine. Use this fan-made hub to track codes, fruits, swords, fighting styles, bosses, and progression routes before and after the Haze Seas update.",
+      "description": "Haze Seas is the rebuilt form of Haze Piece, a Roblox pirate action RPG where you explore islands, master Devil Fruits and Haki, collect weapons, and challenge bosses. Use this fan-made wiki to check active codes, compare builds, and plan your route through Sea 1, Sea 2, and Sea 3.",
       "stats": [
-        "Haze Seas Rework Jun 30 2026",
-        "Updated Jun 19 2026",
-        "239.6M+ Visits",
-        "3.14M+ Favorites",
-        "Server Size 12"
+        "Launched Jun 30, 2026",
+        "Updated Jul 8, 2026",
+        "249.7M+ Visits",
+        "3.4M+ Favorites",
+        "35 Devil Fruits"
       ],
       "primaryCta": "Get Free Codes",
       "secondaryCta": "Play on Roblox",
       "tertiaryCta": "Check Active Codes",
-      "videoLabel": "Official media"
+      "videoLabel": "Official Final Trailer"
     },
     "updates": {
       "title": "动态更新",
@@ -53,22 +40,22 @@
         {
           "number": "1",
           "title": "Beginner Guide",
-          "description": "Start your first Haze Seas session with a clean route covering island quests, fruit basics, races, and early stat priorities."
+          "description": "Learn the first-hour route, redeem launch rewards, choose your main damage stat, obtain an early Fruit, and avoid wasting Cash, Gems, or Race Spins."
         },
         {
           "number": "2",
-          "title": "Codes and Rewards",
-          "description": "Track verified codes from the Roblox description, official Discord, and YouTube for EXP boosts, Race Spins, Gems, and Stat Refunds."
+          "title": "Leveling and Sea Routes",
+          "description": "Follow the island quest path, level efficiently, and prepare for the requirements that move your character from Sea 1 into Sea 2 and Sea 3."
         },
         {
           "number": "3",
-          "title": "Fruit Spawns",
-          "description": "Learn how fruits spawn every 60 minutes, despawn after 20 minutes, and which ones appear in VIP servers."
+          "title": "Devil Fruits and Tier List",
+          "description": "Compare all 35 Fruits by rarity and practical value for grinding, bosses, mobility, and PvP before committing to a build."
         },
         {
           "number": "4",
-          "title": "Fruit Tier List",
-          "description": "Compare all fruits by tier for grinding, bosses, and PvP so you can pick the best build on day one."
+          "title": "Bosses, Haki and Gear",
+          "description": "Find progression-critical bosses, train Armament and Observation Haki, and track the weapons, accessories, and upgrade materials your build needs."
         }
       ]
     },
@@ -111,17 +98,17 @@
     "aboutGame": {
       "title": "What is Haze Seas?",
       "paragraphs": [
-        "Haze Seas is the reworked version of Haze Piece by Haze Studios on Roblox. It keeps the anime pirate RPG loop players search for most: quests, fruits, swords, fighting styles, bosses, races, bounty, and island progression.",
-        "Players should treat Haze Seas as a live-update game. The Roblox page and event page are the safest anchors for release timing, while Discord and YouTube are the best places to verify fresh codes, maintenance notices, and rework showcases."
+        "Haze Seas is a free Roblox Action RPG developed by [HS] Haze Studios and launched as a major rebuild of Haze Piece. Players choose a Pirate or Marine path, complete island quests, assign stats, and fight with Devil Fruits, swords, fighting styles, and Haki.",
+        "The current game features 35 Devil Fruits and progression across three seas. Its long-term loop is to level up, hunt rare boss drops, unlock stronger forms and V2 upgrades, and refine a PvE or PvP build with friends or a crew."
       ],
       "stats": [
         {
           "label": "Developer",
-          "value": "Haze Studios"
+          "value": "[HS] Haze Studios"
         },
         {
           "label": "Platform",
-          "value": "Roblox"
+          "value": "Roblox — PC, Mobile and Xbox"
         },
         {
           "label": "Genre",
@@ -129,192 +116,237 @@
         },
         {
           "label": "Visits",
-          "value": "239.6M+"
+          "value": "249.7M+"
         },
         {
           "label": "Favorites",
-          "value": "3.14M+"
+          "value": "3.4M+"
         },
         {
-          "label": "Fruit Spawn",
-          "value": "60 min"
+          "label": "Devil Fruits",
+          "value": "35"
         },
         {
-          "label": "Server Size",
-          "value": "12"
+          "label": "Seas",
+          "value": "3"
         }
       ],
       "cta": "Explore All Guides"
     },
     "explore": {
-      "title": "Haze Seas Hub Modules",
+      "title": "Explore Haze Seas",
       "description": "Jump to the section you need.",
       "modules": [
         {
           "order": 1,
           "name": "Haze Seas Codes",
-          "description": "Find the latest Haze Seas codes, redemption steps, and update notes in one place. This page should be checked and updated whenever the game receives a new update.",
-          "href": "/codes/haze-seas-codes",
+          "description": "Use the latest working Haze Seas codes for Race Spins, Gems, Cash, and timed EXP boosts. Haze Seas was formerly Haze Piece, so this section also serves legacy code searches while clearly separating active and expired entries.",
+          "href": "/codes",
           "displayType": "code-cards",
           "highlights": [
             {
-              "label": "Active Codes",
-              "detail": "Track active Haze Seas codes and rewards."
+              "label": "OKUCHI",
+              "detail": "5 Race Spins",
+              "badge": "New"
             },
             {
-              "label": "How to Redeem",
-              "detail": "Step-by-step redemption instructions."
+              "label": "Sub2XenoTy",
+              "detail": "20 minutes of 2x EXP",
+              "badge": "New"
             },
             {
-              "label": "Expired Codes",
-              "detail": "Expired code notes and update reminders."
+              "label": "FREECASH",
+              "detail": "50,000 Cash",
+              "badge": "Active"
             }
           ]
         },
         {
           "order": 2,
-          "name": "Haze Seas Official Links",
-          "description": "Quick access hub for Haze Seas resources, including the Roblox game page, community links, Trello-style resources if available, and update channels. This page must clearly state that hazeseashub.wiki is a fan-made guide site, not the official game website.",
-          "href": "/official-links",
+          "name": "Haze Seas Trello and Discord",
+          "description": "Open the verified Haze Seas Trello, Discord, Roblox experience, and developer channel without relying on fan-made wikis. These official links also help players who still search for the game under its former Haze Piece name.",
+          "href": "/trello-discord",
           "displayType": "card-list",
           "highlights": [
             {
+              "label": "Official Trello",
+              "detail": "Game information, codes, controls, chest and mastery systems, sea events, Fruits, Swords, Fighting Styles, Races, NPCs, Bosses, and locations.",
+              "badge": "Official"
+            },
+            {
+              "label": "Official Discord",
+              "detail": "Developer announcements, hotfixes, codes, Fruit stock updates, player questions, and bug reports.",
+              "badge": "Official"
+            },
+            {
               "label": "Roblox Game",
-              "detail": "Official Roblox game page and related links."
-            },
-            {
-              "label": "Community Resources",
-              "detail": "Discord, Trello, and community update channels."
-            },
-            {
-              "label": "Update Sources",
-              "detail": "Official channels for news and patch notes."
+              "detail": "The official Haze Seas experience page by Haze Studios, currently labeled RELEASE + UPD 1.",
+              "badge": "Official"
             }
           ]
         },
         {
           "order": 3,
-          "name": "Haze Seas Beginner Guide",
-          "description": "A beginner-focused route for new Haze Seas players covering first steps, early progression, and how to avoid wasting time. Keep the content practical and task-based.",
-          "href": "/guide/haze-seas-beginner-guide",
-          "displayType": "step-by-step",
+          "name": "Haze Seas Tier List",
+          "description": "Compare current Fruits by PvE grinding, PvP performance, damage, mobility, and general usefulness. The rankings are editorial rather than official, and the complete tier list also explains lower-tier common Fruits and changes caused by new patches.",
+          "href": "/tier-list",
+          "displayType": "tier-grid",
           "highlights": [
             {
-              "label": "Start Here",
-              "detail": "Join the official Roblox experience and set up your first session."
+              "label": "S",
+              "detail": "Electricity, Dragon, Gum with Gear 4 or Gear 5, Darkness, Phoenix, Tremor"
             },
             {
-              "label": "Early Progression",
-              "detail": "Focus on quests, fruit basics, and core systems."
+              "label": "A",
+              "detail": "Okuchi, Dough, Magma, Shadow, Venom"
             },
             {
-              "label": "Beginner Tips",
-              "detail": "Avoid common mistakes and save resources."
+              "label": "B",
+              "detail": "Leopard, Wolf, Soul, Ice, Magnet, Flame, Light, Gas, Gravity, String"
+            },
+            {
+              "label": "C",
+              "detail": "Operation, Smoke, Sand, Snow, Paw, Buddha"
             }
           ]
         },
         {
           "order": 4,
-          "name": "Haze Seas Fruit Tier List",
-          "description": "A ranking hub for Haze Seas fruits based on general player search intent such as grinding, boss fights, and overall usefulness. Do not invent rankings unless the current page already has verified ranking data.",
-          "href": "/tier-list/haze-seas-fruit-tier-list",
-          "displayType": "tier-grid",
+          "name": "Haze Seas Fruits",
+          "description": "The official Roblox page currently lists 35 Fruits, with Okuchi added in Update 1. Browse the roster by rarity, check Fruit Dealer costs, and use the verified one-hour world-spawn timer before choosing what to keep, trade, or replace.",
+          "href": "/fruits",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "Best Fruits",
-              "detail": "Top-tier fruits for general use."
+              "label": "Mythical Fruits",
+              "detail": "Gum, Dough, Dragon, Electricity; Okuchi is the newest Mythical addition."
             },
             {
-              "label": "Grinding",
-              "detail": "Fruits that help with farming and leveling."
+              "label": "Legendary Fruits",
+              "detail": "Magma, Leopard, Venom, Darkness, Phoenix, Soul, Magnet, Wolf, Tremor, Shadow."
             },
             {
-              "label": "Boss Fights",
-              "detail": "Fruits useful for boss encounters."
+              "label": "Fruit Dealer",
+              "detail": "A random Fruit roll costs 125,000 Cash or 50 Gems; specific Fruits can also be bought when in stock."
             }
           ]
         },
         {
           "order": 5,
-          "name": "Haze Seas Fighting Styles",
-          "description": "A guide page for Haze Seas fighting styles and skill progression. Structure it for players who want to compare styles, unlock paths, and practical usage.",
-          "href": "/skills/haze-seas-fighting-styles",
-          "displayType": "card-list",
+          "name": "Haze Seas Beginner Guide",
+          "description": "Start efficiently in Haze Seas, formerly Haze Piece, by following island quests instead of grinding random enemies and by committing to one main damage path. The guide connects codes, Fruit acquisition, stats, bosses, Haki, and later sea progression in the order a new player encounters them.",
+          "href": "/beginner-guide",
+          "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "Unlock Guide",
-              "detail": "How to unlock and progress fighting styles."
+              "label": "1",
+              "detail": "Redeem active codes and claim available starter rewards before beginning the main grind."
             },
             {
-              "label": "Style Comparison",
-              "detail": "Compare V1 and V2 fighting styles."
+              "label": "2",
+              "detail": "Complete quests on the current island; when the level requirement is met, the game highlights the next destination."
             },
             {
-              "label": "Skill Tips",
-              "detail": "Combat and skill planning advice."
+              "label": "3",
+              "detail": "Choose one primary damage stat: Fruit, Sword, or Combat, then keep Defense as the secondary investment."
+            },
+            {
+              "label": "4",
+              "detail": "Get a Fruit from Cynthia for 125,000 Cash or 50 Gems per random roll, or watch for tree spawns every 60 minutes."
+            },
+            {
+              "label": "5",
+              "detail": "Defeat island bosses along the quest route for additional EXP, Cash, and chances at weapons or accessories."
+            },
+            {
+              "label": "6",
+              "detail": "Unlock Buso Haki at Level 350 and Observation Haki at Level 600 as soon as their requirements are met."
             }
           ]
         },
         {
           "order": 6,
-          "name": "Haze Seas Race Guide",
-          "description": "A race guide hub for Haze Seas players comparing race effects, reroll intent, and beginner-friendly choices. Do not add exact race stats unless already verified in the project content.",
-          "href": "/races/haze-seas-race-guide",
+          "name": "Haze Seas Haki Guide",
+          "description": "Learn how to unlock and upgrade Armament, Observation, and Conqueror's Haki with exact level, Cash, race, and trainer requirements. This section directly answers high-intent searches such as how to get Haki, Buso Level 2, and Observation Haki in Haze Seas or Haze Piece.",
+          "href": "/haki",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "Race Overview",
-              "detail": "What races are available in Haze Seas."
+              "label": "Armament Haki",
+              "detail": "Buy Level 1 from Old Man Silver in Logue City at Level 350 for 100,000 Cash; it boosts Sword and Fighting Style damage and lets you hit Logia users.",
+              "badge": "Level 350"
             },
             {
-              "label": "Best Picks",
-              "detail": "Beginner-friendly race choices."
+              "label": "Observation Haki",
+              "detail": "Buy Level 1 from the trainer in Marine Base Town at Level 600 for 150,000 Cash; it starts with three automatic dodges.",
+              "badge": "Level 600"
             },
             {
-              "label": "Reroll Tips",
-              "detail": "When and how to reroll race choices."
+              "label": "Conquerors Haki",
+              "detail": "Automatically unlocks only with the D. Clan race; each use costs 250 Stamina, reduced to 200 with D. Clan V2.",
+              "badge": "D. Clan"
             }
           ]
         },
         {
           "order": 7,
-          "name": "Haze Seas Boss Guide",
-          "description": "A boss guide hub for Haze Seas players who need routes, requirements, drops, and fight tips. Do not invent boss drops; add table structure only if data is not already verified.",
-          "href": "/bosses/haze-seas-boss-guide",
+          "name": "Haze Seas Bosses and Drops",
+          "description": "Find each boss location, summon requirement, respawn window, and confirmed drop before starting a farm. The complete guide covers Island Bosses and Super Bosses, including high-demand legacy Haze Piece searches for G4, Mace, Sea Beast, Enma, and Dough Boss.",
+          "href": "/bosses",
           "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "Boss Routes",
-              "detail": "Where to find bosses and how to reach them."
+              "label": "1",
+              "detail": "G4 Boss — Spawns on Bubble Island, returns 30 seconds after defeat, and has a 5% chance to drop the Gear 4 Book."
             },
             {
-              "label": "Fight Tips",
-              "detail": "General strategies for boss encounters."
+              "label": "2",
+              "detail": "Mace Boss — A Level 700 Super Boss in the cave behind Marine Base Town; place Lava Ore in the cauldron to summon it for Mace V1 and Coded Mask drops."
             },
             {
-              "label": "Drop Table",
-              "detail": "Drop table structure for verified data."
+              "label": "3",
+              "detail": "Sea Beast — The Sea 1 version spawns at Rocky Pillars every 30 to 120 minutes, drops a Sea Beast Core, and has a 50% chance for Sea Beast Hammer V1."
+            },
+            {
+              "label": "4",
+              "detail": "Enma Boss — A Level 2500 Super Boss at Flower Capital in Sea 2 with a 60-minute respawn and a 10% chance to drop the Enma Sword."
+            },
+            {
+              "label": "5",
+              "detail": "Dough Boss — Spawned in Mirror World for 50 Gems; it has a 120-minute respawn, a 10% Dough Scarf drop, and a 50% Dough Trident drop."
             }
           ]
         },
         {
           "order": 8,
-          "name": "Haze Seas Map Guide",
-          "description": "A map and island progression guide for players looking for locations, route planning, and where to go next. Use hub-style cards and internal links to beginner, boss, and leveling content.",
-          "href": "/maps/haze-seas-map-guide",
-          "displayType": "card-list",
+          "name": "Haze Seas Sea 2 and Sea 3",
+          "description": "Follow the current unlock path from the First Sea to the Second and Third Seas. This progression guide also covers legacy Haze Piece searches for Sea 2, Poneglyph Scroll, Gatekeeper, Red Emperor, and Sea 3.",
+          "href": "/sea-2-sea-3",
+          "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "Islands",
-              "detail": "Island locations and progression order."
+              "label": "1",
+              "detail": "Reach Level 2200 before accepting the Sea 2 quest."
             },
             {
-              "label": "Routes",
-              "detail": "Efficient travel and farming routes."
+              "label": "2",
+              "detail": "Talk to the Dimensional Sailor at the Starter Island docks, then enter the central cave at Rocky Pillars and collect the Poneglyph Scroll."
             },
             {
-              "label": "Progression",
-              "detail": "Where to go next at each stage."
+              "label": "3",
+              "detail": "Return the Poneglyph Scroll to the Dimensional Sailor and interact with him again to teleport to Sea 2."
+            },
+            {
+              "label": "4",
+              "detail": "Reach Level 4200, then find the Gatekeeper inside the main building at Flower Capital in Sea 2."
+            },
+            {
+              "label": "5",
+              "detail": "Choose the Sea 3 challenge and fight the Red Emperor alone until the victory cutscene triggers."
+            },
+            {
+              "label": "6",
+              "detail": "Return to the Gatekeeper, select Yes, and travel to the Land of the Gods starter island in Sea 3."
             }
           ]
         }
@@ -326,46 +358,38 @@
       "items": [
         {
           "question": "What is Haze Seas?",
-          "answer": "Haze Seas is the reworked version of Haze Piece by Haze Studios on Roblox. It is an anime pirate Action RPG featuring fruits, swords, fighting styles, races, bosses, and island progression."
+          "answer": "Haze Seas is a free Roblox Action RPG developed by [HS] Haze Studios and launched as a major rebuild of Haze Piece on June 30, 2026. Players explore islands, master Devil Fruits and Haki, collect weapons, and challenge bosses across three seas."
         },
         {
           "question": "Is Haze Seas free to play?",
-          "answer": "Yes, Haze Seas is a free-to-play Roblox experience. You can join via the official Roblox page and start playing immediately."
+          "answer": "Yes, Haze Seas is a free-to-play Roblox experience available on PC, Mobile, and Xbox. You can join via the official Roblox page and start playing immediately."
         },
         {
           "question": "How do I redeem codes in Haze Seas?",
-          "answer": "Open the Roblox game, find the in-game Shop or Codes menu, enter the code, and confirm. Rewards such as EXP boosts, Race Spins, Gems, and Stat Refunds are added to your account instantly."
+          "answer": "Open the Roblox game, find the in-game Shop or Codes menu, enter the code exactly as shown, and confirm. Rewards such as EXP boosts, Race Spins, Gems, and Stat Refunds are added to your account instantly."
         },
         {
           "question": "What is the best fruit in Haze Seas?",
-          "answer": "Post-release testing is still underway. Dragon, Dough, Leopard, Venom, Soul, and Phoenix fruits are the most commonly cited S-tier candidates for grinding, bosses, and PvP."
+          "answer": "Dragon, Dough, Gum with Gear 4 or Gear 5, Darkness, Phoenix, Electricity, and Tremor are the most commonly cited S-tier Fruits in Haze Seas for grinding, bosses, and PvP."
+        },
+        {
+          "question": "How do I progress from Sea 1 to Sea 2 and Sea 3?",
+          "answer": "Reach Level 2200 to unlock Sea 2, then find the Dimensional Sailor at Starter Island docks, collect the Poneglyph Scroll in Rocky Pillars cave, and return it to teleport to Sea 2. For Sea 3, reach Level 4200 and defeat the Red Emperor at Flower Capital."
         },
         {
           "question": "Where do I find active codes for Haze Seas?",
-          "answer": "The Codes page on this wiki tracks codes from the official Roblox description, official Discord announcements, and official Haze Studios YouTube channel. Always verify codes in-game before relying on them."
+          "answer": "The Codes page on this wiki tracks Haze Seas codes from the official Roblox description, official Discord announcements, and official Haze Studios YouTube channel. Always verify codes in-game before relying on them."
         }
       ]
     },
     "finalCta": {
       "title": "Ready to Master Haze Seas?",
-      "description": "From your first island quests to fruit builds, boss drops, sword routes, and update codes, Haze Seas Hub Wiki gives players a clean starting point.",
+      "description": "From your first quests and code rewards to Fruit awakenings, Haki training, boss drops, and Sea 3 progression, this fan-made wiki keeps your next objective clear.",
       "primary": "Read the Beginner Guide",
-      "secondary": "Play on Roblox"
+      "secondary": "Play Haze Seas on Roblox"
     }
   },
-  "bosses": {
-    "meta": {
-      "title": "Haze Seas Boss Guide - Boss Routes, Fight Tips and Drops",
-      "description": "Use this Haze Seas boss guide hub to organize boss routes, fight tips, drop-table structure, and related progression pages."
-    },
-    "overviewTitle": "Bosses",
-    "overviewDescription": "Haze Seas boss guides and routes.",
-    "body": "Bosses in Haze Seas serve as skill gates and progression milestones.",
-    "guidesTitle": "Boss Guides",
-    "readMore": "Read more",
-    "new": "New",
-    "popular": "Popular"
-  },
+  "bosses": {},
   "shared": {
     "wikiNavigation": "Wiki Navigation",
     "activeCodes": "Active Codes",
@@ -385,7 +409,7 @@
   },
   "footer": {
     "aboutTitle": "Haze Seas Wiki",
-    "about": "Haze Seas Wiki is an independent fan-made guide hub for Roblox players who want faster routes, cleaner build choices, and verified update resources. It covers codes, fruits, swords, fighting styles, bosses, races, maps, and beginner progression without replacing official Haze Studios channels.",
+    "about": "Haze Seas Wiki is an independent fan-made guide for Haze Seas and returning Haze Piece players. It covers active codes, Devil Fruits, tier lists, Haki, bosses, weapons, and Sea 1–3 progression. It is not affiliated with Haze Studios or Roblox.",
     "quickLinks": "Quick Links",
     "guides": "Guides",
     "legal": "Legal",
@@ -402,84 +426,14 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
-  "codes": {
-    "meta": {
-      "title": "Haze Seas Codes - Latest Rewards and Redemption Guide",
-      "description": "Check Haze Seas codes, redemption steps, expired code notes, and update reminders in this fan-made Haze Seas guide hub."
-    },
-    "overviewTitle": "Codes",
-    "overviewDescription": "Haze Seas codes, redemption steps, and update notes."
-  },
-  "guide": {
-    "meta": {
-      "title": "Haze Seas Beginner Guide - Start, Leveling and Progression Tips",
-      "description": "Start Haze Seas with a beginner-friendly guide covering early progression, basic priorities, useful routes, and practical tips for new players."
-    },
-    "overviewTitle": "Guides",
-    "overviewDescription": "Beginner guides and progression routes for Haze Seas."
-  },
-  "tier-list": {
-    "meta": {
-      "title": "Haze Seas Fruit Tier List - Best Fruits for Grinding and Bosses",
-      "description": "Compare Haze Seas fruits by general usefulness, grinding potential, boss fights, and beginner-friendly choices in this fan-made tier list guide."
-    },
-    "overviewTitle": "Tier List",
-    "overviewDescription": "Haze Seas fruit tier list and rankings."
-  },
-  "skills": {
-    "meta": {
-      "title": "Haze Seas Fighting Styles Guide - Unlocks, Skills and Progression",
-      "description": "Learn how Haze Seas fighting styles fit into progression, combat choices, unlock paths, and skill planning."
-    },
-    "overviewTitle": "Skills",
-    "overviewDescription": "Haze Seas fighting styles and skill guides."
-  },
-  "races": {
-    "meta": {
-      "title": "Haze Seas Race Guide - Best Races, Rerolls and Player Tips",
-      "description": "Compare Haze Seas races, reroll intent, beginner-friendly picks, and practical race guide notes for players."
-    },
-    "overviewTitle": "Races",
-    "overviewDescription": "Haze Seas race guides and reroll tips."
-  },
-  "maps": {
-    "meta": {
-      "title": "Haze Seas Map Guide - Islands, Routes and Progression",
-      "description": "Navigate Haze Seas maps, islands, routes, and progression paths with this fan-made map guide hub."
-    },
-    "overviewTitle": "Maps",
-    "overviewDescription": "Haze Seas map and island guides."
-  },
-  "weapons": {
-    "meta": {
-      "title": "Haze Seas Swords and Weapons Guide - Unlocks and Progression",
-      "description": "Organize Haze Seas swords and weapons by unlock intent, progression use, and related guide pages without inventing unverified weapon data."
-    },
-    "overviewTitle": "Weapons",
-    "overviewDescription": "Haze Seas swords and weapons guide hub."
-  },
-  "fruits": {
-    "meta": {
-      "title": "Haze Seas Fruits Hub - Fruit Guides and Tier List",
-      "description": "Explore Haze Seas fruit guides, tier list links, grinding recommendations, and related resources."
-    },
-    "overviewTitle": "Fruits",
-    "overviewDescription": "Haze Seas fruit guides, tier list, and fruit-related resources."
-  },
-  "materials": {
-    "meta": {
-      "title": "Haze Seas Materials Guide - Farming, Drops and Upgrade Resources",
-      "description": "Structure Haze Seas material farming, drop sources, and upgrade planning."
-    },
-    "overviewTitle": "Materials",
-    "overviewDescription": "Haze Seas material farming, drops, and upgrade resources."
-  },
-  "official-links": {
-    "meta": {
-      "title": "Haze Seas Official Links - Roblox, Discord and Update Resources",
-      "description": "Find verified Haze Seas resource links and avoid fake mirrors or unsafe script pages."
-    },
-    "overviewTitle": "Official Links",
-    "overviewDescription": "Verified Haze Seas resource links and community channels."
-  }
+  "codes": {},
+  "guide": {},
+  "tier-list": {},
+  "skills": {},
+  "races": {},
+  "maps": {},
+  "weapons": {},
+  "fruits": {},
+  "materials": {},
+  "official-links": {}
 }

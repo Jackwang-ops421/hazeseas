@@ -72,7 +72,7 @@ export default function OfficialLinksPage() {
         <div className="mt-8 rounded-2xl border border-border bg-muted/40 p-5">
           <h2 className="text-xl font-bold text-foreground">Roblox Game Page</h2>
           <p className="mt-2 text-muted-foreground">
-            {externalLink("https://www.roblox.com/games/6918802270/HAZE-PIECE", "Haze Piece / Haze Seas on Roblox")} — the official Roblox experience page.
+            {externalLink("https://www.roblox.com/games/6918802270/Haze-Seas", "Haze Seas on Roblox")} — the official Roblox experience page.
           </p>
         </div>
 

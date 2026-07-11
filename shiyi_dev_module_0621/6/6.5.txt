@@ -1,7 +1,7 @@
-- {{PROJECT_PATH}} — D:\02_soft\cursor\code1\fearstofathomscratchcreek
-- {{REQUIREMENTS_DIR}} — D:\02_soft\cursor\code1\fearstofathomscratchcreek\1shiyi
-- {{DOMAIN}} — fearstofathomscratchcreek.com/
-- {{GAME_NAME}} — fears to fathom scratch creek
+- {{PROJECT_PATH}} — D:\02_soft\cursor\code1\hazeseas\
+- {{REQUIREMENTS_DIR}} — D:\02_soft\cursor\code1\hazeseas\shiyi_dev_module_0621
+- {{DOMAIN}} — hazeseashub.wiki
+- {{GAME_NAME}} — haze seas
 - {{OLD_GAME_KEYWORD}} — vv ultimatum
 
 # 部分 5：文章与导航

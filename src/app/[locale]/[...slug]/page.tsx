@@ -9,6 +9,7 @@ import { Breadcrumbs, JsonLd, WikiSidebar, localizeHref } from "@/components/sit
 import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
 import { CONTENT_TYPES, type ContentType } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
+import { siteConfig } from "@/site-data/site.config";
 import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
 
@@ -32,16 +33,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const ct = slug[0] as ContentType;
     const ctTitle = ct.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
-    const title = ctMessages?.overviewTitle || `${ctTitle} — Haze Seas Wiki`;
-    const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for Haze Seas Wiki.`;
-    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, siteName: "Haze Seas Wiki", images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: "Haze Seas Wiki" }] } };
+    const title = ctMessages?.overviewTitle || `${ctTitle} — ${siteConfig.siteName}`;
+    const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for ${siteConfig.siteName}.`;
+    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, siteName: siteConfig.siteName, images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: siteConfig.siteName }] } };
   }
   const [contentType, ...articleSlug] = slug;
   const item = await getContent(contentType, articleSlug, locale as Locale);
   if (!item) return { title: "Not Found" };
   const pathname = `/${contentType}/${articleSlug.join("/")}`;
   const image = item.metadata.image?.startsWith("http") ? item.metadata.image : `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`;
-  return { title: `${item.metadata.title} — Haze Seas Wiki`, description: item.metadata.description, alternates: { canonical: pathname, languages: languageAlternates(pathname) }, openGraph: { type: "article", title: item.metadata.title, description: item.metadata.description, url: `${siteUrl}${pathname}`, images: [image] }, twitter: { card: "summary_large_image", images: [image] } };
+  return { title: `${item.metadata.title} — ${siteConfig.siteName}`, description: item.metadata.description, alternates: { canonical: pathname, languages: languageAlternates(pathname) }, openGraph: { type: "article", title: item.metadata.title, description: item.metadata.description, url: `${siteUrl}${pathname}`, images: [image] }, twitter: { card: "summary_large_image", images: [image] } };
 }
 
 export default async function SlugPage({ params }: { params: Promise<{ locale: Locale; slug: string[] }> }) {
@@ -55,7 +56,7 @@ async function NavigationPage({ locale, contentType, navGroups }: { locale: Loca
   if (!CONTENT_TYPES.includes(contentType as ContentType)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale as Locale);
-  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — Haze Seas Wiki`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
+  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — ${siteConfig.siteName}`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
 
   const sectionTitle = (messages as unknown as Record<string, Record<string, string>>)[contentType]?.overviewTitle
     || contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());

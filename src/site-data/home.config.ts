@@ -100,10 +100,10 @@ export const heroConfig: HeroConfig = {
   primaryCta: { label: "Get Free Codes", href: "/codes" },
   secondaryCta: {
     label: "Play on Roblox",
-    href: "https://www.roblox.com/games/6918802270/HAZE-PIECE",
+    href: "https://www.roblox.com/games/6918802270/Haze-Seas",
     external: true,
   },
-  trailerVideoId: "uLhv4-5NRCc",
+  trailerVideoId: "fI0K5bc29EE",
   stats: [
     { value: "Guide Hub", label: "Site Type" },
     { value: "Codes", label: "Popular Search" },
@@ -262,7 +262,7 @@ export const officialLinksSection = {
     {
       title: "Roblox Game Page",
       description: "Verified game access link.",
-      href: "https://www.roblox.com/games/6918802270/HAZE-PIECE",
+      href: "https://www.roblox.com/games/6918802270/Haze-Seas",
       external: true,
       ariaLabel: "Play Haze Seas on Roblox",
     },
