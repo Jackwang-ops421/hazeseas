@@ -442,8 +442,132 @@
     "termsOfService": "Terminos de Servicio"
   },
   "codes": {
-    "overviewTitle": "Codigos",
-    "overviewDescription": "Codigos activos de Haze Seas, pasos para canjear y notas de codigos expirados."
+    "meta": {
+      "title": "Códigos de Haze Seas (Julio 2026) — Activos y Verificados",
+      "description": "Usa los últimos códigos de Haze Seas para conseguir Race Spins, Stat Refunds, Cash, Gems y 2x EXP gratis. Actualizado el 11 de julio de 2026 para jugadores que vuelven de Haze Piece.",
+      "h1": "Códigos de Haze Seas (Julio 2026)",
+      "lastUpdated": "2026-07-11",
+      "intro": "Los códigos de Haze Seas pueden dar Race Spins, un Stat Refund, Cash, Gems y 2x EXP temporal. Haze Seas era antes Haze Piece; escribe cada código exactamente con las mayúsculas indicadas abajo.",
+      "verificationNotice": "Última revisión: 11 de julio de 2026. Los códigos distinguen mayúsculas y pueden caducar sin aviso. HAZESEAS2026 puede funcionar solo en servidores nuevos.",
+      "breadcrumb": "Inicio > Códigos de Haze Seas"
+    },
+    "copyButton": {
+      "ariaLabelTemplate": "Copiar código {CODE}",
+      "successLabel": "Copiado"
+    },
+    "redemption": {
+      "h2": "Cómo canjear códigos de Haze Seas",
+      "robloxLinkLabel": "Abrir Haze Seas en Roblox",
+      "robloxUrl": "https://www.roblox.com/games/6918802270/Haze-Seas",
+      "steps": [
+        "Abre Haze Seas en Roblox y carga tu personaje.",
+        "Pulsa el botón Menú en la esquina inferior izquierda de la pantalla.",
+        "Selecciona el icono blanco del Cofre del Tesoro o Regalo.",
+        "Pega el código en el campo Introducir Código con las mayúsculas exactas mostradas arriba.",
+        "Pulsa el botón verde Canjear para reclamar la recompensa."
+      ]
+    },
+    "troubleshooting": {
+      "h2": "¿Por qué un código de Haze Seas no funciona?",
+      "items": [
+        {
+          "title": "Código inválido",
+          "body": "Revisa las mayúsculas y elimina los espacios al inicio o al final del código."
+        },
+        {
+          "title": "Ya canjeado",
+          "body": "Normalmente cada código se puede usar una vez por cuenta de Roblox."
+        },
+        {
+          "title": "No aparece la recompensa",
+          "body": "Vuelve a entrar en un servidor recién creado e inténtalo otra vez. Si sigue fallando, puede que haya caducado."
+        }
+      ]
+    },
+    "expired": {
+      "h2": "Códigos de Haze Seas caducados",
+      "codes": [
+        "275KNEXTLETSGO",
+        "XMAS2023",
+        "NEXTCODEAT400KLIKES",
+        "NEXT300KCOOL",
+        "NEXTAT350KLIKES",
+        "VALENTINES2024",
+        "HAZEPIECE23",
+        "WOW325KMLG",
+        "GOGOGAGA",
+        "LETSGET450K2024",
+        "LETSGO375KHAZE",
+        "425KNEXTCODE123",
+        "GROUPONLY"
+      ]
+    },
+    "faq": [
+      {
+        "question": "¿Los códigos de Haze Seas y Haze Piece son los mismos?",
+        "answer": "Haze Seas es la versión reconstruida de Haze Piece. Usa la lista actual de Haze Seas de arriba; los códigos antiguos de Haze Piece van en la sección de caducados a menos que los desarrolladores los reactiven."
+      },
+      {
+        "question": "¿Los códigos de Haze Seas distinguen mayúsculas?",
+        "answer": "Sí. Copia exactamente las mayúsculas y elimina cualquier espacio al principio o al final del código."
+      },
+      {
+        "question": "¿Por qué falla HAZESEAS2026?",
+        "answer": "Puede que solo funcione en servidores recién creados o que haya caducado. Vuelve a entrar e inténtalo otra vez; si sigue fallando, trátalo como inactivo."
+      }
+    ],
+    "sidebarCodes": [
+      {
+        "code": "STATREFUND",
+        "reward": "1 Stat Refund"
+      },
+      {
+        "code": "DRAGONUPD",
+        "reward": "5 Race Spins"
+      }
+    ],
+    "officialSources": {
+      "h2": "Fuentes oficiales",
+      "items": [
+        {
+          "label": "Juego oficial de Roblox",
+          "url": "https://www.roblox.com/games/6918802270/Haze-Seas"
+        },
+        {
+          "label": "Trello oficial de Haze Seas",
+          "url": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello"
+        },
+        {
+          "label": "Discord oficial de Haze Studios",
+          "url": "https://discord.com/invite/hazeseas"
+        }
+      ]
+    },
+    "relatedGuides": {
+      "h2": "Guías internas relacionadas",
+      "items": [
+        {
+          "title": "Guía de principiante",
+          "description": "Comienza tu viaje en Haze Seas.",
+          "href": "/guide/haze-seas-beginner-guide"
+        },
+        {
+          "title": "Lista de tiers de frutas",
+          "description": "Compara frutas para farmeo y peleas contra bosses.",
+          "href": "/tier-list/haze-seas-fruit-tier-list"
+        },
+        {
+          "title": "Guía de bosses",
+          "description": "Rutas de bosses y consejos de pelea.",
+          "href": "/bosses/haze-seas-boss-guide"
+        },
+        {
+          "title": "Guía de Haki",
+          "description": "Desbloquea y mejora el Haki.",
+          "href": "/haki/haze-seas-haki"
+        }
+      ]
+    }
   },
   "guide": {
     "overviewTitle": "Guias",
@@ -468,5 +592,134 @@
   "community": {
     "overviewTitle": "Comunidad",
     "overviewDescription": "Enlaces de la comunidad oficial de Haze Seas incluyendo Discord, Trello y canales de actualizaciones."
+  },
+  "trelloDiscord": {
+    "meta": {
+      "title": "Haze Seas Trello, Discord y Enlaces Oficiales",
+      "description": "Abre el Trello oficial, Discord, juego de Roblox, comunidad y canal de YouTube de Haze Seas para códigos, actualizaciones, bosses, frutas y ayuda de progresión.",
+      "h1": "Haze Seas Trello, Discord y Enlaces Oficiales",
+      "breadcrumb": "Inicio > Haze Seas Trello y Discord"
+    },
+    "lastChecked": "Enlaces revisados el 11 de julio de 2026",
+    "intro1": "Usa los enlaces de abajo para abrir los recursos oficiales de Haze Seas. Haze Seas era antes conocido como Haze Piece, así que publicaciones y marcadores antiguos pueden seguir usando el nombre anterior.",
+    "intro2": "El Trello es la referencia estructurada para mecánicas y ubicaciones, mientras que Discord es la fuente más rápida de anuncios, hotfixes y códigos nuevos.",
+    "links": [
+      {
+        "title": "Juego oficial de Roblox",
+        "description": "Lanza Haze Seas, mira la descripción actual del juego y comprueba el último estado de actualización.",
+        "href": "https://www.roblox.com/games/6918802270/Haze-Seas",
+        "badge": "Official"
+      },
+      {
+        "title": "Trello oficial",
+        "description": "Consulta controles, códigos, sistemas, frutas, espadas, estilos de lucha, razas, NPCs, bosses y ubicaciones.",
+        "href": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
+        "badge": "Official"
+      },
+      {
+        "title": "Discord oficial",
+        "description": "Sigue anuncios, hotfixes, drops de códigos, sneak peeks y actualizaciones de la comunidad.",
+        "href": "https://discord.com/invite/hazeseas",
+        "badge": "Official"
+      },
+      {
+        "title": "YouTube oficial",
+        "description": "Mira tráilers oficiales, showcases, reworks y vídeos de actualización de Haze Studios.",
+        "href": "https://www.youtube.com/@RealHazeStudios",
+        "badge": "Official"
+      },
+      {
+        "title": "Comunidad oficial de Roblox",
+        "description": "Sigue la comunidad de Haze Studios en Roblox y sus anuncios oficiales de eventos.",
+        "href": "https://www.roblox.com/communities/6602131/HS-Haze-Studios",
+        "badge": "Official"
+      }
+    ],
+    "whichH2": "¿Qué enlace de Haze Seas deberías usar?",
+    "usage": [
+      {
+        "label": "Códigos y hotfixes",
+        "value": "Discord oficial"
+      },
+      {
+        "label": "Información estructurada del juego",
+        "value": "Trello oficial"
+      },
+      {
+        "label": "Lanzar el juego",
+        "value": "Juego oficial de Roblox"
+      },
+      {
+        "label": "Tráilers y showcases",
+        "value": "YouTube oficial"
+      }
+    ],
+    "safetyH2": "Aviso de seguridad",
+    "safety": "Haze Seas Hub es un sitio hecho por fans. No introduzcas tu contraseña de Roblox en ninguna página enlazada desde un mensaje privado y no confíes en enlaces copiados de Discord o Trello que usen un dominio diferente."
+  },
+  "sea2sea3": {
+    "meta": {
+      "title": "Haze Seas Sea 2 y Sea 3 — Guía de Desbloqueo",
+      "description": "Desbloquea Sea 2 en Nivel 2200 con el Poneglyph Scroll, luego alcanza Sea 3 en Nivel 4200 con la prueba del Red Emperor del Gatekeeper y la ruta exacta de NPCs.",
+      "h1": "Haze Seas Sea 2 y Sea 3 Guía",
+      "breadcrumb": "Inicio > Haze Seas Sea 2 y Sea 3"
+    },
+    "lastChecked": "Progresión revisada el 11 de julio de 2026",
+    "intro": "Haze Seas tiene tres mares. Sea 2 se desbloquea en Nivel 2200 tras la quest del Dimensional Sailor, mientras que Sea 3 se desbloquea en Nivel 4200 tras la prueba en solitario del Red Emperor del Gatekeeper.",
+    "tableH": [
+      "Mar",
+      "Nivel requerido",
+      "NPC inicial",
+      "Objetivo requerido"
+    ],
+    "tableRows": [
+      [
+        "Sea 1",
+        "Disponible desde el inicio",
+        "Starter Island",
+        "Alcanza el Nivel 2200 para empezar la quest de Sea 2"
+      ],
+      [
+        "Sea 2",
+        "Nivel 2200",
+        "Dimensional Sailor en los muelles de Starter Island",
+        "Lleva el Poneglyph Scroll desde la cueva central de Rocky Pillars"
+      ],
+      [
+        "Sea 3",
+        "Nivel 4200",
+        "Gatekeeper dentro del edificio principal de Flower Capital",
+        "Derrota al Red Emperor en solitario, vuelve al Gatekeeper y elige Sí"
+      ]
+    ],
+    "sea2": {
+      "h2": "Cómo desbloquear Sea 2 en Haze Seas",
+      "steps": [
+        "Alcanza el Nivel 2200.",
+        "Ve a los muelles de Starter Island y habla con el Dimensional Sailor.",
+        "Navega a Rocky Pillars.",
+        "Entra en la cueva central y completa la cinemática.",
+        "Recoge el Poneglyph Scroll.",
+        "Vuelve con el Dimensional Sailor y entrégale el Poneglyph Scroll.",
+        "Habla otra vez con el Dimensional Sailor para viajar a Sea 2."
+      ],
+      "cta": "Leer la Guía Completa de Sea 2",
+      "ctaHref": "/guide/haze-seas-second-sea"
+    },
+    "sea3": {
+      "h2": "Cómo desbloquear Sea 3 en Haze Seas",
+      "steps": [
+        "Alcanza el Nivel 4200 en Sea 2.",
+        "Viaja a Flower Capital.",
+        "Entra en el edificio principal y habla con el Gatekeeper.",
+        "Acepta el reto de Sea 3.",
+        "Derrota al Red Emperor en la prueba en solitario.",
+        "Vuelve al Gatekeeper tras la cinemática de victoria.",
+        "Elige Sí para viajar a la Land of the Gods en Sea 3."
+      ],
+      "cta": "Leer la Guía Completa de Sea 3",
+      "ctaHref": "/guide/haze-seas-sea-3"
+    },
+    "updateNote": "Los requisitos de progresión pueden cambiar tras una actualización. Vuelve a comprobar el Trello oficial y la página de Roblox si un requisito de NPC o nivel ya no coincide con el juego en vivo."
   }
 }

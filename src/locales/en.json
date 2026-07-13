@@ -415,53 +415,55 @@
       "verificationNotice": "Last checked: July 11, 2026. Codes are case-sensitive and can expire without notice. HAZESEAS2026 may work only in newly started servers.",
       "breadcrumb": "Home > Haze Seas Codes"
     },
-    "active": [
-      { "code": "STATREFUND", "reward": "1 Stat Refund", "status": "New", "badgeVariant": "new" },
-      { "code": "DRAGONUPD", "reward": "5 Race Spins", "status": "New", "badgeVariant": "new" },
-      { "code": "OKUCHI", "reward": "5 Race Spins", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2XenoTy", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2CaptainMaui", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "PATCH", "reward": "25 Gems and 15 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "RELEASE", "reward": "60 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "FREECASH", "reward": "50,000 Cash", "status": "Active", "badgeVariant": "active" },
-      { "code": "FREEGEMS", "reward": "50 Gems", "status": "Active", "badgeVariant": "active" },
-      { "code": "SUBSCRIBETOHAZEYT", "reward": "50,000 Cash", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2Nikkolapz", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2BadiTubes", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2BrosSiam", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "Sub2BuilderboyTV", "reward": "20 minutes of 2x EXP", "status": "Active", "badgeVariant": "active" },
-      { "code": "HAZESEAS2026", "reward": "10 Race Spins", "status": "Conditional", "badgeVariant": "conditional", "note": "May work only in newly started servers." }
-    ],
     "copyButton": {
-      "ariaLabelTemplate": "Copy {CODE} code",
-      "successLabel": "Copied"
+      "ariaLabelTemplate": "Copiar código {CODE}",
+      "successLabel": "Copiado"
     },
     "redemption": {
-      "h2": "How to redeem Haze Seas codes",
-      "robloxLinkLabel": "Open Haze Seas on Roblox",
+      "h2": "Cómo canjear códigos de Haze Seas",
+      "robloxLinkLabel": "Abrir Haze Seas en Roblox",
       "robloxUrl": "https://www.roblox.com/games/6918802270/Haze-Seas",
       "steps": [
-        "Open Haze Seas on Roblox and load your character.",
-        "Press the Menu button at the bottom left of the screen.",
-        "Select the white Treasure Chest or Gift icon.",
-        "Paste the code into the Enter Code field with the exact capitalization shown above.",
-        "Press the green Redeem button to claim the reward."
+        "Abre Haze Seas en Roblox y carga tu personaje.",
+        "Pulsa el botón Menú en la esquina inferior izquierda de la pantalla.",
+        "Selecciona el icono blanco del Cofre del Tesoro o Regalo.",
+        "Pega el código en el campo Introducir Código con las mayúsculas exactas mostradas arriba.",
+        "Pulsa el botón verde Canjear para reclamar la recompensa."
       ]
     },
     "troubleshooting": {
       "h2": "Why is a Haze Seas code not working?",
       "items": [
-        { "title": "Invalid Code", "body": "Check capitalization and remove spaces before or after the code." },
-        { "title": "Already Redeemed", "body": "Each code can normally be used once per Roblox account." },
-        { "title": "No Reward Appeared", "body": "Rejoin a newly started server and try once more. If the code still fails, it may have expired." }
+        {
+          "title": "Invalid Code",
+          "body": "Check capitalization and remove spaces before or after the code."
+        },
+        {
+          "title": "Already Redeemed",
+          "body": "Each code can normally be used once per Roblox account."
+        },
+        {
+          "title": "No Reward Appeared",
+          "body": "Rejoin a newly started server and try once more. If the code still fails, it may have expired."
+        }
       ]
     },
     "expired": {
-      "h2": "Expired Haze Seas codes",
+      "h2": "Códigos de Haze Seas caducados",
       "codes": [
-        "275KNEXTLETSGO", "XMAS2023", "NEXTCODEAT400KLIKES", "NEXT300KCOOL", "NEXTAT350KLIKES",
-        "VALENTINES2024", "HAZEPIECE23", "WOW325KMLG", "GOGOGAGA", "LETSGET450K2024",
-        "LETSGO375KHAZE", "425KNEXTCODE123", "GROUPONLY"
+        "275KNEXTLETSGO",
+        "XMAS2023",
+        "NEXTCODEAT400KLIKES",
+        "NEXT300KCOOL",
+        "NEXTAT350KLIKES",
+        "VALENTINES2024",
+        "HAZEPIECE23",
+        "WOW325KMLG",
+        "GOGOGAGA",
+        "LETSGET450K2024",
+        "LETSGO375KHAZE",
+        "425KNEXTCODE123",
+        "GROUPONLY"
       ]
     },
     "faq": [
@@ -479,14 +481,186 @@
       }
     ],
     "sidebarCodes": [
-      { "code": "STATREFUND", "reward": "1 Stat Refund" },
-      { "code": "DRAGONUPD", "reward": "5 Race Spins" }
+      {
+        "code": "STATREFUND",
+        "reward": "1 Stat Refund"
+      },
+      {
+        "code": "DRAGONUPD",
+        "reward": "5 Race Spins"
+      }
     ],
-    "officialSources": [
-      { "label": "Official Roblox Game", "url": "https://www.roblox.com/games/6918802270/Haze-Seas" },
-      { "label": "Official Haze Seas Trello", "url": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello" },
-      { "label": "Official Haze Studios Discord", "url": "https://discord.com/invite/hazeseas" }
-    ]
+    "officialSources": {
+      "h2": "Fuentes oficiales",
+      "items": [
+        {
+          "label": "Juego oficial de Roblox",
+          "url": "https://www.roblox.com/games/6918802270/Haze-Seas"
+        },
+        {
+          "label": "Trello oficial de Haze Seas",
+          "url": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello"
+        },
+        {
+          "label": "Discord oficial de Haze Studios",
+          "url": "https://discord.com/invite/hazeseas"
+        }
+      ]
+    },
+    "relatedGuides": {
+      "h2": "Guías internas relacionadas",
+      "items": [
+        {
+          "title": "Guía de principiante",
+          "description": "Comienza tu viaje en Haze Seas.",
+          "href": "/guide/haze-seas-beginner-guide"
+        },
+        {
+          "title": "Lista de tiers de frutas",
+          "description": "Compara frutas para farmeo y peleas contra bosses.",
+          "href": "/tier-list/haze-seas-fruit-tier-list"
+        },
+        {
+          "title": "Guía de bosses",
+          "description": "Rutas de bosses y consejos de pelea.",
+          "href": "/bosses/haze-seas-boss-guide"
+        },
+        {
+          "title": "Guía de Haki",
+          "description": "Desbloquea y mejora el Haki.",
+          "href": "/haki/haze-seas-haki"
+        }
+      ]
+    }
+  },
+  "trelloDiscord": {
+    "meta": {
+      "title": "Haze Seas Trello, Discord & Official Links",
+      "description": "Open the official Haze Seas Trello, Discord, Roblox game, community, and YouTube channel for codes, updates, bosses, Fruits, and progression help.",
+      "h1": "Haze Seas Trello, Discord & Official Links",
+      "breadcrumb": "Home > Haze Seas Trello and Discord"
+    },
+    "lastChecked": "Links checked July 11, 2026",
+    "intro1": "Use the links below to open the official Haze Seas resources. Haze Seas was formerly known as Haze Piece, so older posts and bookmarks may still use the previous name.",
+    "intro2": "The Trello is the structured reference for mechanics and locations, while Discord is the fastest source for announcements, hotfixes, and new codes.",
+    "links": [
+      {
+        "title": "Official Roblox Game",
+        "description": "Launch Haze Seas, view the current game description, and check the latest public update state.",
+        "href": "https://www.roblox.com/games/6918802270/Haze-Seas",
+        "badge": "Official"
+      },
+      {
+        "title": "Official Trello",
+        "description": "Check controls, codes, systems, Fruits, swords, fighting styles, races, NPCs, bosses, and locations.",
+        "href": "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
+        "badge": "Official"
+      },
+      {
+        "title": "Official Discord",
+        "description": "Follow announcements, hotfixes, code drops, sneak peeks, and community updates.",
+        "href": "https://discord.com/invite/hazeseas",
+        "badge": "Official"
+      },
+      {
+        "title": "Official YouTube",
+        "description": "Watch official trailers, showcases, reworks, and update videos from Haze Studios.",
+        "href": "https://www.youtube.com/@RealHazeStudios",
+        "badge": "Official"
+      },
+      {
+        "title": "Official Roblox Community",
+        "description": "Follow the Haze Studios Roblox community and its official event announcements.",
+        "href": "https://www.roblox.com/communities/6602131/HS-Haze-Studios",
+        "badge": "Official"
+      }
+    ],
+    "whichH2": "Which Haze Seas link should you use?",
+    "usage": [
+      {
+        "label": "Codes and hotfixes",
+        "value": "Official Discord"
+      },
+      {
+        "label": "Structured game information",
+        "value": "Official Trello"
+      },
+      {
+        "label": "Launch the game",
+        "value": "Official Roblox Game"
+      },
+      {
+        "label": "Trailers and showcases",
+        "value": "Official YouTube"
+      }
+    ],
+    "safetyH2": "Safety Notice",
+    "safety": "Haze Seas Hub is fan-made. Do not enter your Roblox password on any page linked from a private message, and do not trust copied Discord or Trello links that use a different domain."
+  },
+  "sea2sea3": {
+    "meta": {
+      "title": "Haze Seas Sea 2 & Sea 3 — Unlock Guide",
+      "description": "Unlock Sea 2 at Level 2200 with the Poneglyph Scroll, then reach Sea 3 at Level 4200 through the Gatekeeper's Red Emperor trial and exact NPC route.",
+      "h1": "Haze Seas Sea 2 and Sea 3 Guide",
+      "breadcrumb": "Home > Haze Seas Sea 2 and Sea 3"
+    },
+    "lastChecked": "Progression checked July 11, 2026",
+    "intro": "Haze Seas has three seas. Sea 2 unlocks at Level 2200 after the Dimensional Sailor quest, while Sea 3 unlocks at Level 4200 after the Gatekeeper's solo Red Emperor trial.",
+    "tableH": [
+      "Sea",
+      "Level Requirement",
+      "Starting NPC",
+      "Required Objective"
+    ],
+    "tableRows": [
+      [
+        "Sea 1",
+        "Available from the start",
+        "Starter Island",
+        "Reach Level 2200 to begin the Sea 2 quest"
+      ],
+      [
+        "Sea 2",
+        "Level 2200",
+        "Dimensional Sailor at the Starter Island docks",
+        "Bring the Poneglyph Scroll from the central cave at Rocky Pillars"
+      ],
+      [
+        "Sea 3",
+        "Level 4200",
+        "Gatekeeper inside the main building at Flower Capital",
+        "Defeat the Red Emperor solo, return to the Gatekeeper, and choose Yes"
+      ]
+    ],
+    "sea2": {
+      "h2": "How to unlock Sea 2 in Haze Seas",
+      "steps": [
+        "Reach Level 2200.",
+        "Go to the docks on Starter Island and speak to the Dimensional Sailor.",
+        "Sail to Rocky Pillars.",
+        "Enter the central cave and complete the cutscene.",
+        "Collect the Poneglyph Scroll.",
+        "Return to the Dimensional Sailor and give him the Poneglyph Scroll.",
+        "Speak to the Dimensional Sailor again to travel to Sea 2."
+      ],
+      "cta": "Read the Full Sea 2 Guide",
+      "ctaHref": "/guide/haze-seas-second-sea"
+    },
+    "sea3": {
+      "h2": "How to unlock Sea 3 in Haze Seas",
+      "steps": [
+        "Reach Level 4200 in Sea 2.",
+        "Travel to Flower Capital.",
+        "Enter the main building and speak to the Gatekeeper.",
+        "Accept the Sea 3 challenge.",
+        "Defeat the Red Emperor in the solo trial.",
+        "Return to the Gatekeeper after the victory cutscene.",
+        "Choose Yes to travel to the Land of the Gods in Sea 3."
+      ],
+      "cta": "Read the Full Sea 3 Guide",
+      "ctaHref": "/guide/haze-seas-sea-3"
+    },
+    "updateNote": "Progression requirements can change after an update. Recheck the official Trello and Roblox game page if an NPC or level requirement no longer matches the live game."
   },
   "shared": {
     "wikiNavigation": "Wiki Navigation",
@@ -523,10 +697,6 @@
     "buildGuide": "Build Guide",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
-  },
-  "codes": {
-    "overviewTitle": "Codes",
-    "overviewDescription": "Haze Seas active codes, redemption steps, and expired code notes."
   },
   "guide": {
     "overviewTitle": "Guides",

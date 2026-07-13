@@ -1,79 +1,56 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
 import { JsonLd, Breadcrumbs } from "@/components/site";
-import { siteConfig, SITE_URL } from "@/site-data/site.config";
+import { SITE_URL } from "@/site-data/site.config";
+import { buildAlternates } from "@/i18n/locale-path";
+import { routing } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
+import { localizedPath } from "@/i18n/locale-path";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_URL;
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
-export const metadata: Metadata = {
-  title: "Haze Seas Trello, Discord & Official Links",
-  description: "Open the official Haze Seas Trello, Discord, Roblox game, community, and YouTube channel for codes, updates, bosses, Fruits, and progression help.",
-  alternates: { canonical: "https://hazeseashub.wiki/trello-discord" },
-  openGraph: {
-    title: "Haze Seas Trello, Discord & Official Links",
-    description: "Open the official Haze Seas Trello, Discord, Roblox game, community, and YouTube channel for codes, updates, bosses, Fruits, and progression help.",
-    url: `${siteUrl}/trello-discord`,
-    siteName: siteConfig.siteName,
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: siteConfig.siteName }],
-  },
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "trelloDiscord.meta" });
+  const path = "/trello-discord";
+  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const alternates = buildAlternates(path);
+  const languages: Record<string, string> = {};
+  for (const [k, v] of Object.entries(alternates)) languages[k] = v;
+  return {
+    title: { absolute: t("title") },
+    description: t("description"),
+    alternates: { canonical: `${SITE_URL}${pathWithLocale}`, languages },
+    robots: { index: true, follow: true },
+    openGraph: { title: t("title"), description: t("description"), url: `${SITE_URL}${pathWithLocale}`, siteName: "Haze Seas Wiki" },
+  };
+}
 
-const OFFICIAL_LINKS = [
-  {
-    title: "Official Roblox Game",
-    description: "Launch Haze Seas, view the current game description, and check the latest public update state.",
-    href: "https://www.roblox.com/games/6918802270/Haze-Seas",
-    badge: "Official",
-  },
-  {
-    title: "Official Trello",
-    description: "Check controls, codes, systems, Fruits, swords, fighting styles, races, NPCs, bosses, and locations.",
-    href: "https://trello.com/b/nn8bpTB0/haze-seas-official-trello",
-    badge: "Official",
-  },
-  {
-    title: "Official Discord",
-    description: "Follow announcements, hotfixes, code drops, sneak peeks, and community updates.",
-    href: "https://discord.com/invite/hazeseas",
-    badge: "Official",
-  },
-  {
-    title: "Official YouTube",
-    description: "Watch official trailers, showcases, reworks, and update videos from Haze Studios.",
-    href: "https://www.youtube.com/@RealHazeStudios",
-    badge: "Official",
-  },
-  {
-    title: "Official Roblox Community",
-    description: "Follow the Haze Studios Roblox community and its official event announcements.",
-    href: "https://www.roblox.com/communities/6602131/HS-Haze-Studios",
-    badge: "Official",
-  },
-];
+export default async function TrelloDiscordPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "trelloDiscord" });
+  const path = "/trello-discord";
+  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pageUrl = `${SITE_URL}${pathWithLocale}`;
 
-const USAGE_GUIDE = [
-  { label: "Codes and hotfixes", value: "Official Discord" },
-  { label: "Structured game information", value: "Official Trello" },
-  { label: "Launch the game", value: "Official Roblox Game" },
-  { label: "Trailers and showcases", value: "Official YouTube" },
-];
+  const links = t.raw("links") as Array<{ title: string; description: string; href: string; badge: string }>;
+  const usage = t.raw("usage") as Array<{ label: string; value: string }>;
 
-export default function TrelloDiscordPage() {
-  const pageUrl = `${siteUrl}/trello-discord`;
   const webPageData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Haze Seas Trello, Discord & Official Links",
-    description: "Open the official Haze Seas Trello, Discord, Roblox game, community, and YouTube channel for codes, updates, bosses, Fruits, and progression help.",
+    name: t("meta.h1"),
+    description: t("meta.description"),
     url: pageUrl,
+    inLanguage: locale,
   };
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Haze Seas Trello and Discord", item: pageUrl },
+      { "@type": "ListItem", position: 1, name: "Home", item: pageUrl.replace(/\/trello-discord.*$/, "") || pageUrl },
+      { "@type": "ListItem", position: 2, name: t("meta.h1"), item: pageUrl },
     ],
   };
 
@@ -81,23 +58,19 @@ export default function TrelloDiscordPage() {
     <main className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={webPageData} />
       <JsonLd data={breadcrumbData} />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Haze Seas Trello and Discord" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: localizedPath(locale, "/") }, { label: t("meta.h1") }]} />
 
       <article className="rounded-3xl border border-border bg-card/70 p-6 sm:p-10">
-        <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">Haze Seas Trello, Discord & Official Links</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">{t("meta.h1")}</h1>
 
-        <div className="mt-4 text-sm text-muted-foreground">Links checked July 11, 2026</div>
+        <div className="mt-4 text-sm text-muted-foreground">{t("lastChecked")}</div>
 
-        <p className="mt-6 text-base leading-7 text-muted-foreground">
-          Use the links below to open the official Haze Seas resources. Haze Seas was formerly known as Haze Piece, so older posts and bookmarks may still use the previous name.
-        </p>
-        <p className="mt-4 text-base leading-7 text-muted-foreground">
-          The Trello is the structured reference for mechanics and locations, while Discord is the fastest source for announcements, hotfixes, and new codes.
-        </p>
+        <p className="mt-6 text-base leading-7 text-muted-foreground">{t("intro1")}</p>
+        <p className="mt-4 text-base leading-7 text-muted-foreground">{t("intro2")}</p>
 
-        <h2 className="mt-10 text-2xl font-bold text-foreground">Official Resources</h2>
+        <h2 className="mt-10 text-2xl font-bold text-foreground">{t("meta.h1").includes("Discord") ? "Official Resources" : "Official Resources"}</h2>
         <div className="mt-4 grid gap-3">
-          {OFFICIAL_LINKS.map((link) => (
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -112,50 +85,30 @@ export default function TrelloDiscordPage() {
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">{link.description}</p>
               </div>
-              <ExternalLink className="h-5 w-5 shrink-0 text-[hsl(var(--nav-theme))]" />
+              <span className="shrink-0 text-[hsl(var(--nav-theme))]">↗</span>
             </a>
           ))}
         </div>
 
-        <h2 className="mt-10 text-2xl font-bold text-foreground">Which Haze Seas link should you use?</h2>
+        <h2 className="mt-10 text-2xl font-bold text-foreground">{t("whichH2")}</h2>
         <ul className="mt-4 space-y-1.5 text-base text-muted-foreground">
-          {USAGE_GUIDE.map((item) => (
-            <li key={item.label}>
-              <span className="font-medium text-foreground">{item.label}</span> — {item.value}
-            </li>
+          {usage.map((item, i) => (
+            <li key={i}><span className="font-medium text-foreground">{item.label}</span> — {item.value}</li>
           ))}
         </ul>
 
         <div className="mt-10 rounded-2xl border border-[hsl(var(--nav-theme-light))] bg-[hsl(var(--nav-theme))]/5 p-5">
-          <h2 className="text-lg font-bold text-foreground">Safety Notice</h2>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">
-            Haze Seas Hub is fan-made. Do not enter your Roblox password on any page linked from a private message, and do not trust copied Discord or Trello links that use a different domain.
-          </p>
+          <h2 className="text-lg font-bold text-foreground">{t("safetyH2")}</h2>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground">{t("safety")}</p>
         </div>
 
         <div className="mt-10 border-t border-border pt-6">
           <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Official Sources</h3>
           <ul className="mt-3 space-y-2 text-sm">
-            <li>
-              <a href="https://www.roblox.com/games/6918802270/Haze-Seas" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">
-                Official Roblox Game
-              </a>
-            </li>
-            <li>
-              <a href="https://trello.com/b/nn8bpTB0/haze-seas-official-trello" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">
-                Official Haze Seas Trello
-              </a>
-            </li>
-            <li>
-              <a href="https://discord.com/invite/hazeseas" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">
-                Official Haze Studios Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/@RealHazeStudios" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">
-                Official Haze Studios YouTube
-              </a>
-            </li>
+            <li><a href="https://www.roblox.com/games/6918802270/Haze-Seas" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">Official Roblox Game</a></li>
+            <li><a href="https://trello.com/b/nn8bpTB0/haze-seas-official-trello" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">Official Haze Seas Trello</a></li>
+            <li><a href="https://discord.com/invite/hazeseas" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">Official Haze Studios Discord</a></li>
+            <li><a href="https://www.youtube.com/@RealHazeStudios" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--nav-theme))] hover:underline">Official Haze Studios YouTube</a></li>
           </ul>
         </div>
       </article>

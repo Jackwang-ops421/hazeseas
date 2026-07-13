@@ -231,7 +231,7 @@ export function Header({ locale, dropdownData = [] }: HeaderProps) {
           <div className="flex items-center gap-2">
             <ClientThemeToggle label="Toggle theme" />
 
-            <LanguageSwitcher locale={locale} />
+            <LanguageSwitcher locale={locale} pathname={pathname} />
 
             <Link
               href={MORE_WIKIS_BUTTON.href}

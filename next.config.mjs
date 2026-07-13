@@ -59,6 +59,9 @@ const nextConfig = {
       { source: "/materials/:slug", destination: "/items/:slug", permanent: true },
       { source: "/official-links", destination: "/community", permanent: true },
       { source: "/official-links/:slug", destination: "/community/:slug", permanent: true },
+      // Locale canonicalization: /en/* -> /* (en has no prefix), /pt-BR/* -> /pt-br/*
+      { source: "/en/:path*", destination: "/:path*", permanent: true },
+      { source: "/pt-BR/:path*", destination: "/pt-br/:path*", permanent: true },
     ];
   },
 };

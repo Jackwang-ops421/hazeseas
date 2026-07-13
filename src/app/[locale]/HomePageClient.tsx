@@ -20,12 +20,18 @@ import {
   faqItems,
   finalCtaConfig,
 } from "@/site-data/home.config";
+import NativeBannerAd from "@/components/ads/NativeBannerAd";
 
 export default function HomePageClient() {
   return (
     <div className="space-y-12 md:space-y-16">
       {/* 1. Hero */}
       <HeroSection data={heroConfig} />
+
+      {/* Native Banner Ad — after Hero, before content */}
+      <div className="mx-auto max-w-4xl px-4">
+        <NativeBannerAd adKey={process.env.NEXT_PUBLIC_AD_NATIVE_BANNER} className="min-h-[100px]" />
+      </div>
 
       {/* 2. Resource Cards */}
       <ResourceCards items={resourceModules} />
