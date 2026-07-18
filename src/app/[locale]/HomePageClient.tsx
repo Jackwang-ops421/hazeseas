@@ -22,6 +22,7 @@ import {
 } from "@/site-data/home.config";
 import NativeBannerAd from "@/components/ads/NativeBannerAd";
 import AdBanner from "@/components/ads/AdBanner";
+import CloseableStickyBanner from "@/components/ads/CloseableStickyBanner";
 
 export default function HomePageClient() {
   return (
@@ -34,12 +35,8 @@ export default function HomePageClient() {
         <AdBanner type="banner-160x300" />
       </div>
 
-      {/* Sticky 320x50 — top of page, always visible */}
-      <div className="sticky top-20 z-20 py-2">
-        <div className="mx-auto max-w-4xl px-4">
-          <AdBanner type="banner-320x50" />
-        </div>
-      </div>
+      {/* Sticky 320x50 — top of page, always visible (closeable) */}
+      <CloseableStickyBanner />
 
       {/* 1. Hero */}
       <HeroSection data={heroConfig} />
