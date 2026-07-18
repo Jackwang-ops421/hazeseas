@@ -1,39 +1,30 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AD_KEYS } from "@/ads-config";
 
-type BannerType =
-  | "banner-320x50"
-  | "banner-300x250"
-  | "banner-468x60"
-  | "banner-728x90"
-  | "banner-160x300"
-  | "banner-160x600";
+type BannerType = keyof typeof AD_KEYS;
 
-const BANNER_SIZES: Record<BannerType, { width: number; height: number }> = {
-  "banner-320x50": { width: 320, height: 50 },
-  "banner-300x250": { width: 300, height: 250 },
-  "banner-468x60": { width: 468, height: 60 },
-  "banner-728x90": { width: 728, height: 90 },
-  "banner-160x300": { width: 160, height: 300 },
-  "banner-160x600": { width: 160, height: 600 },
-};
-
-interface AdBannerProps {
+export interface AdBannerProps {
   type: BannerType;
+  /** 显式传空字符串或 "0" 可关闭该广告位（不渲染）。不传则用 config 里的 key。 */
+  adKey?: string | null;
   className?: string;
 }
 
-export default function AdBanner({ type, className = "" }: AdBannerProps) {
+export default function AdBanner({ type, adKey, className = "" }: AdBannerProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  // 实际 key：不传 → 用 config 默认值；传空/0 → null（不渲染）
+  const effectiveKey = adKey === undefined || adKey === null ? AD_KEYS[type]?.key : adKey;
 
-  const size = BANNER_SIZES[type];
+  if (!effectiveKey || effectiveKey === "0" || !mounted) return null;
+
+  const size = AD_KEYS[type];
   if (!size) return null;
 
   return (

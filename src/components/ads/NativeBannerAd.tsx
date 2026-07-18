@@ -1,28 +1,33 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { NATIVE_BANNER_KEY } from "@/ads-config";
 
 interface NativeBannerAdProps {
+  /** 显式传空字符串或 "0" 可关闭该广告位。不传则用 config 里的默认 key。 */
+  adKey?: string | null;
   className?: string;
 }
 
-const NATIVE_BANNER_KEY = "2b6dba9fa8419e4c82a4fc67b6c736c9";
-
-export default function NativeBannerAd({ className = "" }: NativeBannerAdProps) {
+export default function NativeBannerAd({ adKey = NATIVE_BANNER_KEY, className = "" }: NativeBannerAdProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const effectiveKey = adKey === undefined || adKey === null ? NATIVE_BANNER_KEY : adKey;
 
   useEffect(() => {
+    if (!effectiveKey || effectiveKey === "0") return;
     const script = document.createElement("script");
     script.async = true;
     script.dataset.cfasync = "false";
-    script.src = `https://pl30309990.effectivecpmnetwork.com/${NATIVE_BANNER_KEY}/invoke.js`;
+    script.src = `https://pl30309990.effectivecpmnetwork.com/${effectiveKey}/invoke.js`;
     containerRef.current?.appendChild(script);
-  }, []);
+  }, [effectiveKey]);
+
+  if (!effectiveKey || effectiveKey === "0") return null;
 
   return (
     <div
       ref={containerRef}
-      id={`container-${NATIVE_BANNER_KEY}`}
+      id={`container-${effectiveKey}`}
       className={className}
     />
   );
