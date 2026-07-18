@@ -29,7 +29,7 @@ export default function HomePageClient() {
       {/* Sticky 320x50 — top of page, always visible */}
       <div className="sticky top-20 z-20 py-2">
         <div className="mx-auto max-w-4xl px-4">
-          <AdBanner type="banner-320x50" adKey={process.env.NEXT_PUBLIC_AD_BANNER_320X50} />
+          <AdBanner type="banner-320x50" />
         </div>
       </div>
 
@@ -38,7 +38,7 @@ export default function HomePageClient() {
 
       {/* Native Banner Ad — after Hero, before content */}
       <div className="mx-auto max-w-4xl px-4">
-        <NativeBannerAd adKey={process.env.NEXT_PUBLIC_AD_NATIVE_BANNER} className="min-h-[100px]" />
+        <NativeBannerAd className="min-h-[100px]" />
       </div>
 
       {/* 2. Resource Cards */}
@@ -58,7 +58,7 @@ export default function HomePageClient() {
 
       {/* 728x90 — bottom of page */}
       <div className="mx-auto max-w-4xl px-4">
-        <AdBanner type="banner-728x90" adKey={process.env.NEXT_PUBLIC_AD_BANNER_728X90} />
+        <AdBanner type="banner-728x90" />
       </div>
 
       {/* Back to top — matches competitor "More" class behavior */}

@@ -21,18 +21,17 @@ const BANNER_SIZES: Record<BannerType, { width: number; height: number }> = {
 
 export interface AdBannerProps {
   type: BannerType;
-  adKey?: string | null;
   className?: string;
 }
 
-export default function AdBanner({ type, adKey, className = "" }: AdBannerProps) {
+export default function AdBanner({ type, className = "" }: AdBannerProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!adKey || adKey === "0" || !mounted) return null;
+  if (!mounted) return null;
 
   const size = BANNER_SIZES[type];
   if (!size) return null;

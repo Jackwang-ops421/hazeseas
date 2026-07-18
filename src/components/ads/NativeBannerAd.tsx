@@ -3,29 +3,26 @@
 import { useEffect, useRef } from "react";
 
 interface NativeBannerAdProps {
-  adKey?: string | null;
   className?: string;
 }
 
-export default function NativeBannerAd({ adKey, className = "" }: NativeBannerAdProps) {
+const NATIVE_BANNER_KEY = "2b6dba9fa8419e4c82a4fc67b6c736c9";
+
+export default function NativeBannerAd({ className = "" }: NativeBannerAdProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!adKey || adKey === "0") return;
-
     const script = document.createElement("script");
     script.async = true;
     script.dataset.cfasync = "false";
-    script.src = `https://pl30309990.effectivecpmnetwork.com/${adKey}/invoke.js`;
+    script.src = `https://pl30309990.effectivecpmnetwork.com/${NATIVE_BANNER_KEY}/invoke.js`;
     containerRef.current?.appendChild(script);
-  }, [adKey]);
-
-  if (!adKey || adKey === "0") return null;
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      id={`container-${adKey}`}
+      id={`container-${NATIVE_BANNER_KEY}`}
       className={className}
     />
   );
