@@ -16,6 +16,7 @@ import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
 import ArticlePageAds from "@/components/ads/ArticlePageAds";
 import ArticleTitleAd from "@/components/ads/ArticleTitleAd";
+import SidebarBanner from "@/components/ads/SidebarBanner";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
 type Messages = typeof en;
@@ -167,8 +168,10 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
         <aside className="space-y-6">
           <SidebarTOC headings={item.headings} label={tocLabel} currentPathname={pathname} />
           <WikiSidebar locale={locale} navGroups={navGroups} currentPath={pathname} />
+          <SidebarBanner />
         </aside>
       </div>
+
     </main>
   );
 }

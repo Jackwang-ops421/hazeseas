@@ -47,6 +47,11 @@ export default function HomePageClient() {
       {/* 3. Latest Updates — auto-generated from MDX */}
       <LatestUpdates />
 
+      {/* 468x60 — between sections */}
+      <div className="mx-auto max-w-4xl px-4">
+        <AdBanner type="banner-468x60" />
+      </div>
+
       {/* 4+. Body sections driven by config */}
       <HomeSections sections={homeSections} />
 

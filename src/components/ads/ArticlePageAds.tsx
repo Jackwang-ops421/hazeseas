@@ -17,6 +17,11 @@ export default function ArticlePageAds() {
         <AdBanner type="banner-300x250" />
       </div>
 
+      {/* 468x60 — in content area */}
+      <div className="my-6 flex justify-center">
+        <AdBanner type="banner-468x60" />
+      </div>
+
       {/* 728x90 — bottom of content */}
       <div className="mt-8 flex justify-center">
         <AdBanner type="banner-728x90" />
