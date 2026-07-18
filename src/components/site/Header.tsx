@@ -97,7 +97,7 @@ export function Header({ locale, dropdownData = [] }: HeaderProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav ref={navRef} className="hidden items-center gap-1 lg:flex">
+          <nav ref={navRef} className="hidden items-center gap-1 xl:flex">
             {PRIMARY_NAV.map((item) => {
               const Icon = item.icon ? NAV_ICON_MAP[item.icon] : null;
               const dropdown = dropdownByPrefix.get(item.href);
@@ -236,13 +236,13 @@ export function Header({ locale, dropdownData = [] }: HeaderProps) {
             <Link
               href={MORE_WIKIS_BUTTON.href}
               aria-label={MORE_WIKIS_BUTTON.ariaLabel}
-              className="hidden items-center gap-1.5 rounded-lg bg-[hsl(var(--nav-theme))] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 lg:inline-flex"
+              className="hidden items-center gap-1.5 rounded-lg bg-[hsl(var(--nav-theme))] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 xl:inline-flex"
             >
               {MORE_WIKIS_BUTTON.label}
             </Link>
 
             <button
-              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-muted dark:text-white/70 dark:hover:bg-white/5 lg:hidden"
+              className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-muted dark:text-white/70 dark:hover:bg-white/5 xl:hidden"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -254,7 +254,7 @@ export function Header({ locale, dropdownData = [] }: HeaderProps) {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl transition-all duration-200 dark:border-white/10 dark:bg-black/95 lg:hidden ${
+        className={`overflow-hidden border-t border-border bg-background/95 backdrop-blur-xl transition-all duration-200 dark:border-white/10 dark:bg-black/95 xl:hidden ${
           mobileOpen ? "max-h-[40rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
