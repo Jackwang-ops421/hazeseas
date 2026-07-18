@@ -22,6 +22,18 @@ import {
 } from "@/site-data/home.config";
 import NativeBannerAd from "@/components/ads/NativeBannerAd";
 import AdBanner from "@/components/ads/AdBanner";
+import SidebarBanner from "@/components/ads/SidebarBanner";
+
+export default function HomePageClient() {
+  return (
+    <div className="space-y-12 md:space-y-16">
+      {/* Sidebar ads — desktop floating (xl only) */}
+      <div className="hidden xl:block fixed top-20 z-10" style={{ left: "max(8px, calc((100vw - 1280px) / 2 - 180px))" }}>
+        <AdBanner type="banner-160x600" />
+      </div>
+      <div className="hidden xl:block fixed top-20 z-10" style={{ right: "max(8px, calc((100vw - 1280px) / 2 - 180px))" }}>
+        <AdBanner type="banner-160x300" />
+      </div>
 
 export default function HomePageClient() {
   return (

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { NATIVE_BANNER_KEY } from "@/ads-config";
 
 interface NativeBannerAdProps {
   className?: string;
 }
+
+const NATIVE_BANNER_KEY = "2b6dba9fa8419e4c82a4fc67b6c736c9";
 
 export default function NativeBannerAd({ className = "" }: NativeBannerAdProps) {
   const containerRef = useRef<HTMLDivElement>(null);
