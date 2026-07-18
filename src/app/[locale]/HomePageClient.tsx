@@ -22,7 +22,6 @@ import {
 } from "@/site-data/home.config";
 import NativeBannerAd from "@/components/ads/NativeBannerAd";
 import AdBanner from "@/components/ads/AdBanner";
-import SidebarBanner from "@/components/ads/SidebarBanner";
 
 export default function HomePageClient() {
   return (
@@ -35,9 +34,6 @@ export default function HomePageClient() {
         <AdBanner type="banner-160x300" />
       </div>
 
-export default function HomePageClient() {
-  return (
-    <div className="space-y-12 md:space-y-16">
       {/* Sticky 320x50 — top of page, always visible */}
       <div className="sticky top-20 z-20 py-2">
         <div className="mx-auto max-w-4xl px-4">
