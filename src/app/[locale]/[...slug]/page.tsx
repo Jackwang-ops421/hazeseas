@@ -14,6 +14,8 @@ import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/site-data/site.config";
 import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
+import ArticlePageAds from "@/components/ads/ArticlePageAds";
+import ArticleTitleAd from "@/components/ads/ArticleTitleAd";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
 type Messages = typeof en;
@@ -142,6 +144,10 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
         <article>
           <Breadcrumbs items={[{ label: messages.shared.home, href: localizeHref("/", locale) }, { label: sectionLabel, href: localizeHref(`/${contentType}`, locale) }, { label: item.metadata.title }]} />
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">{item.metadata.title}</h1>
+
+          {/* Sticky 320x50 — below title, always visible */}
+          <ArticleTitleAd />
+
           <ArticleLayout
             title={item.metadata.title}
             summary={item.metadata.summary ?? item.metadata.description}
@@ -154,6 +160,9 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
             <MobileTOC headings={item.headings} label={tocLabel} />
             <item.MDXContent />
           </ArticleLayout>
+
+          {/* Ads after article content */}
+          <ArticlePageAds />
         </article>
         <aside className="space-y-6">
           <SidebarTOC headings={item.headings} label={tocLabel} currentPathname={pathname} />
