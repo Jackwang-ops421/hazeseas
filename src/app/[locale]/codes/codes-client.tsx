@@ -68,7 +68,7 @@ function CodeCard({ item, ariaLabelTemplate, successLabel, labelNew, labelActive
 
 export function CodesClient({ locale, pageUrl, codes }: Props) {
   const meta = codes.meta;
-  const activeCodes = codes.active;
+  const activeCodes = codes.active ?? [];
   const redemption = codes.redemption;
   const troubleshooting = codes.troubleshooting;
   const expired = codes.expired;
@@ -76,7 +76,7 @@ export function CodesClient({ locale, pageUrl, codes }: Props) {
   const official = codes.officialSources;
   const related = codes.relatedGuides;
 
-  const labelNew = codes.active[0]?.badgeVariant === "new" ? codes.active.find((c) => c.status === "New")?.status ?? "New" : "New";
+  const labelNew = activeCodes[0]?.badgeVariant === "new" ? activeCodes.find((c) => c.status === "New")?.status ?? "New" : "New";
   const labelActive = "Active";
   const labelConditional = "Conditional";
 
