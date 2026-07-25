@@ -31,13 +31,15 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Project-specific legacy URL migration comes first to avoid chains
+      // (e.g. /pt-BR/codes/haze-seas-codes → /pt-br/codes directly, not via
+      //  /pt-BR/:path* → /pt-br/codes/haze-seas-codes → /pt-br/codes)
+      ...legacyRedirects,
       // Template-level locale canonicalization
       { source: "/en", destination: "/", permanent: true },
       { source: "/en/:path*", destination: "/:path*", permanent: true },
       { source: "/pt-BR", destination: "/pt-br", permanent: true },
       { source: "/pt-BR/:path*", destination: "/pt-br/:path*", permanent: true },
-      // Project-specific legacy URL migration (see legacy-routing.config.mjs)
-      ...legacyRedirects,
     ];
   },
 };

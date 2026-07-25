@@ -10,8 +10,9 @@ import { getAllContent, getAllContentPaths, getContent, getDynamicNavigation, ge
 import { Breadcrumbs, JsonLd, WikiSidebar, localizeHref } from "@/components/site";
 import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
 import { type ContentType } from "@/lib/content";
-import { routing, LOCALE_PREFIXES, LOCALE_META, SUPPORTED_LOCALES, type Locale } from "@/i18n/routing";
+import { routing, LOCALE_PREFIXES, SUPPORTED_LOCALES, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/site-data/site.config";
+import { localizedUrl, languageAlternates } from "@/i18n/seo";
 import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
 import ArticlePageAds from "@/components/ads/ArticlePageAds";
@@ -20,19 +21,6 @@ import SidebarBanner from "@/components/ads/SidebarBanner";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
 type Messages = typeof en;
-
-function languageAlternates(pathname: string, availableLocales: readonly Locale[]) {
-  const result: Record<string, string> = {};
-  for (const loc of availableLocales) {
-    const meta = LOCALE_META[loc];
-    const hreflang = meta?.hreflang || loc;
-    result[hreflang] = `${siteUrl}${LOCALE_PREFIXES[loc] || ""}${pathname}`;
-  }
-  if (availableLocales.includes(routing.defaultLocale as Locale)) {
-    result["x-default"] = `${siteUrl}${pathname}`;
-  }
-  return result;
-}
 
 export async function generateStaticParams() {
   const paths = await getAllContentPaths("en");
@@ -100,7 +88,8 @@ async function NavigationPage({ locale, contentType, navGroups }: { locale: Loca
   if (locale !== routing.defaultLocale && !availableLocales.includes(locale)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale as Locale);
-  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — ${siteConfig.siteName}`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
+  if (items.length === 0) notFound();
+  const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — ${siteConfig.siteName}`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: localizedUrl(locale, `/${contentType}/${item.slug}`), name: item.metadata.title })) };
 
   const sectionTitle = (messages as unknown as Record<string, Record<string, string>>)[contentType]?.overviewTitle
     || contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -167,13 +156,12 @@ async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Lo
   const item = await getContent(contentType, slug, locale as Locale);
   if (!item) notFound();
   const pathname = `/${contentType}/${slug.join("/")}`;
-  const localePrefix = LOCALE_PREFIXES[locale];
-  const canonicalUrl = `${siteUrl}${localePrefix}${pathname}`;
+  const canonicalUrl = localizedUrl(locale, pathname);
   const tocLabel = messages.shared.tableOfContents || messages.shared.inThisSection || "Table of Contents";
   const sectionLabel = contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const dateModified = item.metadata.lastModified || item.metadata.date;
-  const articleData = { "@context": "https://schema.org", "@type": "Article", headline: item.metadata.title, description: item.metadata.description, image: `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`, datePublished: item.metadata.date, dateModified, mainEntityOfPage: `${siteUrl}${pathname}`, author: { "@type": "Organization", name: `${siteConfig.siteName} Team` }, publisher: { "@type": "Organization", name: siteConfig.siteName, logo: { "@type": "ImageObject", url: `${siteUrl}/android-chrome-512x512.png` } } };
-  const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: sectionLabel, item: `${siteUrl}/${contentType}` }, { "@type": "ListItem", position: 3, name: item.metadata.title, item: `${siteUrl}${pathname}` }] };
+  const articleData = { "@context": "https://schema.org", "@type": "Article", headline: item.metadata.title, description: item.metadata.description, image: `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`, datePublished: item.metadata.date, dateModified, mainEntityOfPage: canonicalUrl, author: { "@type": "Organization", name: `${siteConfig.siteName} Team` }, publisher: { "@type": "Organization", name: siteConfig.siteName, logo: { "@type": "ImageObject", url: `${siteUrl}/android-chrome-512x512.png` } } };
+  const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: localizedUrl(locale, "/") }, { "@type": "ListItem", position: 2, name: sectionLabel, item: localizedUrl(locale, `/${contentType}`) }, { "@type": "ListItem", position: 3, name: item.metadata.title, item: canonicalUrl }] };
   const related = RELATED_BY_TYPE[contentType] ?? [];
 
   return (
