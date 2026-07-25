@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const locPath = hubPath === "/" ? (LOCALE_PREFIXES[loc] || "/") : `${LOCALE_PREFIXES[loc]}${hubPath}`;
       urls.push({
         url: `${SITE_URL}${locPath}`,
-        lastModified: new Date(),
+        
         changeFrequency: hubPath === "/" ? "daily" : "weekly",
         priority: hubPath === "/" ? 1 : 0.8,
         alternates: { languages: buildSitemapAlternates(hubPath, SUPPORTED_LOCALES) },
@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const legalPath of EN_ONLY) {
     urls.push({
       url: `${SITE_URL}${legalPath}`,
-      lastModified: new Date(),
+      
       changeFrequency: "weekly",
       priority: 0.5,
     });
@@ -83,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
       urls.push({
         url: `${SITE_URL}${LOCALE_PREFIXES[loc]}${catPath}`,
-        lastModified: new Date(),
+        
         changeFrequency: "weekly",
         priority: 0.8,
         alternates: { languages: buildSitemapAlternates(catPath, availableLocales) },
@@ -105,7 +105,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
         urls.push({
           url: `${SITE_URL}${LOCALE_PREFIXES[loc]}${articlePath}`,
-          lastModified: new Date(),
+          
           changeFrequency: "weekly",
           priority: 0.6,
           alternates: { languages: buildSitemapAlternates(articlePath, availableLocales) },

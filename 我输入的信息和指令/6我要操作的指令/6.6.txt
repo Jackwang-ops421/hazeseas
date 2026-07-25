@@ -4,6 +4,26 @@
 - {{GAME_NAME}} — haze seas
 - {{OLD_GAME_KEYWORD}} — vv ultimatum
 
+【多语言保护边界】
+
+content/**/*.mdx 是用户正式输入数据。
+禁止复制英语 MDX 到其他语言。
+禁止为了补齐语言数量制造假翻译。
+禁止删除已有 MDX。
+禁止删除已有 locale JSON。
+禁止用空 {} 覆盖 locale JSON。
+缺失翻译只记录为 Missing Translation。
+缺失翻译页面不进入 sitemap，不进入 hreflang，不回退英语正文。
+GSC legacy URL 中出现的旧语言，不等于当前站点支持语言。
+例如当前 hazeseashub.wiki 的 /ja 只是旧 URL 污染。
+禁止因为发现 /ja URL 就：
+1. 把 ja 加入 routing.locales。
+2. 创建 ja.json。
+3. 创建 content/ja。
+4. 生成 /ja sitemap。
+5. 加入 hreflang ja。
+6. 复制英语 MDX 到 ja。
+
 # 部分 6：多语言翻译
 
 先进行 SEO 全面检查，尤其是链接一致性、旧品牌残留、Loading 占位文字、H1 / 页面主题语义、内链/站内结构完整性。

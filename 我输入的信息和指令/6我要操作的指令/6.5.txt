@@ -4,6 +4,15 @@
 - {{GAME_NAME}} — haze seas
 - {{OLD_GAME_KEYWORD}} — vv ultimatum
 
+【重要边界】
+
+从本阶段开始，content/**/*.mdx 是用户正式输入数据。
+执行本文件前，用户已经手动把最终 MDX 文件放入 content 目录。
+禁止删除、覆盖、合并、重写、翻译、批量修改 content/**/*.mdx。
+如果 content 下 .mdx 总数为 0，立即停止，并输出：
+ERROR: No production MDX files were found. Add the final MDX files to content before running 6.5.
+禁止在 content 为空时继续生成导航、分类、sitemap 或文章页面。
+
 # 部分 5：文章与导航
 
 ## G1. 拉取文章到项目

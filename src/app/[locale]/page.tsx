@@ -3,25 +3,19 @@ import { getMessages } from "next-intl/server";
 import { JsonLd } from "@/components/site";
 import { siteConfig, SITE_URL } from "@/site-data/site.config";
 import { faqItems } from "@/site-data/home.config";
+import { createPageMetadata } from "@/i18n/seo";
+import { routing, type Locale } from "@/i18n/routing";
 import HomePageClient from "./HomePageClient";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return {
+  return createPageMetadata({
+    locale: locale as Locale,
+    pathname: "/",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
-    alternates: {
-      canonical: locale === "en" ? "/" : `/${locale}`,
-      languages: { en: "/" },
-    },
-    openGraph: {
-      title: siteConfig.seo.title,
-      description: siteConfig.seo.description,
-      url: SITE_URL,
-      siteName: siteConfig.siteName,
-      images: [{ url: `${SITE_URL}/images/og-image.png`, width: 1200, height: 630, alt: siteConfig.siteName }],
-    },
-  };
+    availableLocales: routing.locales as readonly Locale[],
+  });
 }
 
 export default async function LocaleHomePage({ params }: { params: Promise<{ locale: string }> }) {
