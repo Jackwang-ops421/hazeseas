@@ -2,68 +2,115 @@ import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 import { getAllContentPaths } from "@/lib/content";
-import { routing } from "@/i18n/routing";
-import { localizedPath } from "@/i18n/locale-path";
+import { SUPPORTED_LOCALES, LOCALE_PREFIXES, DEFAULT_LOCALE, LOCALE_META, type Locale } from "@/i18n/routing";
+
+// Pages that have full 4-language translations (static hubs)
+const FULLY_TRANSLATED = new Set([
+  "/",
+  "/codes",
+  "/trello-discord",
+  "/sea-2-sea-3",
+]);
+
+// English-only static pages (legal)
+const EN_ONLY = new Set([
+  "/about",
+  "/privacy-policy",
+  "/terms-of-service",
+  "/copyright",
+]);
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
+
+/** Build alternates.languages for a path, only for locales that genuinely have the page */
+function buildSitemapAlternates(pathname: string, availableLocales: readonly Locale[]): Record<string, string> {
+  const result: Record<string, string> = {};
+  for (const loc of availableLocales) {
+    const hreflang = LOCALE_META[loc].hreflang;
+    result[hreflang] = `${SITE_URL}${LOCALE_PREFIXES[loc]}${pathname}`;
+  }
+  if (availableLocales.includes(DEFAULT_LOCALE)) {
+    result["x-default"] = `${SITE_URL}${pathname}`;
+  }
+  return result;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
-
-  const enDir = path.join(process.cwd(), "content", "en");
-  const categoryDirs = fs.existsSync(enDir)
-    ? fs.readdirSync(enDir, { withFileTypes: true })
-        .filter((e) => e.isDirectory())
-        .map((e) => `/${e.name}`)
-    : [];
-
-  const legalPaths = ["/privacy-policy", "/terms-of-service", "/copyright", "/about"];
-  const staticHubs = ["/", "/codes", "/trello-discord", "/sea-2-sea-3"];
-
-  // Fully translated static pages (included in all locales)
-  const fullyTranslated = new Set([
-    "/",
-    "/codes",
-    "/trello-discord",
-    "/sea-2-sea-3",
-    ...legalPaths,
-  ]);
-
-  // Generate URLs: one entry per (path x locale)
   const urls: MetadataRoute.Sitemap = [];
 
-  for (const path of [...staticHubs, ...categoryDirs, ...legalPaths]) {
-    for (const locale of routing.locales) {
-      const localizedUrl = `${siteUrl}${localizedPath(locale, path)}`;
-      const alternates: Record<string, string> = {};
-      for (const altLoc of routing.locales) {
-        alternates[altLoc] = `${siteUrl}${localizedPath(altLoc, path)}`;
-      }
-      alternates["x-default"] = `${siteUrl}${localizedPath(routing.defaultLocale, path)}`;
-
-      const isFullyTranslated = fullyTranslated.has(path);
-      const priority = path === "/" ? 1 : isFullyTranslated ? 0.8 : 0.6;
-      const changeFrequency = path === "/" ? "daily" as const : "weekly" as const;
-
+  // 1. Static hub pages (4 locales each)
+  const staticHubs = [...FULLY_TRANSLATED];
+  for (const hubPath of staticHubs) {
+    for (const loc of SUPPORTED_LOCALES) {
+      const locPath = hubPath === "/" ? (LOCALE_PREFIXES[loc] || "/") : `${LOCALE_PREFIXES[loc]}${hubPath}`;
       urls.push({
-        url: localizedUrl,
+        url: `${SITE_URL}${locPath}`,
         lastModified: new Date(),
-        changeFrequency,
-        priority,
-        alternates: { languages: alternates },
+        changeFrequency: hubPath === "/" ? "daily" : "weekly",
+        priority: hubPath === "/" ? 1 : 0.8,
+        alternates: { languages: buildSitemapAlternates(hubPath, SUPPORTED_LOCALES) },
       });
     }
   }
 
-  // Add dynamic MDX article paths per locale
-  const contentPaths = await getAllContentPaths("en");
-  for (const item of contentPaths) {
-    const itemPath = `/${item.contentType}/${item.slug.join("/")}`;
-    for (const locale of routing.locales) {
-      urls.push({
-        url: `${siteUrl}${localizedPath(locale, itemPath)}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.6,
+  // 2. English-only legal pages
+  for (const legalPath of EN_ONLY) {
+    urls.push({
+      url: `${SITE_URL}${legalPath}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.5,
+    });
+  }
+
+  // 3. Dynamic category pages — scan actual content/<locale> directories
+  const contentRoot = path.join(process.cwd(), "content");
+  for (const loc of SUPPORTED_LOCALES) {
+    const locDir = path.join(contentRoot, loc);
+    if (!fs.existsSync(locDir)) continue;
+    const categories = fs.readdirSync(locDir, { withFileTypes: true })
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name);
+    for (const cat of categories) {
+      const catDir = path.join(locDir, cat);
+      const mdxFiles = fs.readdirSync(catDir, { withFileTypes: true })
+        .filter((f) => f.isFile() && f.name.endsWith(".mdx"));
+      if (mdxFiles.length === 0) continue;
+      const catPath = `/${cat}`;
+      const availableLocales = SUPPORTED_LOCALES.filter((l) => {
+        const d = path.join(contentRoot, l, cat);
+        return fs.existsSync(d) && fs.readdirSync(d, { withFileTypes: true }).some((f) => f.isFile() && f.name.endsWith(".mdx"));
       });
+      urls.push({
+        url: `${SITE_URL}${LOCALE_PREFIXES[loc]}${catPath}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.8,
+        alternates: { languages: buildSitemapAlternates(catPath, availableLocales) },
+      });
+    }
+  }
+
+  // 4. Dynamic article pages — only include real MDX per locale
+  const allContent = await getAllContentPaths("en");
+  for (const item of allContent) {
+    for (const loc of SUPPORTED_LOCALES) {
+      const articlePath = `/${item.contentType}/${item.slug.join("/")}`;
+      const mdxLocDir = path.join(contentRoot, loc, item.contentType);
+      const hasFile = fs.existsSync(path.join(mdxLocDir, `${item.slug.join("/")}.mdx`));
+      if (hasFile) {
+        const availableLocales = SUPPORTED_LOCALES.filter((l) => {
+          const d = path.join(contentRoot, l, item.contentType);
+          return fs.existsSync(path.join(d, `${item.slug.join("/")}.mdx`));
+        });
+        urls.push({
+          url: `${SITE_URL}${LOCALE_PREFIXES[loc]}${articlePath}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly",
+          priority: 0.6,
+          alternates: { languages: buildSitemapAlternates(articlePath, availableLocales) },
+        });
+      }
     }
   }
 

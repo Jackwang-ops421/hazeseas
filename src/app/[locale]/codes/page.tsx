@@ -3,7 +3,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { JsonLd, Breadcrumbs } from "@/components/site";
 import { SITE_URL } from "@/site-data/site.config";
 import { buildAlternates } from "@/i18n/locale-path";
-import { routing } from "@/i18n/routing";
+import { routing, LOCALE_PREFIXES, type Locale } from "@/i18n/routing";
 import { CodesClient } from "./codes-client";
 
 interface Props {
@@ -12,12 +12,13 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const lLoc = locale as Locale;
   const t = await getTranslations({ locale, namespace: "codes.meta" });
   const path = "/codes";
   const alternates = buildAlternates(path);
   const languages: Record<string, string> = {};
   for (const [k, v] of Object.entries(alternates)) languages[k] = v;
-  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
   return {
     title: { absolute: t("title") },
     description: t("description"),
@@ -32,12 +33,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Static locale map (webpack cannot resolve dynamic template literal imports)
+const localeMap: Record<string, () => Promise<{ default: unknown }>> = {
+  en: () => import("@/locales/en.json"),
+  es: () => import("@/locales/es.json"),
+  "pt-BR": () => import("@/locales/pt-BR.json"),
+  ru: () => import("@/locales/ru.json"),
+};
+
 export default async function CodesPage({ params }: Props) {
   const { locale } = await params;
   await getMessages({ locale });
-  const pageUrl = `${SITE_URL}${locale === routing.defaultLocale ? "/codes" : `/${locale.toLowerCase()}/codes`}`;
+  const lLoc = locale as Locale;
+  const pageUrl = `${SITE_URL}${locale === routing.defaultLocale ? "/codes" : `/${LOCALE_PREFIXES[lLoc]}/codes`}`;
 
-  const codes = (await import(`@/locales/${locale}.json`)).default.codes as {
+  const loader = localeMap[locale as keyof typeof localeMap];
+  const localeData = loader
+    ? (await loader()).default as { codes: { meta: Record<string, unknown>; active: unknown[]; copyButton: Record<string, string>; redemption: Record<string, unknown>; troubleshooting: Record<string, unknown>; expired: Record<string, unknown>; faq: unknown[]; sidebarCodes: unknown[]; officialSources: Record<string, unknown>; relatedGuides: Record<string, unknown> } }
+    : { codes: { meta: {}, active: [], copyButton: {}, redemption: {}, troubleshooting: {}, expired: {}, faq: [], sidebarCodes: [], officialSources: {}, relatedGuides: {} } };
+  const codes = localeData.codes as {
     meta: { h1: string; lastUpdated: string; intro: string; verificationNotice: string; breadcrumb: string };
     active: Array<{ code: string; reward: string; status: string; badgeVariant: string; note?: string }>;
     copyButton: { ariaLabelTemplate: string; successLabel: string };

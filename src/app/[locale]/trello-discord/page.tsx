@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd, Breadcrumbs } from "@/components/site";
 import { SITE_URL } from "@/site-data/site.config";
 import { buildAlternates } from "@/i18n/locale-path";
-import { routing } from "@/i18n/routing";
+import { routing, LOCALE_PREFIXES, type Locale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { localizedPath } from "@/i18n/locale-path";
 
@@ -12,9 +12,10 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const lLoc = locale as Locale;
   const t = await getTranslations({ locale, namespace: "trelloDiscord.meta" });
   const path = "/trello-discord";
-  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
   const alternates = buildAlternates(path);
   const languages: Record<string, string> = {};
   for (const [k, v] of Object.entries(alternates)) languages[k] = v;
@@ -29,9 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TrelloDiscordPage({ params }: Props) {
   const { locale } = await params;
+  const lLoc = locale as Locale;
   const t = await getTranslations({ locale, namespace: "trelloDiscord" });
   const path = "/trello-discord";
-  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
   const pageUrl = `${SITE_URL}${pathWithLocale}`;
 
   const links = t.raw("links") as Array<{ title: string; description: string; href: string; badge: string }>;

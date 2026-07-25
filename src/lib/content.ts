@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { routing, type Locale } from "@/i18n/routing";
+import { routing, SUPPORTED_LOCALES, type Locale } from "@/i18n/routing";
 
 // ─── Content type definitions ────────────────────────────────────────────────
 
@@ -201,29 +201,25 @@ export async function getContent(
       headings: getHeadingsFromFile(mdxPath),
     };
   } catch {
-    if (language !== routing.defaultLocale) {
-      try {
-        const enContentDir = path.join(CONTENT_ROOT, routing.defaultLocale, contentType);
-        const enRealSlug = findFileBySlug(enContentDir, currentSlug) || currentSlug;
-        const enMdxPath = path.join(enContentDir, `${enRealSlug}.mdx`);
-        const { default: MDXContent, metadata } = await import(
-          `../../content/${routing.defaultLocale}/${contentType}/${enRealSlug}.mdx`
-        );
-        return {
-          slug: currentSlug,
-          segments: slugSegments,
-          contentType,
-          locale: routing.defaultLocale,
-          metadata: metadata as ContentMetadata,
-          MDXContent,
-          headings: getHeadingsFromFile(enMdxPath),
-        };
-      } catch {
-        return null;
-      }
-    }
     return null;
   }
+}
+
+/** Returns which locales have at least one MDX file in the given category */
+export function getCategoryLocales(contentType: string): Locale[] {
+  return (SUPPORTED_LOCALES as readonly string[]).filter((locale) => {
+    const directory = path.join(CONTENT_ROOT, locale, contentType);
+    return getSlugsFromDirectory(directory).length > 0;
+  }) as Locale[];
+}
+
+/** Returns which locales have the specified article */
+export function getArticleLocales(contentType: string, slugSegments: string[]): Locale[] {
+  const slug = slugSegments.join("/");
+  return (SUPPORTED_LOCALES as readonly string[]).filter((locale) => {
+    const directory = path.join(CONTENT_ROOT, locale, contentType);
+    return Boolean(findFileBySlug(directory, slug));
+  }) as Locale[];
 }
 
 export async function getAllContentPaths(language: Locale) {

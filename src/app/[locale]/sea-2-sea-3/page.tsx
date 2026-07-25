@@ -3,7 +3,7 @@ import Link from "next/link";
 import { JsonLd, Breadcrumbs } from "@/components/site";
 import { SITE_URL } from "@/site-data/site.config";
 import { buildAlternates, localizedPath } from "@/i18n/locale-path";
-import { routing } from "@/i18n/routing";
+import { routing, LOCALE_PREFIXES, type Locale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 interface Props {
@@ -12,9 +12,10 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const lLoc = locale as Locale;
   const t = await getTranslations({ locale, namespace: "sea2sea3.meta" });
   const path = "/sea-2-sea-3";
-  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
   const alternates = buildAlternates(path);
   const languages: Record<string, string> = {};
   for (const [k, v] of Object.entries(alternates)) languages[k] = v;
@@ -29,9 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Sea2Sea3Page({ params }: Props) {
   const { locale } = await params;
+  const lLoc = locale as Locale;
   const t = await getTranslations({ locale, namespace: "sea2sea3" });
   const path = "/sea-2-sea-3";
-  const pathWithLocale = locale === routing.defaultLocale ? path : `/${locale.toLowerCase()}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
   const pageUrl = `${SITE_URL}${pathWithLocale}`;
 
   const tableH = t.raw("tableH") as string[];

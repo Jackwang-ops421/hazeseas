@@ -6,11 +6,11 @@ import { notFound } from "next/navigation";
 import { ChevronRight, Swords } from "lucide-react";
 import { getMessages } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
-import { getAllContent, getAllContentPaths, getContent, getDynamicNavigation, type ContentItem } from "@/lib/content";
+import { getAllContent, getAllContentPaths, getContent, getDynamicNavigation, getCategoryLocales, getArticleLocales, type ContentItem } from "@/lib/content";
 import { Breadcrumbs, JsonLd, WikiSidebar, localizeHref } from "@/components/site";
 import { MobileTOC, SidebarTOC } from "@/components/table-of-contents";
 import { type ContentType } from "@/lib/content";
-import { routing, type Locale } from "@/i18n/routing";
+import { routing, LOCALE_PREFIXES, LOCALE_META, SUPPORTED_LOCALES, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/site-data/site.config";
 import en from "@/locales/en.json";
 import { ArticleLayout } from "@/components/article-layout";
@@ -21,8 +21,17 @@ import SidebarBanner from "@/components/ads/SidebarBanner";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hazeseashub.wiki";
 type Messages = typeof en;
 
-function languageAlternates(pathname: string) {
-  return Object.fromEntries(routing.locales.map((locale) => [locale, locale === "en" ? pathname : `/${locale}${pathname}`]));
+function languageAlternates(pathname: string, availableLocales: readonly Locale[]) {
+  const result: Record<string, string> = {};
+  for (const loc of availableLocales) {
+    const meta = LOCALE_META[loc];
+    const hreflang = meta?.hreflang || loc;
+    result[hreflang] = `${siteUrl}${LOCALE_PREFIXES[loc] || ""}${pathname}`;
+  }
+  if (availableLocales.includes(routing.defaultLocale as Locale)) {
+    result["x-default"] = `${siteUrl}${pathname}`;
+  }
+  return result;
 }
 
 export async function generateStaticParams() {
@@ -37,22 +46,46 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string[] }> }): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const messages = (await getMessages({ locale })) as Messages;
+  const { locale: localeParam, slug } = await params;
+  const lLocale = localeParam as Locale;
+  const messages = (await getMessages({ locale: localeParam })) as Messages;
   if (slug.length === 1) {
-    const ct = slug[0] as ContentType;
+    const ct = slug[0];
+    const availableLocales = getCategoryLocales(ct);
+    if (lLocale !== (routing.defaultLocale as Locale) && !availableLocales.includes(lLocale)) {
+      return { title: "Not Found" };
+    }
     const ctTitle = ct.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const ctMessages = (messages as unknown as Record<string, Record<string, string>>)[ct];
     const title = ctMessages?.overviewTitle || `${ctTitle} — ${siteConfig.siteName}`;
     const description = ctMessages?.overviewDescription || `Browse all ${ctTitle.toLowerCase()} guides and resources for ${siteConfig.siteName}.`;
-    return { title, description, alternates: { canonical: `/${ct}`, languages: languageAlternates(`/${ct}`) }, openGraph: { title, description, url: `${siteUrl}/${ct}`, siteName: siteConfig.siteName, images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630, alt: siteConfig.siteName }] } };
+    const locKey = lLocale as keyof typeof LOCALE_PREFIXES;
+    const canonical = `${siteUrl}${LOCALE_PREFIXES[locKey] || ""}${`/${ct}`}`;
+    return {
+      title: { absolute: title },
+      description,
+      alternates: { canonical, languages: languageAlternates(`/${ct}`, availableLocales) },
+      robots: { index: true, follow: true },
+    };
   }
   const [contentType, ...articleSlug] = slug;
-  const item = await getContent(contentType, articleSlug, locale as Locale);
+  const item = await getContent(contentType, articleSlug, lLocale);
   if (!item) return { title: "Not Found" };
-  const pathname = `/${contentType}/${articleSlug.join("/")}`;
+  const availableLocales = getArticleLocales(contentType, articleSlug);
+  if (lLocale !== (routing.defaultLocale as Locale) && !availableLocales.includes(lLocale)) {
+    return { title: "Not Found" };
+  }
+  const rawPath = `/${contentType}/${articleSlug.join("/")}`;
+  const locKey = lLocale as keyof typeof LOCALE_PREFIXES;
+  const canonical = `${siteUrl}${LOCALE_PREFIXES[locKey] || ""}${rawPath}`;
   const image = item.metadata.image?.startsWith("http") ? item.metadata.image : `${siteUrl}${item.metadata.image ?? "/images/hero.webp"}`;
-  return { title: `${item.metadata.title} — ${siteConfig.siteName}`, description: item.metadata.description, alternates: { canonical: pathname, languages: languageAlternates(pathname) }, openGraph: { type: "article", title: item.metadata.title, description: item.metadata.description, url: `${siteUrl}${pathname}`, images: [image] }, twitter: { card: "summary_large_image", images: [image] } };
+  return {
+    title: { absolute: `${item.metadata.title} — ${siteConfig.siteName}` },
+    description: item.metadata.description,
+    alternates: { canonical, languages: languageAlternates(rawPath, availableLocales) },
+    robots: { index: true, follow: true },
+    twitter: { card: "summary_large_image", images: [image] },
+  };
 }
 
 export default async function SlugPage({ params }: { params: Promise<{ locale: Locale; slug: string[] }> }) {
@@ -63,6 +96,8 @@ export default async function SlugPage({ params }: { params: Promise<{ locale: L
 }
 
 async function NavigationPage({ locale, contentType, navGroups }: { locale: Locale; contentType: string; navGroups: import("@/lib/content").NavGroup[] }) {
+  const availableLocales = getCategoryLocales(contentType);
+  if (locale !== routing.defaultLocale && !availableLocales.includes(locale)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const items = await getAllContent(contentType, locale as Locale);
   const listData = { "@context": "https://schema.org", "@type": "ItemList", name: `${contentType} — ${siteConfig.siteName}`, itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, url: `${siteUrl}/${contentType}/${item.slug}`, name: item.metadata.title })) };
@@ -126,10 +161,14 @@ const RELATED_BY_TYPE: Record<string, Array<{ title: string; description: string
 };
 
 async function DetailPage({ locale, contentType, slug, navGroups }: { locale: Locale; contentType: string; slug: string[]; navGroups: import("@/lib/content").NavGroup[] }) {
+  const availableLocales = getArticleLocales(contentType, slug);
+  if (locale !== routing.defaultLocale && !availableLocales.includes(locale)) notFound();
   const messages = (await getMessages({ locale })) as Messages;
   const item = await getContent(contentType, slug, locale as Locale);
   if (!item) notFound();
   const pathname = `/${contentType}/${slug.join("/")}`;
+  const localePrefix = LOCALE_PREFIXES[locale];
+  const canonicalUrl = `${siteUrl}${localePrefix}${pathname}`;
   const tocLabel = messages.shared.tableOfContents || messages.shared.inThisSection || "Table of Contents";
   const sectionLabel = contentType.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const dateModified = item.metadata.lastModified || item.metadata.date;

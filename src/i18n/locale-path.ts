@@ -1,41 +1,42 @@
-import { routing, type Locale } from "./routing";
+import { DEFAULT_LOCALE, LOCALE_PREFIXES, type Locale } from "./routing";
 
-/** Build a localized URL path for a given locale and route. */
-export function localizedPath(locale: string, path: string): string {
-  if (locale === routing.defaultLocale) {
-    return path === "/" ? "/" : path;
-  }
-  // Normalize pt-BR -> pt-br (lowercase prefix used in URLs)
-  const prefix = locale.toLowerCase();
-  if (path === "/" || path === "") return `/${prefix}`;
-  return `/${prefix}${path.startsWith("/") ? path : `/${path}`}`;
+export function normalizeInternalPath(value: string): string {
+  const pathname = value.split(/[?#]/, 1)[0] || "/";
+  const withLeadingSlash = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  if (withLeadingSlash === "/") return "/";
+  return withLeadingSlash.replace(/\/+$/, "");
 }
 
-/** Strip the locale prefix from a pathname (e.g. /es/codes -> /codes). */
+export function localizedPath(locale: Locale | string, pathname: string): string {
+  const normalized = normalizeInternalPath(pathname);
+  const prefix = LOCALE_PREFIXES[locale as Locale];
+  if (normalized === "/") return prefix || "/";
+  return `${prefix}${normalized}`;
+}
+
+/** Build alternate-language URLs for hreflang. */
+export function buildAlternates(pathname: string): Record<string, string> {
+  const { rest } = stripLocale(pathname);
+  const alternates: Record<string, string> = {};
+  for (const loc of (Object.keys(LOCALE_PREFIXES) as Locale[])) {
+    alternates[loc] = `${LOCALE_PREFIXES[loc]}${rest}`;
+  }
+  alternates["x-default"] = rest;
+  return alternates;
+}
+
 export function stripLocale(pathname: string): { locale: Locale; rest: string } {
-  for (const loc of routing.locales) {
-    if (loc === routing.defaultLocale) continue;
-    const prefix = `/${loc.toLowerCase()}`;
-    if (pathname === prefix) return { locale: loc, rest: "/" };
-    if (pathname.startsWith(`${prefix}/`)) {
-      return { locale: loc, rest: pathname.slice(prefix.length) || "/" };
+  const normalized = normalizeInternalPath(pathname);
+  const locales = (Object.keys(LOCALE_PREFIXES) as Locale[])
+    .filter((locale) => locale !== DEFAULT_LOCALE)
+    .sort((a, b) => LOCALE_PREFIXES[b].length - LOCALE_PREFIXES[a].length);
+
+  for (const locale of locales) {
+    const prefix = LOCALE_PREFIXES[locale];
+    if (normalized === prefix) return { locale, rest: "/" };
+    if (normalized.startsWith(`${prefix}/`)) {
+      return { locale, rest: normalized.slice(prefix.length) || "/" };
     }
   }
-  return { locale: routing.defaultLocale, rest: pathname };
-}
-
-/** Build alternate-language URLs for hreflang. Returns null for x-default excluded. */
-export function buildAlternates(pathname: string): Record<string, string> {
-  const { locale: current, rest } = stripLocale(pathname);
-  const alternates: Record<string, string> = {};
-  for (const loc of routing.locales) {
-    alternates[loc] = localizedPath(loc, rest);
-  }
-  // x-default points to default locale (en)
-  alternates["x-default"] = localizedPath(routing.defaultLocale, rest);
-  // Override current locale hreflang with its normalized URL
-  if (current !== routing.defaultLocale) {
-    alternates[current] = localizedPath(current, rest);
-  }
-  return alternates;
+  return { locale: DEFAULT_LOCALE, rest: normalized };
 }

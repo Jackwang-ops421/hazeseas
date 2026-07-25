@@ -46,6 +46,16 @@ const nextConfig = {
       { source: "/progression", destination: "/guide", permanent: true },
       { source: "/progression/:slug", destination: "/guide/:slug", permanent: true },
       { source: "/codes/haze-seas-codes", destination: "/codes", permanent: true },
+      // Locale canonicalization
+      { source: "/en", destination: "/", permanent: true },
+      { source: "/en/:path*", destination: "/:path*", permanent: true },
+      { source: "/pt-BR", destination: "/pt-br", permanent: true },
+      { source: "/pt-BR/:path*", destination: "/pt-br/:path*", permanent: true },
+      // Multi-locale codes redirects
+      { source: "/es/codes/haze-seas-codes", destination: "/es/codes", permanent: true },
+      { source: "/pt-br/codes/haze-seas-codes", destination: "/pt-br/codes", permanent: true },
+      { source: "/pt-BR/codes/haze-seas-codes", destination: "/pt-br/codes", permanent: true },
+      { source: "/ru/codes/haze-seas-codes", destination: "/ru/codes", permanent: true },
       // Legacy catch-all redirects for removed categories
       { source: "/maps", destination: "/guide", permanent: true },
       { source: "/maps/:slug", destination: "/guide/:slug", permanent: true },
