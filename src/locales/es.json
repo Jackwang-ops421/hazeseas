@@ -405,42 +405,6 @@
     "overviewTitle": "Bosses",
     "overviewDescription": "Guias de bosses de Haze Seas y rutas para island bosses y super bosses."
   },
-  "shared": {
-    "wikiNavigation": "Navegacion de la Wiki",
-    "activeCodes": "Codigos Activos",
-    "updated": "Actualizado",
-    "viewAllCodes": "Ver todos los codigos",
-    "playOnRoblox": "Jugar en Roblox",
-    "inThisSection": "En esta seccion",
-    "tableOfContents": "Tabla de Contenidos",
-    "nextSteps": "Proximos Pasos",
-    "needHelp": "¿Necesitas Ayuda?",
-    "relatedReading": "Lectura Relacionada",
-    "relatedGuides": "Guias Relacionadas",
-    "readMore": "Leer mas",
-    "officialMedia": "Medios oficiales",
-    "home": "Inicio",
-    "noGuidesAvailable": "No hay guias disponibles todavia. Vuelve pronto!"
-  },
-  "footer": {
-    "aboutTitle": "Wiki de Haze Seas",
-    "about": "Wiki de Haze Seas es una guia independiente hecha por fans para Haze Seas y jugadores que regresan de Haze Piece. Cubre codigos activos, Devil Fruits, listas de niveles, Haki, bosses, armas y progresion del Mar 1 al 3. No esta afiliada con Haze Studios ni Roblox.",
-    "quickLinks": "Enlaces Rapidos",
-    "guides": "Guias",
-    "legal": "Legal",
-    "copyright": "© 2026 Haze Seas Hub. No afiliado con Haze Studios o Roblox Corporation.",
-    "description": "RPG de accion pirata gratuito en Roblox con 35 Devil Fruits, Haki, drops de bosses y tres mares para explorar.",
-    "playGame": "Jugar Haze Seas en Roblox",
-    "officialDiscord": "Discord Oficial",
-    "officialYoutube": "YouTube Oficial",
-    "communityTool": "Trello Oficial de Haze Seas",
-    "beginnerGuide": "Guia para Principiantes",
-    "raceGuides": "Guias de Razas",
-    "bossGuides": "Guias de Bosses",
-    "buildGuide": "Guia de Builds",
-    "privacyPolicy": "Politica de Privacidad",
-    "termsOfService": "Terminos de Servicio"
-  },
   "codes": {
     "meta": {
       "title": "Códigos de Haze Seas (Julio 2026) — Activos y Verificados",
@@ -568,30 +532,6 @@
         }
       ]
     }
-  },
-  "guide": {
-    "overviewTitle": "Guias",
-    "overviewDescription": "Guias para principiantes y rutas de progresion para Haze Seas."
-  },
-  "tier-list": {
-    "overviewTitle": "Ranking",
-    "overviewDescription": "Ranking y clasificaciones de Haze Seas para frutas, razas y espadas."
-  },
-  "fruits": {
-    "overviewTitle": "Frutas",
-    "overviewDescription": "Guia de Devil Fruits de Haze Seas, lista de rareza e informacion del Vendedor de Frutas."
-  },
-  "haki": {
-    "overviewTitle": "Haki",
-    "overviewDescription": "Guia de Haki de Haze Seas cubriendo Haki de Armadura, de Observacion y de Conqueror."
-  },
-  "items": {
-    "overviewTitle": "Objetos",
-    "overviewDescription": "Objetos de Haze Seas, accesorios, materiales y recursos de mejora."
-  },
-  "community": {
-    "overviewTitle": "Comunidad",
-    "overviewDescription": "Enlaces de la comunidad oficial de Haze Seas incluyendo Discord, Trello y canales de actualizaciones."
   },
   "trelloDiscord": {
     "meta": {
@@ -721,5 +661,65 @@
       "ctaHref": "/guide/haze-seas-sea-3"
     },
     "updateNote": "Los requisitos de progresión pueden cambiar tras una actualización. Vuelve a comprobar el Trello oficial y la página de Roblox si un requisito de NPC o nivel ya no coincide con el juego en vivo."
+  },
+  "shared": {
+    "wikiNavigation": "Navegacion de la Wiki",
+    "activeCodes": "Codigos Activos",
+    "updated": "Actualizado",
+    "viewAllCodes": "Ver todos los codigos",
+    "playOnRoblox": "Jugar en Roblox",
+    "inThisSection": "En esta seccion",
+    "tableOfContents": "Tabla de Contenidos",
+    "nextSteps": "Proximos Pasos",
+    "needHelp": "¿Necesitas Ayuda?",
+    "relatedReading": "Lectura Relacionada",
+    "relatedGuides": "Guias Relacionadas",
+    "readMore": "Leer mas",
+    "officialMedia": "Medios oficiales",
+    "home": "Inicio",
+    "noGuidesAvailable": "No hay guias disponibles todavia. Vuelve pronto!"
+  },
+  "footer": {
+    "aboutTitle": "Wiki de Haze Seas",
+    "about": "Wiki de Haze Seas es una guia independiente hecha por fans para Haze Seas y jugadores que regresan de Haze Piece. Cubre codigos activos, Devil Fruits, listas de niveles, Haki, bosses, armas y progresion del Mar 1 al 3. No esta afiliada con Haze Studios ni Roblox.",
+    "quickLinks": "Enlaces Rapidos",
+    "guides": "Guias",
+    "legal": "Legal",
+    "copyright": "© 2026 Haze Seas Hub. No afiliado con Haze Studios o Roblox Corporation.",
+    "description": "RPG de accion pirata gratuito en Roblox con 35 Devil Fruits, Haki, drops de bosses y tres mares para explorar.",
+    "playGame": "Jugar Haze Seas en Roblox",
+    "officialDiscord": "Discord Oficial",
+    "officialYoutube": "YouTube Oficial",
+    "communityTool": "Trello Oficial de Haze Seas",
+    "beginnerGuide": "Guia para Principiantes",
+    "raceGuides": "Guias de Razas",
+    "bossGuides": "Guias de Bosses",
+    "buildGuide": "Guia de Builds",
+    "privacyPolicy": "Politica de Privacidad",
+    "termsOfService": "Terminos de Servicio"
+  },
+  "guide": {
+    "overviewTitle": "Guias",
+    "overviewDescription": "Guias para principiantes y rutas de progresion para Haze Seas."
+  },
+  "tier-list": {
+    "overviewTitle": "Ranking",
+    "overviewDescription": "Ranking y clasificaciones de Haze Seas para frutas, razas y espadas."
+  },
+  "fruits": {
+    "overviewTitle": "Frutas",
+    "overviewDescription": "Guia de Devil Fruits de Haze Seas, lista de rareza e informacion del Vendedor de Frutas."
+  },
+  "haki": {
+    "overviewTitle": "Haki",
+    "overviewDescription": "Guia de Haki de Haze Seas cubriendo Haki de Armadura, de Observacion y de Conqueror."
+  },
+  "items": {
+    "overviewTitle": "Objetos",
+    "overviewDescription": "Objetos de Haze Seas, accesorios, materiales y recursos de mejora."
+  },
+  "community": {
+    "overviewTitle": "Comunidad",
+    "overviewDescription": "Enlaces de la comunidad oficial de Haze Seas incluyendo Discord, Trello y canales de actualizaciones."
   }
 }

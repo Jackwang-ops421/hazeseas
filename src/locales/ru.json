@@ -405,42 +405,6 @@
     "overviewTitle": "Боссы",
     "overviewDescription": "Гайды по боссам и маршруты Haze Seas для островных боссов и супер-боссов."
   },
-  "shared": {
-    "wikiNavigation": "Навигация вики",
-    "activeCodes": "Активные коды",
-    "updated": "Обновлено",
-    "viewAllCodes": "Все коды",
-    "playOnRoblox": "Играть на Roblox",
-    "inThisSection": "В этом разделе",
-    "tableOfContents": "Содержание",
-    "nextSteps": "Следующие шаги",
-    "needHelp": "Нужна помощь?",
-    "relatedReading": "Связанное чтение",
-    "relatedGuides": "Связанные гайды",
-    "readMore": "Читать далее",
-    "officialMedia": "Официальные медиа",
-    "home": "Главная",
-    "noGuidesAvailable": "Гайды пока недоступны. Возвращайтесь позже!"
-  },
-  "footer": {
-    "aboutTitle": "Haze Seas Wiki",
-    "about": "Haze Seas Wiki — независимый фанатский гайд для игроков Haze Seas и вернувшихся фанатов Haze Piece. Охватывает активные коды, Дьявольские фрукты, тир-листы, Хаки, боссов, оружие и прогресс Морей 1–3. Не связана с Haze Studios или Roblox.",
-    "quickLinks": "Быстрые ссылки",
-    "guides": "Гайды",
-    "legal": "Правовая информация",
-    "copyright": "© 2026 Haze Seas Hub. Не связана с Haze Studios или Roblox Corporation.",
-    "description": "Бесплатная пиратская Action RPG в Roblox с 35 Дьявольскими фруктами, Хаки, дропами боссов и тремя морями для исследования.",
-    "playGame": "Играть в Haze Seas на Roblox",
-    "officialDiscord": "Официальный Discord",
-    "officialYoutube": "Официальный YouTube",
-    "communityTool": "Официальный Trello Haze Seas",
-    "beginnerGuide": "Гайд для новичков",
-    "raceGuides": "Гайды по расам",
-    "bossGuides": "Гайды по боссам",
-    "buildGuide": "Гайд по билдам",
-    "privacyPolicy": "Политика конфиденциальности",
-    "termsOfService": "Условия использования"
-  },
   "codes": {
     "meta": {
       "title": "Коды Haze Seas (Июль 2026) — Активные и Проверенные",
@@ -568,30 +532,6 @@
         }
       ]
     }
-  },
-  "guide": {
-    "overviewTitle": "Гайды",
-    "overviewDescription": "Гайды для новичков и маршруты прогресса для Haze Seas."
-  },
-  "tier-list": {
-    "overviewTitle": "Тир-лист",
-    "overviewDescription": "Тир-лист Haze Seas и рейтинги фруктов, рас и мечей."
-  },
-  "fruits": {
-    "overviewTitle": "Фрукты",
-    "overviewDescription": "Гайд по Дьявольским фруктам Haze Seas, список редкости и информация о Торговце фруктами."
-  },
-  "haki": {
-    "overviewTitle": "Хаки",
-    "overviewDescription": "Гайд по Хаки Haze Seas, охватывающий Хаки Вооружения, Наблюдения и Покорителя."
-  },
-  "items": {
-    "overviewTitle": "Предметы",
-    "overviewDescription": "Предметы Haze Seas, аксессуары, материалы и ресурсы улучшений."
-  },
-  "community": {
-    "overviewTitle": "Сообщество",
-    "overviewDescription": "Официальные ссылки сообщества Haze Seas, включая Discord, Trello и каналы обновлений."
   },
   "trelloDiscord": {
     "meta": {
@@ -721,5 +661,65 @@
       "ctaHref": "/guide/haze-seas-sea-3"
     },
     "updateNote": "Требования прогрессии могут меняться после обновления. Перепроверьте официальный Trello и страницу Roblox, если требование NPC или уровня больше не совпадает с актуальной игрой."
+  },
+  "shared": {
+    "wikiNavigation": "Навигация вики",
+    "activeCodes": "Активные коды",
+    "updated": "Обновлено",
+    "viewAllCodes": "Все коды",
+    "playOnRoblox": "Играть на Roblox",
+    "inThisSection": "В этом разделе",
+    "tableOfContents": "Содержание",
+    "nextSteps": "Следующие шаги",
+    "needHelp": "Нужна помощь?",
+    "relatedReading": "Связанное чтение",
+    "relatedGuides": "Связанные гайды",
+    "readMore": "Читать далее",
+    "officialMedia": "Официальные медиа",
+    "home": "Главная",
+    "noGuidesAvailable": "Гайды пока недоступны. Возвращайтесь позже!"
+  },
+  "footer": {
+    "aboutTitle": "Haze Seas Wiki",
+    "about": "Haze Seas Wiki — независимый фанатский гайд для игроков Haze Seas и вернувшихся фанатов Haze Piece. Охватывает активные коды, Дьявольские фрукты, тир-листы, Хаки, боссов, оружие и прогресс Морей 1–3. Не связана с Haze Studios или Roblox.",
+    "quickLinks": "Быстрые ссылки",
+    "guides": "Гайды",
+    "legal": "Правовая информация",
+    "copyright": "© 2026 Haze Seas Hub. Не связана с Haze Studios или Roblox Corporation.",
+    "description": "Бесплатная пиратская Action RPG в Roblox с 35 Дьявольскими фруктами, Хаки, дропами боссов и тремя морями для исследования.",
+    "playGame": "Играть в Haze Seas на Roblox",
+    "officialDiscord": "Официальный Discord",
+    "officialYoutube": "Официальный YouTube",
+    "communityTool": "Официальный Trello Haze Seas",
+    "beginnerGuide": "Гайд для новичков",
+    "raceGuides": "Гайды по расам",
+    "bossGuides": "Гайды по боссам",
+    "buildGuide": "Гайд по билдам",
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия использования"
+  },
+  "guide": {
+    "overviewTitle": "Гайды",
+    "overviewDescription": "Гайды для новичков и маршруты прогресса для Haze Seas."
+  },
+  "tier-list": {
+    "overviewTitle": "Тир-лист",
+    "overviewDescription": "Тир-лист Haze Seas и рейтинги фруктов, рас и мечей."
+  },
+  "fruits": {
+    "overviewTitle": "Фрукты",
+    "overviewDescription": "Гайд по Дьявольским фруктам Haze Seas, список редкости и информация о Торговце фруктами."
+  },
+  "haki": {
+    "overviewTitle": "Хаки",
+    "overviewDescription": "Гайд по Хаки Haze Seas, охватывающий Хаки Вооружения, Наблюдения и Покорителя."
+  },
+  "items": {
+    "overviewTitle": "Предметы",
+    "overviewDescription": "Предметы Haze Seas, аксессуары, материалы и ресурсы улучшений."
+  },
+  "community": {
+    "overviewTitle": "Сообщество",
+    "overviewDescription": "Официальные ссылки сообщества Haze Seas, включая Discord, Trello и каналы обновлений."
   }
 }

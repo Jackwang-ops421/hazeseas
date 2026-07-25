@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const alternates = buildAlternates(path);
   const languages: Record<string, string> = {};
   for (const [k, v] of Object.entries(alternates)) languages[k] = v;
-  const pathWithLocale = lLoc === routing.defaultLocale ? path : `${LOCALE_PREFIXES[lLoc]}${path}`;
+  const pathWithLocale = lLoc === routing.defaultLocale ? "/codes" : `${LOCALE_PREFIXES[lLoc]}/codes`;
   return {
     title: { absolute: t("title") },
     description: t("description"),
@@ -45,7 +45,7 @@ export default async function CodesPage({ params }: Props) {
   const { locale } = await params;
   await getMessages({ locale });
   const lLoc = locale as Locale;
-  const pageUrl = `${SITE_URL}${locale === routing.defaultLocale ? "/codes" : `/${LOCALE_PREFIXES[lLoc]}/codes`}`;
+  const pageUrl = locale === routing.defaultLocale ? `${SITE_URL}/codes` : `${SITE_URL}${LOCALE_PREFIXES[lLoc]}/codes`;
 
   const loader = localeMap[locale as keyof typeof localeMap];
   const localeData = loader
