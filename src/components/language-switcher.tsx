@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Globe, Check } from "lucide-react";
-import { routing } from "@/i18n/routing";
-import { stripLocale } from "@/i18n/locale-path";
+import { routing, type Locale } from "@/i18n/routing";
+import { stripLocale, localizedPath } from "@/i18n/locale-path";
 
 const LOCALE_LABELS: Record<string, string> = {
   en: "English",
@@ -10,14 +10,16 @@ const LOCALE_LABELS: Record<string, string> = {
   ru: "Русский",
 };
 
-/**
- * Language switcher — receives pathname from Header (client) and renders
- * real <Link> elements with localized equivalent URLs.
- */
+function toLocale(value: string): Locale | null {
+  return (routing.locales as readonly string[]).includes(value)
+    ? (value as Locale)
+    : null;
+}
+
 export function LanguageSwitcher({ locale, pathname }: { locale: string; pathname: string }) {
   const { locale: current, rest } = stripLocale(pathname);
-
-  if (!routing.locales.includes(current as (typeof routing.locales)[number])) return null;
+  const cur = toLocale(current);
+  if (!cur) return null;
 
   return (
     <div className="relative group">
@@ -33,7 +35,7 @@ export function LanguageSwitcher({ locale, pathname }: { locale: string; pathnam
         <ul className="p-1">
           {routing.locales.map((loc) => {
             const isCurrent = loc === current;
-            const targetPath = loc === routing.defaultLocale ? rest : `/${loc.toLowerCase()}${rest === "/" ? "" : rest}`;
+            const targetPath = localizedPath(loc as Locale, rest);
             return (
               <li key={loc}>
                 <Link

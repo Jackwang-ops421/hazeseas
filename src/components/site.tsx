@@ -4,14 +4,33 @@ import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { CollapsibleNavGroup } from "@/components/collapsible-nav-group";
 import { type NavGroup } from "@/lib/content";
+import { localizedPath } from "@/i18n/locale-path";
+import { routing, type Locale } from "@/i18n/routing";
 
 export { TrailerButton } from "./site/Trailer";
 export { Header as SiteHeader } from "./site/Header";
 export { Footer as SiteFooter } from "./site/Footer";
 
+/** Legal pages are English-only — never add locale prefix */
+const LEGAL_PAGES = ["/about", "/privacy-policy", "/terms-of-service", "/copyright"];
+
+function isLocale(value: string): value is Locale {
+  return (routing.locales as readonly string[]).includes(value);
+}
+
 export function localizeHref(href: string, locale: string) {
-  if (locale === "en") return href;
-  return `/${locale}${href === "/" ? "" : href}`;
+  if (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("#") ||
+    href.startsWith("mailto:")
+  ) {
+    return href;
+  }
+  // Legal pages stay English-only
+  if (LEGAL_PAGES.includes(href)) return href;
+  const safeLocale = isLocale(locale) ? locale : routing.defaultLocale;
+  return localizedPath(safeLocale, href);
 }
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {

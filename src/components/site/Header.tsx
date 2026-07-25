@@ -16,6 +16,22 @@ import { siteConfig } from "@/site-data/site.config";
 import { ClientThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { NavDropdownGroup } from "@/lib/content";
+import { localizedPath } from "@/i18n/locale-path";
+import { routing, type Locale } from "@/i18n/routing";
+
+/** Legal pages are English-only */
+const LEGAL = new Set(["/about", "/privacy-policy", "/terms-of-service", "/copyright"]);
+
+function toLocale(value: string): Locale | null {
+  return (routing.locales as readonly string[]).includes(value) ? (value as Locale) : null;
+}
+
+function localize(locale: string, href: string): string {
+  if (href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:")) return href;
+  if (LEGAL.has(href)) return href;
+  const loc = toLocale(locale) ?? routing.defaultLocale as Locale;
+  return localizedPath(loc, href);
+}
 
 interface HeaderProps {
   locale: string;
@@ -73,9 +89,11 @@ export function Header({ locale, dropdownData = [] }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const lp = (href: string) => (locale === "en" ? href : `/${locale}${href}`);
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" || pathname === `/${locale}` : pathname.startsWith(`/${locale}${href}`);
+  const lp = (href: string) => localize(locale, href);
+  const isActive = (href: string) => {
+    const normalized = localize(locale, href);
+    return pathname === normalized || pathname.startsWith(normalized + "/") || pathname.startsWith(normalized + "#");
+  };
 
   return (
     <header
